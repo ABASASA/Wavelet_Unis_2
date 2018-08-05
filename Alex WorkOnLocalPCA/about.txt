@@ -1,0 +1,5 @@
+local pca == set split type to "5"
+To Do:
+1) Feature importance
+2) Compare errors and trees deeps to other split types
+3) Histogram of selected components

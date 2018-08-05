@@ -1,0 +1,3 @@
+C:\Users\Oren E\Google Drive\teaching\mlMath\july2017\buildingGUI\DataSetsSparsity\bin\Debug\DataSetsSparsity.exe.config
+C:\Users\Oren E\Google Drive\teaching\mlMath\july2017\buildingGUI\DataSetsSparsity\obj\Debug\DataSetsSparsity.exe
+C:\Users\Oren E\Google Drive\teaching\mlMath\july2017\buildingGUI\DataSetsSparsity\obj\Debug\DataSetsSparsity.pdb

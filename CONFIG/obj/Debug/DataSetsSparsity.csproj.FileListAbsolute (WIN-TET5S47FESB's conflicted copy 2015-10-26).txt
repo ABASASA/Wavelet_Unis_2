@@ -1,0 +1,219 @@
+C:\Users\212441441\Documents\code versions\rotated partitions\DataSetsSparsity\bin\Debug\DataSetsSparsity.exe.config
+C:\Users\212441441\Documents\code versions\rotated partitions\DataSetsSparsity\bin\Debug\DataSetsSparsity.exe
+C:\Users\212441441\Documents\code versions\rotated partitions\DataSetsSparsity\bin\Debug\DataSetsSparsity.pdb
+C:\Users\212441441\Documents\code versions\rotated partitions\DataSetsSparsity\bin\Debug\AForge.dll
+C:\Users\212441441\Documents\code versions\rotated partitions\DataSetsSparsity\bin\Debug\AForge.Math.dll
+C:\Users\212441441\Documents\code versions\rotated partitions\DataSetsSparsity\bin\Debug\Accord.dll
+C:\Users\212441441\Documents\code versions\rotated partitions\DataSetsSparsity\bin\Debug\Accord.MachineLearning.pdb
+C:\Users\212441441\Documents\code versions\rotated partitions\DataSetsSparsity\bin\Debug\Accord.MachineLearning.xml
+C:\Users\212441441\Documents\code versions\rotated partitions\DataSetsSparsity\bin\Debug\Accord.Math.pdb
+C:\Users\212441441\Documents\code versions\rotated partitions\DataSetsSparsity\bin\Debug\Accord.Math.xml
+C:\Users\212441441\Documents\code versions\rotated partitions\DataSetsSparsity\bin\Debug\Accord.Statistics.pdb
+C:\Users\212441441\Documents\code versions\rotated partitions\DataSetsSparsity\bin\Debug\Accord.Statistics.xml
+C:\Users\212441441\Documents\code versions\rotated partitions\DataSetsSparsity\bin\Debug\AForge.xml
+C:\Users\212441441\Documents\code versions\rotated partitions\DataSetsSparsity\bin\Debug\AForge.Math.xml
+C:\Users\212441441\Documents\code versions\rotated partitions\DataSetsSparsity\bin\Debug\Accord.pdb
+C:\Users\212441441\Documents\code versions\rotated partitions\DataSetsSparsity\bin\Debug\Accord.xml
+C:\Users\212441441\Documents\code versions\rotated partitions\DataSetsSparsity\obj\Debug\DataSetsSparsity.csprojResolveAssemblyReference.cache
+C:\Users\212441441\Documents\code versions\rotated partitions\DataSetsSparsity\obj\Debug\DataSetsSparsity.Form1.resources
+C:\Users\212441441\Documents\code versions\rotated partitions\DataSetsSparsity\obj\Debug\DataSetsSparsity.ManageInputData.resources
+C:\Users\212441441\Documents\code versions\rotated partitions\DataSetsSparsity\obj\Debug\DataSetsSparsity.ProgressForm.resources
+C:\Users\212441441\Documents\code versions\rotated partitions\DataSetsSparsity\obj\Debug\DataSetsSparsity.Properties.Resources.resources
+C:\Users\212441441\Documents\code versions\rotated partitions\DataSetsSparsity\obj\Debug\DataSetsSparsity.csproj.GenerateResource.Cache
+C:\Users\212441441\Documents\code versions\rotated partitions\DataSetsSparsity\obj\Debug\DataSetsSparsity.exe
+C:\Users\212441441\Documents\code versions\rotated partitions\DataSetsSparsity\obj\Debug\DataSetsSparsity.pdb
+C:\Users\Administrator\Dropbox\code\DataSetsSparsity\bin\Debug\DataSetsSparsity.exe.config
+C:\Users\Administrator\Dropbox\code\DataSetsSparsity\obj\Debug\DataSetsSparsity.exe
+C:\Users\Administrator\Dropbox\code\DataSetsSparsity\obj\Debug\DataSetsSparsity.pdb
+C:\Users\Administrator\Dropbox\code\DataSetsSparsity\bin\Debug\DataSetsSparsity.exe
+C:\Users\Administrator\Dropbox\code\DataSetsSparsity\bin\Debug\DataSetsSparsity.pdb
+C:\Users\Administrator\Dropbox\code\DataSetsSparsity\bin\Debug\AForge.dll
+C:\Users\Administrator\Dropbox\code\DataSetsSparsity\bin\Debug\AForge.Math.dll
+C:\Users\Administrator\Dropbox\code\DataSetsSparsity\bin\Debug\Accord.dll
+C:\Users\Administrator\Dropbox\code\DataSetsSparsity\bin\Debug\Accord.MachineLearning.pdb
+C:\Users\Administrator\Dropbox\code\DataSetsSparsity\bin\Debug\Accord.MachineLearning.xml
+C:\Users\Administrator\Dropbox\code\DataSetsSparsity\bin\Debug\Accord.Math.pdb
+C:\Users\Administrator\Dropbox\code\DataSetsSparsity\bin\Debug\Accord.Math.xml
+C:\Users\Administrator\Dropbox\code\DataSetsSparsity\bin\Debug\Accord.Statistics.pdb
+C:\Users\Administrator\Dropbox\code\DataSetsSparsity\bin\Debug\Accord.Statistics.xml
+C:\Users\Administrator\Dropbox\code\DataSetsSparsity\bin\Debug\AForge.xml
+C:\Users\Administrator\Dropbox\code\DataSetsSparsity\bin\Debug\AForge.Math.xml
+C:\Users\Administrator\Dropbox\code\DataSetsSparsity\bin\Debug\Accord.pdb
+C:\Users\Administrator\Dropbox\code\DataSetsSparsity\bin\Debug\Accord.xml
+C:\Users\Administrator\Dropbox\code\DataSetsSparsity\obj\Debug\DataSetsSparsity.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Dropbox\code\DataSetsSparsity\obj\Debug\DataSetsSparsity.Form1.resources
+C:\Users\Administrator\Dropbox\code\DataSetsSparsity\obj\Debug\DataSetsSparsity.ManageInputData.resources
+C:\Users\Administrator\Dropbox\code\DataSetsSparsity\obj\Debug\DataSetsSparsity.ProgressForm.resources
+C:\Users\Administrator\Dropbox\code\DataSetsSparsity\obj\Debug\DataSetsSparsity.Properties.Resources.resources
+C:\Users\Administrator\Dropbox\code\DataSetsSparsity\obj\Debug\DataSetsSparsity.csproj.GenerateResource.Cache
+C:\Users\212441441\Dropbox\code\DataSetsSparsity\bin\Debug\DataSetsSparsity.exe.config
+C:\Users\212441441\Dropbox\code\DataSetsSparsity\obj\Debug\DataSetsSparsity.exe
+C:\Users\212441441\Dropbox\code\DataSetsSparsity\obj\Debug\DataSetsSparsity.pdb
+C:\Users\212441441\Dropbox\code\DataSetsSparsity\bin\Debug\DataSetsSparsity.exe
+C:\Users\212441441\Dropbox\code\DataSetsSparsity\bin\Debug\DataSetsSparsity.pdb
+C:\Users\212441441\Dropbox\code\DataSetsSparsity\bin\Debug\AForge.dll
+C:\Users\212441441\Dropbox\code\DataSetsSparsity\bin\Debug\AForge.Math.dll
+C:\Users\212441441\Dropbox\code\DataSetsSparsity\bin\Debug\Accord.dll
+C:\Users\212441441\Dropbox\code\DataSetsSparsity\bin\Debug\Accord.MachineLearning.pdb
+C:\Users\212441441\Dropbox\code\DataSetsSparsity\bin\Debug\Accord.MachineLearning.xml
+C:\Users\212441441\Dropbox\code\DataSetsSparsity\bin\Debug\Accord.Math.pdb
+C:\Users\212441441\Dropbox\code\DataSetsSparsity\bin\Debug\Accord.Math.xml
+C:\Users\212441441\Dropbox\code\DataSetsSparsity\bin\Debug\Accord.Statistics.pdb
+C:\Users\212441441\Dropbox\code\DataSetsSparsity\bin\Debug\Accord.Statistics.xml
+C:\Users\212441441\Dropbox\code\DataSetsSparsity\bin\Debug\AForge.xml
+C:\Users\212441441\Dropbox\code\DataSetsSparsity\bin\Debug\AForge.Math.xml
+C:\Users\212441441\Dropbox\code\DataSetsSparsity\bin\Debug\Accord.pdb
+C:\Users\212441441\Dropbox\code\DataSetsSparsity\bin\Debug\Accord.xml
+C:\Users\212441441\Dropbox\code\DataSetsSparsity\obj\Debug\DataSetsSparsity.csprojResolveAssemblyReference.cache
+C:\Users\212441441\Dropbox\code\DataSetsSparsity\obj\Debug\DataSetsSparsity.Form1.resources
+C:\Users\212441441\Dropbox\code\DataSetsSparsity\obj\Debug\DataSetsSparsity.ManageInputData.resources
+C:\Users\212441441\Dropbox\code\DataSetsSparsity\obj\Debug\DataSetsSparsity.ProgressForm.resources
+C:\Users\212441441\Dropbox\code\DataSetsSparsity\obj\Debug\DataSetsSparsity.Properties.Resources.resources
+C:\Users\212441441\Dropbox\code\DataSetsSparsity\obj\Debug\DataSetsSparsity.csproj.GenerateResource.Cache
+C:\Users\212441441\Documents\code versions\07092015 - fix cross validate\DataSetsSparsity\bin\Debug\DataSetsSparsity.exe.config
+C:\Users\212441441\Documents\code versions\07092015 - fix cross validate\DataSetsSparsity\obj\Debug\DataSetsSparsity.exe
+C:\Users\212441441\Documents\code versions\07092015 - fix cross validate\DataSetsSparsity\obj\Debug\DataSetsSparsity.pdb
+C:\Users\212441441\Documents\code versions\07092015 - fix cross validate\DataSetsSparsity\bin\Debug\DataSetsSparsity.exe
+C:\Users\212441441\Documents\code versions\07092015 - fix cross validate\DataSetsSparsity\bin\Debug\DataSetsSparsity.pdb
+C:\Users\212441441\Documents\code versions\07092015 - fix cross validate\DataSetsSparsity\bin\Debug\AForge.dll
+C:\Users\212441441\Documents\code versions\07092015 - fix cross validate\DataSetsSparsity\bin\Debug\AForge.Math.dll
+C:\Users\212441441\Documents\code versions\07092015 - fix cross validate\DataSetsSparsity\bin\Debug\Accord.dll
+C:\Users\212441441\Documents\code versions\07092015 - fix cross validate\DataSetsSparsity\bin\Debug\Accord.MachineLearning.pdb
+C:\Users\212441441\Documents\code versions\07092015 - fix cross validate\DataSetsSparsity\bin\Debug\Accord.MachineLearning.xml
+C:\Users\212441441\Documents\code versions\07092015 - fix cross validate\DataSetsSparsity\bin\Debug\Accord.Math.pdb
+C:\Users\212441441\Documents\code versions\07092015 - fix cross validate\DataSetsSparsity\bin\Debug\Accord.Math.xml
+C:\Users\212441441\Documents\code versions\07092015 - fix cross validate\DataSetsSparsity\bin\Debug\Accord.Statistics.pdb
+C:\Users\212441441\Documents\code versions\07092015 - fix cross validate\DataSetsSparsity\bin\Debug\Accord.Statistics.xml
+C:\Users\212441441\Documents\code versions\07092015 - fix cross validate\DataSetsSparsity\bin\Debug\AForge.xml
+C:\Users\212441441\Documents\code versions\07092015 - fix cross validate\DataSetsSparsity\bin\Debug\AForge.Math.xml
+C:\Users\212441441\Documents\code versions\07092015 - fix cross validate\DataSetsSparsity\bin\Debug\Accord.pdb
+C:\Users\212441441\Documents\code versions\07092015 - fix cross validate\DataSetsSparsity\bin\Debug\Accord.xml
+C:\Users\212441441\Documents\code versions\07092015 - fix cross validate\DataSetsSparsity\obj\Debug\DataSetsSparsity.csprojResolveAssemblyReference.cache
+C:\Users\212441441\Documents\code versions\07092015 - fix cross validate\DataSetsSparsity\obj\Debug\DataSetsSparsity.Form1.resources
+C:\Users\212441441\Documents\code versions\07092015 - fix cross validate\DataSetsSparsity\obj\Debug\DataSetsSparsity.ManageInputData.resources
+C:\Users\212441441\Documents\code versions\07092015 - fix cross validate\DataSetsSparsity\obj\Debug\DataSetsSparsity.ProgressForm.resources
+C:\Users\212441441\Documents\code versions\07092015 - fix cross validate\DataSetsSparsity\obj\Debug\DataSetsSparsity.Properties.Resources.resources
+C:\Users\212441441\Documents\code versions\07092015 - fix cross validate\DataSetsSparsity\obj\Debug\DataSetsSparsity.csproj.GenerateResource.Cache
+C:\Users\212441441\Documents\code versions\09092015 - fix cross validate\DataSetsSparsity\bin\Debug\DataSetsSparsity.exe.config
+C:\Users\212441441\Documents\code versions\09092015 - fix cross validate\DataSetsSparsity\obj\Debug\DataSetsSparsity.exe
+C:\Users\212441441\Documents\code versions\09092015 - fix cross validate\DataSetsSparsity\obj\Debug\DataSetsSparsity.pdb
+C:\Users\212441441\Documents\code versions\09092015 - fix cross validate\DataSetsSparsity\bin\Debug\DataSetsSparsity.exe
+C:\Users\212441441\Documents\code versions\09092015 - fix cross validate\DataSetsSparsity\bin\Debug\DataSetsSparsity.pdb
+C:\Users\212441441\Documents\code versions\09092015 - fix cross validate\DataSetsSparsity\bin\Debug\AForge.dll
+C:\Users\212441441\Documents\code versions\09092015 - fix cross validate\DataSetsSparsity\bin\Debug\AForge.Math.dll
+C:\Users\212441441\Documents\code versions\09092015 - fix cross validate\DataSetsSparsity\bin\Debug\Accord.dll
+C:\Users\212441441\Documents\code versions\09092015 - fix cross validate\DataSetsSparsity\bin\Debug\Accord.MachineLearning.pdb
+C:\Users\212441441\Documents\code versions\09092015 - fix cross validate\DataSetsSparsity\bin\Debug\Accord.MachineLearning.xml
+C:\Users\212441441\Documents\code versions\09092015 - fix cross validate\DataSetsSparsity\bin\Debug\Accord.Math.pdb
+C:\Users\212441441\Documents\code versions\09092015 - fix cross validate\DataSetsSparsity\bin\Debug\Accord.Math.xml
+C:\Users\212441441\Documents\code versions\09092015 - fix cross validate\DataSetsSparsity\bin\Debug\Accord.Statistics.pdb
+C:\Users\212441441\Documents\code versions\09092015 - fix cross validate\DataSetsSparsity\bin\Debug\Accord.Statistics.xml
+C:\Users\212441441\Documents\code versions\09092015 - fix cross validate\DataSetsSparsity\bin\Debug\AForge.xml
+C:\Users\212441441\Documents\code versions\09092015 - fix cross validate\DataSetsSparsity\bin\Debug\AForge.Math.xml
+C:\Users\212441441\Documents\code versions\09092015 - fix cross validate\DataSetsSparsity\bin\Debug\Accord.pdb
+C:\Users\212441441\Documents\code versions\09092015 - fix cross validate\DataSetsSparsity\bin\Debug\Accord.xml
+C:\Users\212441441\Documents\code versions\09092015 - fix cross validate\DataSetsSparsity\obj\Debug\DataSetsSparsity.csprojResolveAssemblyReference.cache
+C:\Users\212441441\Documents\code versions\09092015 - fix cross validate\DataSetsSparsity\obj\Debug\DataSetsSparsity.Form1.resources
+C:\Users\212441441\Documents\code versions\09092015 - fix cross validate\DataSetsSparsity\obj\Debug\DataSetsSparsity.ManageInputData.resources
+C:\Users\212441441\Documents\code versions\09092015 - fix cross validate\DataSetsSparsity\obj\Debug\DataSetsSparsity.ProgressForm.resources
+C:\Users\212441441\Documents\code versions\09092015 - fix cross validate\DataSetsSparsity\obj\Debug\DataSetsSparsity.Properties.Resources.resources
+C:\Users\212441441\Documents\code versions\09092015 - fix cross validate\DataSetsSparsity\obj\Debug\DataSetsSparsity.csproj.GenerateResource.Cache
+C:\Users\212441441\Documents\code versions\21092015 - adaptive nodes in forest\DataSetsSparsity\bin\Debug\DataSetsSparsity.exe.config
+C:\Users\212441441\Documents\code versions\21092015 - adaptive nodes in forest\DataSetsSparsity\obj\Debug\DataSetsSparsity.exe
+C:\Users\212441441\Documents\code versions\21092015 - adaptive nodes in forest\DataSetsSparsity\obj\Debug\DataSetsSparsity.pdb
+C:\Users\212441441\Documents\code versions\21092015 - adaptive nodes in forest\DataSetsSparsity\bin\Debug\DataSetsSparsity.exe
+C:\Users\212441441\Documents\code versions\21092015 - adaptive nodes in forest\DataSetsSparsity\bin\Debug\DataSetsSparsity.pdb
+C:\Users\212441441\Documents\code versions\21092015 - adaptive nodes in forest\DataSetsSparsity\bin\Debug\AForge.dll
+C:\Users\212441441\Documents\code versions\21092015 - adaptive nodes in forest\DataSetsSparsity\bin\Debug\AForge.Math.dll
+C:\Users\212441441\Documents\code versions\21092015 - adaptive nodes in forest\DataSetsSparsity\bin\Debug\Accord.dll
+C:\Users\212441441\Documents\code versions\21092015 - adaptive nodes in forest\DataSetsSparsity\bin\Debug\Accord.MachineLearning.pdb
+C:\Users\212441441\Documents\code versions\21092015 - adaptive nodes in forest\DataSetsSparsity\bin\Debug\Accord.MachineLearning.xml
+C:\Users\212441441\Documents\code versions\21092015 - adaptive nodes in forest\DataSetsSparsity\bin\Debug\Accord.Math.pdb
+C:\Users\212441441\Documents\code versions\21092015 - adaptive nodes in forest\DataSetsSparsity\bin\Debug\Accord.Math.xml
+C:\Users\212441441\Documents\code versions\21092015 - adaptive nodes in forest\DataSetsSparsity\bin\Debug\Accord.Statistics.pdb
+C:\Users\212441441\Documents\code versions\21092015 - adaptive nodes in forest\DataSetsSparsity\bin\Debug\Accord.Statistics.xml
+C:\Users\212441441\Documents\code versions\21092015 - adaptive nodes in forest\DataSetsSparsity\bin\Debug\AForge.xml
+C:\Users\212441441\Documents\code versions\21092015 - adaptive nodes in forest\DataSetsSparsity\bin\Debug\AForge.Math.xml
+C:\Users\212441441\Documents\code versions\21092015 - adaptive nodes in forest\DataSetsSparsity\bin\Debug\Accord.pdb
+C:\Users\212441441\Documents\code versions\21092015 - adaptive nodes in forest\DataSetsSparsity\bin\Debug\Accord.xml
+C:\Users\212441441\Documents\code versions\21092015 - adaptive nodes in forest\DataSetsSparsity\obj\Debug\DataSetsSparsity.csprojResolveAssemblyReference.cache
+C:\Users\212441441\Documents\code versions\21092015 - adaptive nodes in forest\DataSetsSparsity\obj\Debug\DataSetsSparsity.Form1.resources
+C:\Users\212441441\Documents\code versions\21092015 - adaptive nodes in forest\DataSetsSparsity\obj\Debug\DataSetsSparsity.ManageInputData.resources
+C:\Users\212441441\Documents\code versions\21092015 - adaptive nodes in forest\DataSetsSparsity\obj\Debug\DataSetsSparsity.ProgressForm.resources
+C:\Users\212441441\Documents\code versions\21092015 - adaptive nodes in forest\DataSetsSparsity\obj\Debug\DataSetsSparsity.Properties.Resources.resources
+C:\Users\212441441\Documents\code versions\21092015 - adaptive nodes in forest\DataSetsSparsity\obj\Debug\DataSetsSparsity.csproj.GenerateResource.Cache
+C:\Users\Administrator\Dropbox\code\ShlavBcode\DataSetsSparsity\bin\Debug\DataSetsSparsity.exe.config
+C:\Users\Administrator\Dropbox\code\ShlavBcode\DataSetsSparsity\obj\Debug\DataSetsSparsity.exe
+C:\Users\Administrator\Dropbox\code\ShlavBcode\DataSetsSparsity\obj\Debug\DataSetsSparsity.pdb
+C:\Users\Administrator\Dropbox\code\ShlavBcode\DataSetsSparsity\bin\Debug\DataSetsSparsity.exe
+C:\Users\Administrator\Dropbox\code\ShlavBcode\DataSetsSparsity\bin\Debug\DataSetsSparsity.pdb
+C:\Users\Administrator\Dropbox\code\ShlavBcode\DataSetsSparsity\bin\Debug\AForge.dll
+C:\Users\Administrator\Dropbox\code\ShlavBcode\DataSetsSparsity\bin\Debug\AForge.Math.dll
+C:\Users\Administrator\Dropbox\code\ShlavBcode\DataSetsSparsity\bin\Debug\Accord.dll
+C:\Users\Administrator\Dropbox\code\ShlavBcode\DataSetsSparsity\bin\Debug\Accord.MachineLearning.pdb
+C:\Users\Administrator\Dropbox\code\ShlavBcode\DataSetsSparsity\bin\Debug\Accord.MachineLearning.xml
+C:\Users\Administrator\Dropbox\code\ShlavBcode\DataSetsSparsity\bin\Debug\Accord.Math.pdb
+C:\Users\Administrator\Dropbox\code\ShlavBcode\DataSetsSparsity\bin\Debug\Accord.Math.xml
+C:\Users\Administrator\Dropbox\code\ShlavBcode\DataSetsSparsity\bin\Debug\Accord.Statistics.pdb
+C:\Users\Administrator\Dropbox\code\ShlavBcode\DataSetsSparsity\bin\Debug\Accord.Statistics.xml
+C:\Users\Administrator\Dropbox\code\ShlavBcode\DataSetsSparsity\bin\Debug\AForge.xml
+C:\Users\Administrator\Dropbox\code\ShlavBcode\DataSetsSparsity\bin\Debug\AForge.Math.xml
+C:\Users\Administrator\Dropbox\code\ShlavBcode\DataSetsSparsity\bin\Debug\Accord.pdb
+C:\Users\Administrator\Dropbox\code\ShlavBcode\DataSetsSparsity\bin\Debug\Accord.xml
+C:\Users\Administrator\Dropbox\code\ShlavBcode\DataSetsSparsity\obj\Debug\DataSetsSparsity.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Dropbox\code\ShlavBcode\DataSetsSparsity\obj\Debug\DataSetsSparsity.Form1.resources
+C:\Users\Administrator\Dropbox\code\ShlavBcode\DataSetsSparsity\obj\Debug\DataSetsSparsity.ManageInputData.resources
+C:\Users\Administrator\Dropbox\code\ShlavBcode\DataSetsSparsity\obj\Debug\DataSetsSparsity.ProgressForm.resources
+C:\Users\Administrator\Dropbox\code\ShlavBcode\DataSetsSparsity\obj\Debug\DataSetsSparsity.Properties.Resources.resources
+C:\Users\Administrator\Dropbox\code\ShlavBcode\DataSetsSparsity\obj\Debug\DataSetsSparsity.csproj.GenerateResource.Cache
+C:\Users\212441441\Dropbox\code\ShlavBcode\DataSetsSparsity\bin\Debug\DataSetsSparsity.exe.config
+C:\Users\212441441\Dropbox\code\ShlavBcode\DataSetsSparsity\obj\Debug\DataSetsSparsity.exe
+C:\Users\212441441\Dropbox\code\ShlavBcode\DataSetsSparsity\obj\Debug\DataSetsSparsity.pdb
+C:\Users\212441441\Documents\code versions\24102015 - pruning\DataSetsSparsity\bin\Debug\DataSetsSparsity.exe.config
+C:\Users\212441441\Documents\code versions\24102015 - pruning\DataSetsSparsity\obj\Debug\DataSetsSparsity.exe
+C:\Users\212441441\Documents\code versions\24102015 - pruning\DataSetsSparsity\obj\Debug\DataSetsSparsity.pdb
+C:\Users\212441441\Documents\code versions\24102015 - pruning\DataSetsSparsity\obj\Debug\DataSetsSparsity.csprojResolveAssemblyReference.cache
+C:\Users\212441441\Documents\code versions\24102015 - pruning\DataSetsSparsity\obj\Debug\DataSetsSparsity.Form1.resources
+C:\Users\212441441\Documents\code versions\24102015 - pruning\DataSetsSparsity\obj\Debug\DataSetsSparsity.ManageInputData.resources
+C:\Users\212441441\Documents\code versions\24102015 - pruning\DataSetsSparsity\obj\Debug\DataSetsSparsity.ProgressForm.resources
+C:\Users\212441441\Documents\code versions\24102015 - pruning\DataSetsSparsity\obj\Debug\DataSetsSparsity.Properties.Resources.resources
+C:\Users\212441441\Documents\code versions\24102015 - pruning\DataSetsSparsity\obj\Debug\DataSetsSparsity.csproj.GenerateResource.Cache
+C:\Users\212441441\Documents\code versions\24102015 - pruning\DataSetsSparsity\bin\Debug\DataSetsSparsity.exe
+C:\Users\212441441\Documents\code versions\24102015 - pruning\DataSetsSparsity\bin\Debug\DataSetsSparsity.pdb
+C:\Users\212441441\Documents\code versions\24102015 - pruning\DataSetsSparsity\bin\Debug\AForge.dll
+C:\Users\212441441\Documents\code versions\24102015 - pruning\DataSetsSparsity\bin\Debug\AForge.Math.dll
+C:\Users\212441441\Documents\code versions\24102015 - pruning\DataSetsSparsity\bin\Debug\Accord.dll
+C:\Users\212441441\Documents\code versions\24102015 - pruning\DataSetsSparsity\bin\Debug\Accord.MachineLearning.pdb
+C:\Users\212441441\Documents\code versions\24102015 - pruning\DataSetsSparsity\bin\Debug\Accord.MachineLearning.xml
+C:\Users\212441441\Documents\code versions\24102015 - pruning\DataSetsSparsity\bin\Debug\Accord.Math.pdb
+C:\Users\212441441\Documents\code versions\24102015 - pruning\DataSetsSparsity\bin\Debug\Accord.Math.xml
+C:\Users\212441441\Documents\code versions\24102015 - pruning\DataSetsSparsity\bin\Debug\Accord.Statistics.pdb
+C:\Users\212441441\Documents\code versions\24102015 - pruning\DataSetsSparsity\bin\Debug\Accord.Statistics.xml
+C:\Users\212441441\Documents\code versions\24102015 - pruning\DataSetsSparsity\bin\Debug\AForge.xml
+C:\Users\212441441\Documents\code versions\24102015 - pruning\DataSetsSparsity\bin\Debug\AForge.Math.xml
+C:\Users\212441441\Documents\code versions\24102015 - pruning\DataSetsSparsity\bin\Debug\Accord.pdb
+C:\Users\212441441\Documents\code versions\24102015 - pruning\DataSetsSparsity\bin\Debug\Accord.xml
+C:\Users\Administrator\Dropbox\code\treePruning26102015\DataSetsSparsity\bin\Debug\DataSetsSparsity.exe.config
+C:\Users\Administrator\Dropbox\code\treePruning26102015\DataSetsSparsity\obj\Debug\DataSetsSparsity.exe
+C:\Users\Administrator\Dropbox\code\treePruning26102015\DataSetsSparsity\obj\Debug\DataSetsSparsity.pdb
+C:\Users\Administrator\Dropbox\code\treePruning26102015\DataSetsSparsity\bin\Debug\DataSetsSparsity.exe
+C:\Users\Administrator\Dropbox\code\treePruning26102015\DataSetsSparsity\bin\Debug\DataSetsSparsity.pdb
+C:\Users\Administrator\Dropbox\code\treePruning26102015\DataSetsSparsity\bin\Debug\AForge.dll
+C:\Users\Administrator\Dropbox\code\treePruning26102015\DataSetsSparsity\bin\Debug\AForge.Math.dll
+C:\Users\Administrator\Dropbox\code\treePruning26102015\DataSetsSparsity\bin\Debug\Accord.dll
+C:\Users\Administrator\Dropbox\code\treePruning26102015\DataSetsSparsity\bin\Debug\Accord.MachineLearning.pdb
+C:\Users\Administrator\Dropbox\code\treePruning26102015\DataSetsSparsity\bin\Debug\Accord.MachineLearning.xml
+C:\Users\Administrator\Dropbox\code\treePruning26102015\DataSetsSparsity\bin\Debug\Accord.Math.pdb
+C:\Users\Administrator\Dropbox\code\treePruning26102015\DataSetsSparsity\bin\Debug\Accord.Math.xml
+C:\Users\Administrator\Dropbox\code\treePruning26102015\DataSetsSparsity\bin\Debug\Accord.Statistics.pdb
+C:\Users\Administrator\Dropbox\code\treePruning26102015\DataSetsSparsity\bin\Debug\Accord.Statistics.xml
+C:\Users\Administrator\Dropbox\code\treePruning26102015\DataSetsSparsity\bin\Debug\AForge.xml
+C:\Users\Administrator\Dropbox\code\treePruning26102015\DataSetsSparsity\bin\Debug\AForge.Math.xml
+C:\Users\Administrator\Dropbox\code\treePruning26102015\DataSetsSparsity\bin\Debug\Accord.pdb
+C:\Users\Administrator\Dropbox\code\treePruning26102015\DataSetsSparsity\bin\Debug\Accord.xml
+C:\Users\Administrator\Dropbox\code\treePruning26102015\DataSetsSparsity\obj\Debug\DataSetsSparsity.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Dropbox\code\treePruning26102015\DataSetsSparsity\obj\Debug\DataSetsSparsity.Form1.resources
+C:\Users\Administrator\Dropbox\code\treePruning26102015\DataSetsSparsity\obj\Debug\DataSetsSparsity.ManageInputData.resources
+C:\Users\Administrator\Dropbox\code\treePruning26102015\DataSetsSparsity\obj\Debug\DataSetsSparsity.ProgressForm.resources
+C:\Users\Administrator\Dropbox\code\treePruning26102015\DataSetsSparsity\obj\Debug\DataSetsSparsity.Properties.Resources.resources
+C:\Users\Administrator\Dropbox\code\treePruning26102015\DataSetsSparsity\obj\Debug\DataSetsSparsity.csproj.GenerateResource.Cache

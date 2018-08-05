@@ -1,0 +1,25 @@
+useCV				true
+useContNorms		true
+useRFprunning		false
+useRF				true
+useParallel			true
+dbPath				C:\Users\Oren E\Documents\Visual Studio 2015\Projects\wf\dataSets\cifar10\layer4\dbg
+resultsPath			C:\Users\Oren E\Documents\Visual Studio 2015\Projects\wf\dataSets\cifar10\layer4\dbg\results
+approxThresh		0
+minNodeSize			1
+partitionType		2
+boundLevelDepth		1024
+errTypeTest			3
+nTrees				1000
+nFeaturesStr		all
+bagginPercent		0.8
+saveTrees			true
+testRF				false
+evaluateSmoothness	true
+testWf				false
+fixThreshold		-1
+setClassification	false
+rumPrallel			true
+runRf				true
+runRFPrunning		false
+nCv					5

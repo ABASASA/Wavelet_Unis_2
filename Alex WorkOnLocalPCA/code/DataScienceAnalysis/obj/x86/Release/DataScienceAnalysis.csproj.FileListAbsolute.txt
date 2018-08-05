@@ -1,0 +1,7 @@
+C:\Users\Administrator\Desktop\AlexDropbox\Dropbox\Alex-Oren\WorkOnLocalPCA\code\DataScienceAnalysis\bin\Release\DataScienceAnalysis.exe.config
+C:\Users\Administrator\Desktop\AlexDropbox\Dropbox\Alex-Oren\WorkOnLocalPCA\code\DataScienceAnalysis\obj\x86\Release\DataScienceAnalysis.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\AlexDropbox\Dropbox\Alex-Oren\WorkOnLocalPCA\code\DataScienceAnalysis\obj\x86\Release\DataScienceAnalysis.Form1.resources
+C:\Users\Administrator\Desktop\AlexDropbox\Dropbox\Alex-Oren\WorkOnLocalPCA\code\DataScienceAnalysis\obj\x86\Release\DataScienceAnalysis.ManageInputData.resources
+C:\Users\Administrator\Desktop\AlexDropbox\Dropbox\Alex-Oren\WorkOnLocalPCA\code\DataScienceAnalysis\obj\x86\Release\DataScienceAnalysis.ProgressForm.resources
+C:\Users\Administrator\Desktop\AlexDropbox\Dropbox\Alex-Oren\WorkOnLocalPCA\code\DataScienceAnalysis\obj\x86\Release\DataScienceAnalysis.Properties.Resources.resources
+C:\Users\Administrator\Desktop\AlexDropbox\Dropbox\Alex-Oren\WorkOnLocalPCA\code\DataScienceAnalysis\obj\x86\Release\DataScienceAnalysis.csproj.GenerateResource.Cache

@@ -1,0 +1,74 @@
+C:\Users\Administrator\Dropbox\code\DataScienceAnalysis\bin\Debug\DataScienceAnalysis.exe.config
+C:\Users\Administrator\Dropbox\code\DataScienceAnalysis\obj\Debug\DataScienceAnalysis.exe
+C:\Users\Administrator\Dropbox\code\DataScienceAnalysis\obj\Debug\DataScienceAnalysis.pdb
+C:\Users\Administrator\Dropbox\code\DataScienceAnalysis\bin\Debug\DataScienceAnalysis.exe
+C:\Users\Administrator\Dropbox\code\DataScienceAnalysis\bin\Debug\DataScienceAnalysis.pdb
+C:\Users\Administrator\Dropbox\code\DataScienceAnalysis\bin\Debug\AForge.dll
+C:\Users\Administrator\Dropbox\code\DataScienceAnalysis\bin\Debug\AForge.Math.dll
+C:\Users\Administrator\Dropbox\code\DataScienceAnalysis\bin\Debug\Accord.dll
+C:\Users\Administrator\Dropbox\code\DataScienceAnalysis\bin\Debug\Accord.MachineLearning.pdb
+C:\Users\Administrator\Dropbox\code\DataScienceAnalysis\bin\Debug\Accord.MachineLearning.xml
+C:\Users\Administrator\Dropbox\code\DataScienceAnalysis\bin\Debug\Accord.Math.pdb
+C:\Users\Administrator\Dropbox\code\DataScienceAnalysis\bin\Debug\Accord.Math.xml
+C:\Users\Administrator\Dropbox\code\DataScienceAnalysis\bin\Debug\Accord.Statistics.pdb
+C:\Users\Administrator\Dropbox\code\DataScienceAnalysis\bin\Debug\Accord.Statistics.xml
+C:\Users\Administrator\Dropbox\code\DataScienceAnalysis\bin\Debug\AForge.xml
+C:\Users\Administrator\Dropbox\code\DataScienceAnalysis\bin\Debug\AForge.Math.xml
+C:\Users\Administrator\Dropbox\code\DataScienceAnalysis\bin\Debug\Accord.pdb
+C:\Users\Administrator\Dropbox\code\DataScienceAnalysis\bin\Debug\Accord.xml
+C:\Users\Administrator\Dropbox\code\DataScienceAnalysis\obj\Debug\DataScienceAnalysis.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Dropbox\code\DataScienceAnalysis\obj\Debug\DataScienceAnalysis.Form1.resources
+C:\Users\Administrator\Dropbox\code\DataScienceAnalysis\obj\Debug\DataScienceAnalysis.ManageInputData.resources
+C:\Users\Administrator\Dropbox\code\DataScienceAnalysis\obj\Debug\DataScienceAnalysis.ProgressForm.resources
+C:\Users\Administrator\Dropbox\code\DataScienceAnalysis\obj\Debug\DataScienceAnalysis.Properties.Resources.resources
+C:\Users\Administrator\Dropbox\code\DataScienceAnalysis\obj\Debug\DataScienceAnalysis.csproj.GenerateResource.Cache
+C:\Users\212441441\Dropbox\code\DataScienceAnalysis\bin\Debug\DataScienceAnalysis.exe.config
+C:\Users\212441441\Dropbox\code\DataScienceAnalysis\obj\Debug\DataScienceAnalysis.exe
+C:\Users\212441441\Dropbox\code\DataScienceAnalysis\obj\Debug\DataScienceAnalysis.pdb
+C:\Users\212441441\Dropbox\code\DataScienceAnalysis\bin\Debug\DataScienceAnalysis.exe
+C:\Users\212441441\Dropbox\code\DataScienceAnalysis\bin\Debug\DataScienceAnalysis.pdb
+C:\Users\212441441\Dropbox\code\DataScienceAnalysis\bin\Debug\AForge.dll
+C:\Users\212441441\Dropbox\code\DataScienceAnalysis\bin\Debug\AForge.Math.dll
+C:\Users\212441441\Dropbox\code\DataScienceAnalysis\bin\Debug\Accord.dll
+C:\Users\212441441\Dropbox\code\DataScienceAnalysis\bin\Debug\Accord.MachineLearning.pdb
+C:\Users\212441441\Dropbox\code\DataScienceAnalysis\bin\Debug\Accord.MachineLearning.xml
+C:\Users\212441441\Dropbox\code\DataScienceAnalysis\bin\Debug\Accord.Math.pdb
+C:\Users\212441441\Dropbox\code\DataScienceAnalysis\bin\Debug\Accord.Math.xml
+C:\Users\212441441\Dropbox\code\DataScienceAnalysis\bin\Debug\Accord.Statistics.pdb
+C:\Users\212441441\Dropbox\code\DataScienceAnalysis\bin\Debug\Accord.Statistics.xml
+C:\Users\212441441\Dropbox\code\DataScienceAnalysis\bin\Debug\AForge.xml
+C:\Users\212441441\Dropbox\code\DataScienceAnalysis\bin\Debug\AForge.Math.xml
+C:\Users\212441441\Dropbox\code\DataScienceAnalysis\bin\Debug\Accord.pdb
+C:\Users\212441441\Dropbox\code\DataScienceAnalysis\bin\Debug\Accord.xml
+C:\Users\212441441\Dropbox\code\DataScienceAnalysis\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\212441441\Dropbox\code\DataScienceAnalysis\obj\Debug\DataScienceAnalysis.Form1.resources
+C:\Users\212441441\Dropbox\code\DataScienceAnalysis\obj\Debug\DataScienceAnalysis.ManageInputData.resources
+C:\Users\212441441\Dropbox\code\DataScienceAnalysis\obj\Debug\DataScienceAnalysis.ProgressForm.resources
+C:\Users\212441441\Dropbox\code\DataScienceAnalysis\obj\Debug\DataScienceAnalysis.Properties.Resources.resources
+C:\Users\212441441\Dropbox\code\DataScienceAnalysis\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\212441441\Dropbox\code\DataScienceAnalysis\obj\Debug\GenerateResource.write.1.tlog
+C:\Users\212441441\Documents\code versions\29092015\DataScienceAnalysis\bin\Debug\DataScienceAnalysis.exe.config
+C:\Users\212441441\Documents\code versions\29092015\DataScienceAnalysis\obj\Debug\DataScienceAnalysis.exe
+C:\Users\212441441\Documents\code versions\29092015\DataScienceAnalysis\obj\Debug\DataScienceAnalysis.pdb
+C:\Users\212441441\Documents\code versions\29092015\DataScienceAnalysis\bin\Debug\DataScienceAnalysis.exe
+C:\Users\212441441\Documents\code versions\29092015\DataScienceAnalysis\bin\Debug\DataScienceAnalysis.pdb
+C:\Users\212441441\Documents\code versions\29092015\DataScienceAnalysis\bin\Debug\AForge.dll
+C:\Users\212441441\Documents\code versions\29092015\DataScienceAnalysis\bin\Debug\AForge.Math.dll
+C:\Users\212441441\Documents\code versions\29092015\DataScienceAnalysis\bin\Debug\Accord.dll
+C:\Users\212441441\Documents\code versions\29092015\DataScienceAnalysis\bin\Debug\Accord.MachineLearning.pdb
+C:\Users\212441441\Documents\code versions\29092015\DataScienceAnalysis\bin\Debug\Accord.MachineLearning.xml
+C:\Users\212441441\Documents\code versions\29092015\DataScienceAnalysis\bin\Debug\Accord.Math.pdb
+C:\Users\212441441\Documents\code versions\29092015\DataScienceAnalysis\bin\Debug\Accord.Math.xml
+C:\Users\212441441\Documents\code versions\29092015\DataScienceAnalysis\bin\Debug\Accord.Statistics.pdb
+C:\Users\212441441\Documents\code versions\29092015\DataScienceAnalysis\bin\Debug\Accord.Statistics.xml
+C:\Users\212441441\Documents\code versions\29092015\DataScienceAnalysis\bin\Debug\AForge.xml
+C:\Users\212441441\Documents\code versions\29092015\DataScienceAnalysis\bin\Debug\AForge.Math.xml
+C:\Users\212441441\Documents\code versions\29092015\DataScienceAnalysis\bin\Debug\Accord.pdb
+C:\Users\212441441\Documents\code versions\29092015\DataScienceAnalysis\bin\Debug\Accord.xml
+C:\Users\212441441\Documents\code versions\29092015\DataScienceAnalysis\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\212441441\Documents\code versions\29092015\DataScienceAnalysis\obj\Debug\DataScienceAnalysis.Form1.resources
+C:\Users\212441441\Documents\code versions\29092015\DataScienceAnalysis\obj\Debug\DataScienceAnalysis.ManageInputData.resources
+C:\Users\212441441\Documents\code versions\29092015\DataScienceAnalysis\obj\Debug\DataScienceAnalysis.ProgressForm.resources
+C:\Users\212441441\Documents\code versions\29092015\DataScienceAnalysis\obj\Debug\DataScienceAnalysis.Properties.Resources.resources
+C:\Users\212441441\Documents\code versions\29092015\DataScienceAnalysis\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\212441441\Documents\code versions\29092015\DataScienceAnalysis\obj\Debug\GenerateResource.write.1.tlog

@@ -1,0 +1,18 @@
+c:\users\oren e\documents\visual studio 2015\Projects\wf\wf\bin\Debug\wf.exe.config
+C:\Users\Oren E\Documents\Visual Studio 2015\Projects\wf\wf\obj\Debug\wf.csprojResolveAssemblyReference.cache
+C:\Users\Oren E\Documents\Visual Studio 2015\Projects\wf\wf\bin\Debug\wf.exe
+C:\Users\Oren E\Documents\Visual Studio 2015\Projects\wf\wf\bin\Debug\wf.pdb
+C:\Users\Oren E\Documents\Visual Studio 2015\Projects\wf\wf\obj\Debug\wf.exe
+C:\Users\Oren E\Documents\Visual Studio 2015\Projects\wf\wf\obj\Debug\wf.pdb
+C:\Users\Administrator\Documents\wf\bin\Debug\wf.exe.config
+C:\Users\Administrator\Documents\wf\bin\Debug\wf.exe
+C:\Users\Administrator\Documents\wf\bin\Debug\wf.pdb
+C:\Users\Administrator\Documents\wf\obj\Debug\wf.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\wf\obj\Debug\wf.exe
+C:\Users\Administrator\Documents\wf\obj\Debug\wf.pdb
+C:\Users\Oren E\Google Drive\phd\learnability paper\code\multilableCodeJuly2017\july2017\wf\bin\Debug\wf.exe.config
+C:\Users\Oren E\Google Drive\phd\learnability paper\code\multilableCodeJuly2017\july2017\wf\obj\Debug\wf.exe
+C:\Users\Oren E\Google Drive\phd\learnability paper\code\multilableCodeJuly2017\july2017\wf\obj\Debug\wf.pdb
+C:\Users\Oren E\Google Drive\phd\learnability paper\code\multilableCodeJuly2017\july2017\wf\bin\Debug\wf.exe
+C:\Users\Oren E\Google Drive\phd\learnability paper\code\multilableCodeJuly2017\july2017\wf\bin\Debug\wf.pdb
+C:\Users\Oren E\Google Drive\phd\learnability paper\code\multilableCodeJuly2017\july2017\wf\obj\Debug\wf.csprojResolveAssemblyReference.cache

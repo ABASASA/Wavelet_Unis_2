@@ -1,0 +1,4 @@
+training_data,D:\Phd\Shai\code\helix\noise_5\trainingData.txt
+training_label,D:\Phd\Shai\code\helix\noise_5\trainingLabel.txt
+testing_data,D:\Phd\Shai\code\helix\clean\testingData.txt
+testing_label,D:\Phd\Shai\code\helix\clean\testingLabel.txt

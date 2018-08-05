@@ -1,0 +1,17 @@
+C:\Users\Alex\Dropbox\Alex-Oren\WorkOnLocalPCA\code\DataScienceAnalysis\bin\x64\Release\DataScienceAnalysis.exe.config
+C:\Users\Alex\Dropbox\Alex-Oren\WorkOnLocalPCA\code\DataScienceAnalysis\obj\x64\Release\Interop.MLApp.dll
+C:\Users\Alex\Dropbox\Alex-Oren\WorkOnLocalPCA\code\DataScienceAnalysis\obj\x64\Release\DataScienceAnalysis.csproj.ResolveComReference.cache
+C:\Users\Alex\Dropbox\Alex-Oren\WorkOnLocalPCA\code\DataScienceAnalysis\bin\x64\Release\DataScienceAnalysis.exe
+C:\Users\Alex\Dropbox\Alex-Oren\WorkOnLocalPCA\code\DataScienceAnalysis\bin\x64\Release\DataScienceAnalysis.pdb
+C:\Users\Alex\Dropbox\Alex-Oren\WorkOnLocalPCA\code\DataScienceAnalysis\bin\x64\Release\Accord.dll
+C:\Users\Alex\Dropbox\Alex-Oren\WorkOnLocalPCA\code\DataScienceAnalysis\bin\x64\Release\Accord.MachineLearning.dll
+C:\Users\Alex\Dropbox\Alex-Oren\WorkOnLocalPCA\code\DataScienceAnalysis\bin\x64\Release\Accord.Math.dll
+C:\Users\Alex\Dropbox\Alex-Oren\WorkOnLocalPCA\code\DataScienceAnalysis\bin\x64\Release\Accord.Statistics.dll
+C:\Users\Alex\Dropbox\Alex-Oren\WorkOnLocalPCA\code\DataScienceAnalysis\obj\x64\Release\DataScienceAnalysis.csprojResolveAssemblyReference.cache
+C:\Users\Alex\Dropbox\Alex-Oren\WorkOnLocalPCA\code\DataScienceAnalysis\obj\x64\Release\DataScienceAnalysis.Form1.resources
+C:\Users\Alex\Dropbox\Alex-Oren\WorkOnLocalPCA\code\DataScienceAnalysis\obj\x64\Release\DataScienceAnalysis.ManageInputData.resources
+C:\Users\Alex\Dropbox\Alex-Oren\WorkOnLocalPCA\code\DataScienceAnalysis\obj\x64\Release\DataScienceAnalysis.ProgressForm.resources
+C:\Users\Alex\Dropbox\Alex-Oren\WorkOnLocalPCA\code\DataScienceAnalysis\obj\x64\Release\DataScienceAnalysis.Properties.Resources.resources
+C:\Users\Alex\Dropbox\Alex-Oren\WorkOnLocalPCA\code\DataScienceAnalysis\obj\x64\Release\DataScienceAnalysis.csproj.GenerateResource.Cache
+C:\Users\Alex\Dropbox\Alex-Oren\WorkOnLocalPCA\code\DataScienceAnalysis\obj\x64\Release\DataScienceAnalysis.exe
+C:\Users\Alex\Dropbox\Alex-Oren\WorkOnLocalPCA\code\DataScienceAnalysis\obj\x64\Release\DataScienceAnalysis.pdb

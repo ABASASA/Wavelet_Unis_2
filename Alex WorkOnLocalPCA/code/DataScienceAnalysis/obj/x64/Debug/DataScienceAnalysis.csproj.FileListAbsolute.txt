@@ -1,0 +1,36 @@
+C:\reasearch\DataScienceAnalysis\bin\x64\Debug\DataScienceAnalysis.exe.config
+C:\Users\Administrator\Desktop\AlexDropbox\Dropbox\Alex-Oren\WorkOnLocalPCA\code\DataScienceAnalysis\obj\x64\Debug\DataScienceAnalysis.Form1.resources
+C:\Users\Administrator\Desktop\AlexDropbox\Dropbox\Alex-Oren\WorkOnLocalPCA\code\DataScienceAnalysis\obj\x64\Debug\DataScienceAnalysis.ManageInputData.resources
+C:\Users\Administrator\Desktop\AlexDropbox\Dropbox\Alex-Oren\WorkOnLocalPCA\code\DataScienceAnalysis\obj\x64\Debug\DataScienceAnalysis.ProgressForm.resources
+C:\Users\Administrator\Desktop\AlexDropbox\Dropbox\Alex-Oren\WorkOnLocalPCA\code\DataScienceAnalysis\obj\x64\Debug\DataScienceAnalysis.Properties.Resources.resources
+C:\Users\Administrator\Desktop\AlexDropbox\Dropbox\Alex-Oren\WorkOnLocalPCA\code\DataScienceAnalysis\obj\x64\Debug\DataScienceAnalysis.csproj.GenerateResource.Cache
+C:\Users\Administrator\Desktop\AlexDropbox\Dropbox\Alex-Oren\WorkOnLocalPCA\code\DataScienceAnalysis\bin\x64\Debug\DataScienceAnalysis.exe.config
+C:\Users\Administrator\Desktop\AlexDropbox\Dropbox\Alex-Oren\WorkOnLocalPCA\code\DataScienceAnalysis\obj\x64\Debug\Interop.MLApp.dll
+C:\Users\Administrator\Desktop\AlexDropbox\Dropbox\Alex-Oren\WorkOnLocalPCA\code\DataScienceAnalysis\obj\x64\Debug\DataScienceAnalysis.csproj.ResolveComReference.cache
+C:\Users\Administrator\Desktop\AlexDropbox\Dropbox\Alex-Oren\WorkOnLocalPCA\code\DataScienceAnalysis\obj\x64\Debug\DataScienceAnalysis.exe
+C:\Users\Administrator\Desktop\AlexDropbox\Dropbox\Alex-Oren\WorkOnLocalPCA\code\DataScienceAnalysis\obj\x64\Debug\DataScienceAnalysis.pdb
+C:\Users\Administrator\Desktop\AlexDropbox\Dropbox\Alex-Oren\WorkOnLocalPCA\code\DataScienceAnalysis\bin\x64\Debug\DataScienceAnalysis.exe
+C:\Users\Administrator\Desktop\AlexDropbox\Dropbox\Alex-Oren\WorkOnLocalPCA\code\DataScienceAnalysis\bin\x64\Debug\DataScienceAnalysis.pdb
+C:\Users\Administrator\Desktop\AlexDropbox\Dropbox\Alex-Oren\WorkOnLocalPCA\code\DataScienceAnalysis\bin\x64\Debug\Accord.dll
+C:\Users\Administrator\Desktop\AlexDropbox\Dropbox\Alex-Oren\WorkOnLocalPCA\code\DataScienceAnalysis\bin\x64\Debug\Accord.MachineLearning.dll
+C:\Users\Administrator\Desktop\AlexDropbox\Dropbox\Alex-Oren\WorkOnLocalPCA\code\DataScienceAnalysis\bin\x64\Debug\Accord.Math.dll
+C:\Users\Administrator\Desktop\AlexDropbox\Dropbox\Alex-Oren\WorkOnLocalPCA\code\DataScienceAnalysis\bin\x64\Debug\Accord.Statistics.dll
+C:\Users\212441441\Dropbox\Alex-Oren\WorkOnLocalPCA\code\DataScienceAnalysis\bin\x64\Debug\DataScienceAnalysis.exe.config
+C:\Users\212441441\Dropbox\Alex-Oren\WorkOnLocalPCA\code\DataScienceAnalysis\obj\x64\Debug\Interop.MLApp.dll
+C:\Users\212441441\Dropbox\Alex-Oren\WorkOnLocalPCA\code\DataScienceAnalysis\obj\x64\Debug\DataScienceAnalysis.csproj.ResolveComReference.cache
+C:\Users\212441441\Dropbox\Alex-Oren\WorkOnLocalPCA\code\DataScienceAnalysis\obj\x64\Debug\DataScienceAnalysis.exe
+C:\Users\212441441\Dropbox\Alex-Oren\WorkOnLocalPCA\code\DataScienceAnalysis\obj\x64\Debug\DataScienceAnalysis.pdb
+D:\dropBox backup\Alex-Oren\WorkOnLocalPCA\code\DataScienceAnalysis\bin\x64\Debug\DataScienceAnalysis.exe.config
+D:\dropBox backup\Alex-Oren\WorkOnLocalPCA\code\DataScienceAnalysis\obj\x64\Debug\DataScienceAnalysis.csproj.ResolveComReference.cache
+D:\dropBox backup\Alex-Oren\WorkOnLocalPCA\code\DataScienceAnalysis\obj\x64\Debug\DataScienceAnalysis.exe
+D:\dropBox backup\Alex-Oren\WorkOnLocalPCA\code\DataScienceAnalysis\obj\x64\Debug\DataScienceAnalysis.pdb
+D:\dropBox backup\Alex-Oren\WorkOnLocalPCA\code\DataScienceAnalysis\obj\x64\Debug\DataScienceAnalysis.csprojResolveAssemblyReference.cache
+D:\dropBox backup\Alex-Oren\WorkOnLocalPCA\code\DataScienceAnalysis\obj\x64\Debug\DataScienceAnalysis.Form1.resources
+D:\dropBox backup\Alex-Oren\WorkOnLocalPCA\code\DataScienceAnalysis\obj\x64\Debug\DataScienceAnalysis.ManageInputData.resources
+D:\dropBox backup\Alex-Oren\WorkOnLocalPCA\code\DataScienceAnalysis\obj\x64\Debug\DataScienceAnalysis.ProgressForm.resources
+D:\dropBox backup\Alex-Oren\WorkOnLocalPCA\code\DataScienceAnalysis\obj\x64\Debug\DataScienceAnalysis.Properties.Resources.resources
+D:\dropBox backup\Alex-Oren\WorkOnLocalPCA\code\DataScienceAnalysis\obj\x64\Debug\DataScienceAnalysis.csproj.GenerateResource.Cache
+C:\gitRepo\MFML\WF\WorkOnLocalPCA\code\DataScienceAnalysis\bin\x64\Debug\DataScienceAnalysis.exe.config
+C:\gitRepo\MFML\WF\WorkOnLocalPCA\code\DataScienceAnalysis\obj\x64\Debug\DataScienceAnalysis.csproj.ResolveComReference.cache
+C:\gitRepo\MFML\WF\WorkOnLocalPCA\code\DataScienceAnalysis\obj\x64\Debug\DataScienceAnalysis.exe
+C:\gitRepo\MFML\WF\WorkOnLocalPCA\code\DataScienceAnalysis\obj\x64\Debug\DataScienceAnalysis.pdb

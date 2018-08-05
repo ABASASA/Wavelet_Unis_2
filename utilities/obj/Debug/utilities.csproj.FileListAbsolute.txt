@@ -1,0 +1,23 @@
+C:\Users\Oren E\documents\visual studio 2015\Projects\wf\utilities\bin\Debug\utilities.exe.config
+C:\Users\Oren E\documents\visual studio 2015\Projects\wf\utilities\bin\Debug\utilities.exe
+C:\Users\Oren E\documents\visual studio 2015\Projects\wf\utilities\bin\Debug\utilities.pdb
+C:\Users\Oren E\documents\visual studio 2015\Projects\wf\utilities\obj\Debug\utilities.exe
+C:\Users\Oren E\documents\visual studio 2015\Projects\wf\utilities\obj\Debug\utilities.pdb
+C:\Users\Oren E\documents\visual studio 2015\Projects\wf\utilities\obj\Debug\utilities.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\utilities\bin\Debug\utilities.exe.config
+C:\Users\Administrator\Documents\utilities\bin\Debug\utilities.exe
+C:\Users\Administrator\Documents\utilities\bin\Debug\utilities.pdb
+C:\Users\Administrator\Documents\utilities\obj\Debug\utilities.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\utilities\obj\Debug\utilities.exe
+C:\Users\Administrator\Documents\utilities\obj\Debug\utilities.pdb
+C:\Users\Oren E\Google Drive\phd\learnability paper\code\multilableCodeJuly2017\july2017\utilities\bin\Debug\utilities.exe.config
+C:\Users\Oren E\Google Drive\phd\learnability paper\code\multilableCodeJuly2017\july2017\utilities\obj\Debug\utilities.exe
+C:\Users\Oren E\Google Drive\phd\learnability paper\code\multilableCodeJuly2017\july2017\utilities\obj\Debug\utilities.pdb
+C:\Users\Oren E\Google Drive\phd\learnability paper\code\multilableCodeJuly2017\july2017\utilities\bin\Debug\utilities.exe
+C:\Users\Oren E\Google Drive\phd\learnability paper\code\multilableCodeJuly2017\july2017\utilities\bin\Debug\utilities.pdb
+C:\Users\Oren E\Google Drive\phd\learnability paper\code\multilableCodeJuly2017\july2017\utilities\obj\Debug\utilities.csprojResolveAssemblyReference.cache
+C:\Users\Oren E\Google Drive\teaching\mlMath\july2017\utilities\bin\Debug\utilities.exe.config
+C:\Users\Oren E\Google Drive\teaching\mlMath\july2017\utilities\bin\Debug\utilities.exe
+C:\Users\Oren E\Google Drive\teaching\mlMath\july2017\utilities\bin\Debug\utilities.pdb
+C:\Users\Oren E\Google Drive\teaching\mlMath\july2017\utilities\obj\Debug\utilities.exe
+C:\Users\Oren E\Google Drive\teaching\mlMath\july2017\utilities\obj\Debug\utilities.pdb

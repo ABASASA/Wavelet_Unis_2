@@ -1,0 +1,123 @@
+C:\Users\212441441\Documents\code versions\rotated partitions\DataSetsSparsity\bin\Debug\DataSetsSparsity.exe.config
+C:\Users\212441441\Documents\code versions\rotated partitions\DataSetsSparsity\bin\Debug\DataSetsSparsity.exe
+C:\Users\212441441\Documents\code versions\rotated partitions\DataSetsSparsity\bin\Debug\DataSetsSparsity.pdb
+C:\Users\212441441\Documents\code versions\rotated partitions\DataSetsSparsity\bin\Debug\AForge.dll
+C:\Users\212441441\Documents\code versions\rotated partitions\DataSetsSparsity\bin\Debug\AForge.Math.dll
+C:\Users\212441441\Documents\code versions\rotated partitions\DataSetsSparsity\bin\Debug\Accord.dll
+C:\Users\212441441\Documents\code versions\rotated partitions\DataSetsSparsity\bin\Debug\Accord.MachineLearning.pdb
+C:\Users\212441441\Documents\code versions\rotated partitions\DataSetsSparsity\bin\Debug\Accord.MachineLearning.xml
+C:\Users\212441441\Documents\code versions\rotated partitions\DataSetsSparsity\bin\Debug\Accord.Math.pdb
+C:\Users\212441441\Documents\code versions\rotated partitions\DataSetsSparsity\bin\Debug\Accord.Math.xml
+C:\Users\212441441\Documents\code versions\rotated partitions\DataSetsSparsity\bin\Debug\Accord.Statistics.pdb
+C:\Users\212441441\Documents\code versions\rotated partitions\DataSetsSparsity\bin\Debug\Accord.Statistics.xml
+C:\Users\212441441\Documents\code versions\rotated partitions\DataSetsSparsity\bin\Debug\AForge.xml
+C:\Users\212441441\Documents\code versions\rotated partitions\DataSetsSparsity\bin\Debug\AForge.Math.xml
+C:\Users\212441441\Documents\code versions\rotated partitions\DataSetsSparsity\bin\Debug\Accord.pdb
+C:\Users\212441441\Documents\code versions\rotated partitions\DataSetsSparsity\bin\Debug\Accord.xml
+C:\Users\212441441\Documents\code versions\rotated partitions\DataSetsSparsity\obj\Debug\DataSetsSparsity.csprojResolveAssemblyReference.cache
+C:\Users\212441441\Documents\code versions\rotated partitions\DataSetsSparsity\obj\Debug\DataSetsSparsity.Form1.resources
+C:\Users\212441441\Documents\code versions\rotated partitions\DataSetsSparsity\obj\Debug\DataSetsSparsity.ManageInputData.resources
+C:\Users\212441441\Documents\code versions\rotated partitions\DataSetsSparsity\obj\Debug\DataSetsSparsity.ProgressForm.resources
+C:\Users\212441441\Documents\code versions\rotated partitions\DataSetsSparsity\obj\Debug\DataSetsSparsity.Properties.Resources.resources
+C:\Users\212441441\Documents\code versions\rotated partitions\DataSetsSparsity\obj\Debug\DataSetsSparsity.csproj.GenerateResource.Cache
+C:\Users\212441441\Documents\code versions\rotated partitions\DataSetsSparsity\obj\Debug\DataSetsSparsity.exe
+C:\Users\212441441\Documents\code versions\rotated partitions\DataSetsSparsity\obj\Debug\DataSetsSparsity.pdb
+D:\Dropbox\yair\DataSetsSparsity\bin\Debug\DataSetsSparsity.exe.config
+D:\Dropbox\yair\DataSetsSparsity\obj\Debug\DataSetsSparsity.exe
+D:\Dropbox\yair\DataSetsSparsity\obj\Debug\DataSetsSparsity.pdb
+D:\Dropbox\yair\DataSetsSparsity\bin\Debug\DataSetsSparsity.exe
+D:\Dropbox\yair\DataSetsSparsity\bin\Debug\DataSetsSparsity.pdb
+D:\Dropbox\yair\DataSetsSparsity\bin\Debug\AForge.dll
+D:\Dropbox\yair\DataSetsSparsity\bin\Debug\AForge.Math.dll
+D:\Dropbox\yair\DataSetsSparsity\bin\Debug\Accord.dll
+D:\Dropbox\yair\DataSetsSparsity\bin\Debug\Accord.MachineLearning.pdb
+D:\Dropbox\yair\DataSetsSparsity\bin\Debug\Accord.MachineLearning.xml
+D:\Dropbox\yair\DataSetsSparsity\bin\Debug\Accord.Math.pdb
+D:\Dropbox\yair\DataSetsSparsity\bin\Debug\Accord.Math.xml
+D:\Dropbox\yair\DataSetsSparsity\bin\Debug\Accord.Statistics.pdb
+D:\Dropbox\yair\DataSetsSparsity\bin\Debug\Accord.Statistics.xml
+D:\Dropbox\yair\DataSetsSparsity\bin\Debug\AForge.xml
+D:\Dropbox\yair\DataSetsSparsity\bin\Debug\AForge.Math.xml
+D:\Dropbox\yair\DataSetsSparsity\bin\Debug\Accord.pdb
+D:\Dropbox\yair\DataSetsSparsity\bin\Debug\Accord.xml
+D:\Dropbox\yair\DataSetsSparsity\obj\Debug\DataSetsSparsity.csprojResolveAssemblyReference.cache
+D:\Dropbox\yair\DataSetsSparsity\obj\Debug\DataSetsSparsity.Form1.resources
+D:\Dropbox\yair\DataSetsSparsity\obj\Debug\DataSetsSparsity.ManageInputData.resources
+D:\Dropbox\yair\DataSetsSparsity\obj\Debug\DataSetsSparsity.ProgressForm.resources
+D:\Dropbox\yair\DataSetsSparsity\obj\Debug\DataSetsSparsity.Properties.Resources.resources
+D:\Dropbox\yair\DataSetsSparsity\obj\Debug\DataSetsSparsity.csproj.GenerateResource.Cache
+C:\Users\212441441\Dropbox\Yair\DataSetsSparsity\bin\Debug\DataSetsSparsity.exe.config
+C:\Users\212441441\Dropbox\Yair\DataSetsSparsity\obj\Debug\DataSetsSparsity.exe
+C:\Users\212441441\Dropbox\Yair\DataSetsSparsity\obj\Debug\DataSetsSparsity.pdb
+C:\Users\212441441\Dropbox\Yair\DataSetsSparsity\bin\Debug\DataSetsSparsity.exe
+C:\Users\212441441\Dropbox\Yair\DataSetsSparsity\bin\Debug\DataSetsSparsity.pdb
+C:\Users\212441441\Dropbox\Yair\DataSetsSparsity\bin\Debug\AForge.dll
+C:\Users\212441441\Dropbox\Yair\DataSetsSparsity\bin\Debug\AForge.Math.dll
+C:\Users\212441441\Dropbox\Yair\DataSetsSparsity\bin\Debug\Accord.dll
+C:\Users\212441441\Dropbox\Yair\DataSetsSparsity\bin\Debug\Accord.MachineLearning.pdb
+C:\Users\212441441\Dropbox\Yair\DataSetsSparsity\bin\Debug\Accord.MachineLearning.xml
+C:\Users\212441441\Dropbox\Yair\DataSetsSparsity\bin\Debug\Accord.Math.pdb
+C:\Users\212441441\Dropbox\Yair\DataSetsSparsity\bin\Debug\Accord.Math.xml
+C:\Users\212441441\Dropbox\Yair\DataSetsSparsity\bin\Debug\Accord.Statistics.pdb
+C:\Users\212441441\Dropbox\Yair\DataSetsSparsity\bin\Debug\Accord.Statistics.xml
+C:\Users\212441441\Dropbox\Yair\DataSetsSparsity\bin\Debug\AForge.xml
+C:\Users\212441441\Dropbox\Yair\DataSetsSparsity\bin\Debug\AForge.Math.xml
+C:\Users\212441441\Dropbox\Yair\DataSetsSparsity\bin\Debug\Accord.pdb
+C:\Users\212441441\Dropbox\Yair\DataSetsSparsity\bin\Debug\Accord.xml
+C:\Users\212441441\Dropbox\Yair\DataSetsSparsity\obj\Debug\DataSetsSparsity.csprojResolveAssemblyReference.cache
+C:\Users\212441441\Dropbox\Yair\DataSetsSparsity\obj\Debug\DataSetsSparsity.Form1.resources
+C:\Users\212441441\Dropbox\Yair\DataSetsSparsity\obj\Debug\DataSetsSparsity.ManageInputData.resources
+C:\Users\212441441\Dropbox\Yair\DataSetsSparsity\obj\Debug\DataSetsSparsity.ProgressForm.resources
+C:\Users\212441441\Dropbox\Yair\DataSetsSparsity\obj\Debug\DataSetsSparsity.Properties.Resources.resources
+C:\Users\212441441\Dropbox\Yair\DataSetsSparsity\obj\Debug\DataSetsSparsity.csproj.GenerateResource.Cache
+D:\YairMS\Dropbox\Yair\DataSetsSparsity\bin\Debug\DataSetsSparsity.exe.config
+D:\YairMS\Dropbox\Yair\DataSetsSparsity\obj\Debug\DataSetsSparsity.exe
+D:\YairMS\Dropbox\Yair\DataSetsSparsity\obj\Debug\DataSetsSparsity.pdb
+D:\YairMS\Dropbox\Yair\DataSetsSparsity\bin\Debug\DataSetsSparsity.exe
+D:\YairMS\Dropbox\Yair\DataSetsSparsity\bin\Debug\DataSetsSparsity.pdb
+D:\YairMS\Dropbox\Yair\DataSetsSparsity\bin\Debug\AForge.dll
+D:\YairMS\Dropbox\Yair\DataSetsSparsity\bin\Debug\AForge.Math.dll
+D:\YairMS\Dropbox\Yair\DataSetsSparsity\bin\Debug\Accord.dll
+D:\YairMS\Dropbox\Yair\DataSetsSparsity\bin\Debug\Accord.MachineLearning.pdb
+D:\YairMS\Dropbox\Yair\DataSetsSparsity\bin\Debug\Accord.MachineLearning.xml
+D:\YairMS\Dropbox\Yair\DataSetsSparsity\bin\Debug\Accord.Math.pdb
+D:\YairMS\Dropbox\Yair\DataSetsSparsity\bin\Debug\Accord.Math.xml
+D:\YairMS\Dropbox\Yair\DataSetsSparsity\bin\Debug\Accord.Statistics.pdb
+D:\YairMS\Dropbox\Yair\DataSetsSparsity\bin\Debug\Accord.Statistics.xml
+D:\YairMS\Dropbox\Yair\DataSetsSparsity\bin\Debug\AForge.xml
+D:\YairMS\Dropbox\Yair\DataSetsSparsity\bin\Debug\AForge.Math.xml
+D:\YairMS\Dropbox\Yair\DataSetsSparsity\bin\Debug\Accord.pdb
+D:\YairMS\Dropbox\Yair\DataSetsSparsity\bin\Debug\Accord.xml
+D:\YairMS\Dropbox\Yair\DataSetsSparsity\obj\Debug\DataSetsSparsity.csprojResolveAssemblyReference.cache
+D:\YairMS\Dropbox\Yair\DataSetsSparsity\obj\Debug\DataSetsSparsity.Form1.resources
+D:\YairMS\Dropbox\Yair\DataSetsSparsity\obj\Debug\DataSetsSparsity.ManageInputData.resources
+D:\YairMS\Dropbox\Yair\DataSetsSparsity\obj\Debug\DataSetsSparsity.ProgressForm.resources
+D:\YairMS\Dropbox\Yair\DataSetsSparsity\obj\Debug\DataSetsSparsity.Properties.Resources.resources
+D:\YairMS\Dropbox\Yair\DataSetsSparsity\obj\Debug\DataSetsSparsity.csproj.GenerateResource.Cache
+C:\Users\Administrator\Dropbox\AWS teza\DataSetsSparsity\bin\Debug\DataSetsSparsity.exe.config
+C:\Users\Administrator\Dropbox\AWS teza\DataSetsSparsity\obj\Debug\DataSetsSparsity.exe
+C:\Users\Administrator\Dropbox\AWS teza\DataSetsSparsity\obj\Debug\DataSetsSparsity.pdb
+C:\Users\Administrator\Dropbox\AWS teza\DataSetsSparsity\bin\Debug\DataSetsSparsity.exe
+C:\Users\Administrator\Dropbox\AWS teza\DataSetsSparsity\bin\Debug\DataSetsSparsity.pdb
+C:\Users\Administrator\Dropbox\AWS teza\DataSetsSparsity\bin\Debug\AForge.dll
+C:\Users\Administrator\Dropbox\AWS teza\DataSetsSparsity\bin\Debug\AForge.Math.dll
+C:\Users\Administrator\Dropbox\AWS teza\DataSetsSparsity\bin\Debug\Accord.dll
+C:\Users\Administrator\Dropbox\AWS teza\DataSetsSparsity\bin\Debug\Accord.MachineLearning.pdb
+C:\Users\Administrator\Dropbox\AWS teza\DataSetsSparsity\bin\Debug\Accord.MachineLearning.xml
+C:\Users\Administrator\Dropbox\AWS teza\DataSetsSparsity\bin\Debug\Accord.Math.pdb
+C:\Users\Administrator\Dropbox\AWS teza\DataSetsSparsity\bin\Debug\Accord.Math.xml
+C:\Users\Administrator\Dropbox\AWS teza\DataSetsSparsity\bin\Debug\Accord.Statistics.pdb
+C:\Users\Administrator\Dropbox\AWS teza\DataSetsSparsity\bin\Debug\Accord.Statistics.xml
+C:\Users\Administrator\Dropbox\AWS teza\DataSetsSparsity\bin\Debug\AForge.xml
+C:\Users\Administrator\Dropbox\AWS teza\DataSetsSparsity\bin\Debug\AForge.Math.xml
+C:\Users\Administrator\Dropbox\AWS teza\DataSetsSparsity\bin\Debug\Accord.pdb
+C:\Users\Administrator\Dropbox\AWS teza\DataSetsSparsity\bin\Debug\Accord.xml
+C:\Users\Administrator\Dropbox\AWS teza\DataSetsSparsity\obj\Debug\DataSetsSparsity.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Dropbox\AWS teza\DataSetsSparsity\obj\Debug\DataSetsSparsity.Form1.resources
+C:\Users\Administrator\Dropbox\AWS teza\DataSetsSparsity\obj\Debug\DataSetsSparsity.ManageInputData.resources
+C:\Users\Administrator\Dropbox\AWS teza\DataSetsSparsity\obj\Debug\DataSetsSparsity.ProgressForm.resources
+C:\Users\Administrator\Dropbox\AWS teza\DataSetsSparsity\obj\Debug\DataSetsSparsity.Properties.Resources.resources
+C:\Users\Administrator\Dropbox\AWS teza\DataSetsSparsity\obj\Debug\DataSetsSparsity.csproj.GenerateResource.Cache
+D:\Dropbox\AWS teza\DataSetsSparsity\bin\Debug\DataSetsSparsity.exe.config
+D:\Dropbox\AWS teza\DataSetsSparsity\obj\Debug\DataSetsSparsity.exe
+D:\Dropbox\AWS teza\DataSetsSparsity\obj\Debug\DataSetsSparsity.pdb

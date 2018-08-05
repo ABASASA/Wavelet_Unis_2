@@ -1,0 +1,36 @@
+C:\Users\Administrator\Documents\wf\bin\x64\Debug\wf.exe.config
+C:\Users\Administrator\Documents\wf\bin\x64\Debug\wf.exe
+C:\Users\Administrator\Documents\wf\bin\x64\Debug\wf.pdb
+C:\Users\Administrator\Documents\wf\obj\x64\Debug\wf.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\wf\obj\x64\Debug\wf.exe
+C:\Users\Administrator\Documents\wf\obj\x64\Debug\wf.pdb
+C:\Users\Oren E\Google Drive\phd\learnability paper\code\multilableCodeJuly2017\july2017\wf\bin\x64\Debug\wf.exe.config
+C:\Users\Oren E\Google Drive\phd\learnability paper\code\multilableCodeJuly2017\july2017\wf\obj\x64\Debug\wf.exe
+C:\Users\Oren E\Google Drive\phd\learnability paper\code\multilableCodeJuly2017\july2017\wf\obj\x64\Debug\wf.pdb
+C:\Users\Oren E\Google Drive\phd\learnability paper\code\multilableCodeJuly2017\july2017\wf\bin\x64\Debug\wf.exe
+C:\Users\Oren E\Google Drive\phd\learnability paper\code\multilableCodeJuly2017\july2017\wf\bin\x64\Debug\wf.pdb
+C:\Users\Oren E\Google Drive\phd\learnability paper\code\multilableCodeJuly2017\july2017\wf\obj\x64\Debug\wf.csprojResolveAssemblyReference.cache
+C:\Users\Oren E\Google Drive\teaching\יסודות מתמטיים ללמידת מכונה\july2017\wf\bin\x64\Debug\wf.exe.config
+C:\Users\Oren E\Google Drive\teaching\יסודות מתמטיים ללמידת מכונה\july2017\wf\obj\x64\Debug\wf.exe
+C:\Users\Oren E\Google Drive\teaching\יסודות מתמטיים ללמידת מכונה\july2017\wf\obj\x64\Debug\wf.pdb
+C:\Users\Oren E\Google Drive\teaching\mlMath\july2017\wf\bin\x64\Debug\wf.exe.config
+C:\Users\Oren E\Google Drive\teaching\mlMath\july2017\wf\bin\x64\Debug\wf.exe
+C:\Users\Oren E\Google Drive\teaching\mlMath\july2017\wf\bin\x64\Debug\wf.pdb
+C:\Users\Oren E\Google Drive\teaching\mlMath\july2017\wf\obj\x64\Debug\wf.exe
+C:\Users\Oren E\Google Drive\teaching\mlMath\july2017\wf\obj\x64\Debug\wf.pdb
+C:\Users\Oren E\Google Drive\teaching\mlMath\july2017\wf\obj\x64\Debug\wf.csprojResolveAssemblyReference.cache
+C:\Users\Oren E\Google Drive\teaching\mlMath\WF\wf\bin\x64\Debug\wf.exe.config
+C:\Users\Oren E\Google Drive\teaching\mlMath\WF\wf\obj\x64\Debug\wf.exe
+C:\Users\Oren E\Google Drive\teaching\mlMath\WF\wf\obj\x64\Debug\wf.pdb
+C:\Users\Oren E\Google Drive\teaching\mlMath\WF\wf\bin\x64\Debug\wf.exe
+C:\Users\Oren E\Google Drive\teaching\mlMath\WF\wf\bin\x64\Debug\wf.pdb
+C:\Users\Oren E\Google Drive\teaching\mlMath\WF\wf\obj\x64\Debug\wf.csprojResolveAssemblyReference.cache
+E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\wf\bin\x64\Debug\wf.exe.config
+E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\wf\bin\x64\Debug\wf.exe
+E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\wf\bin\x64\Debug\wf.pdb
+E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\wf\obj\x64\Debug\wf.csprojAssemblyReference.cache
+E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\wf\obj\x64\Debug\wf.csproj.CoreCompileInputs.cache
+E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\wf\obj\x64\Debug\wf.exe
+E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\wf\obj\x64\Debug\wf.pdb
+E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\wf\bin\x64\Debug\alglibnet2.dll
+E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\wf\obj\x64\Debug\wf.csproj.CopyComplete

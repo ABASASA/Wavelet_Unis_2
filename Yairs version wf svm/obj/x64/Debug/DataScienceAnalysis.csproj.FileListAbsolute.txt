@@ -1,0 +1,1 @@
+C:\reasearch\DataScienceAnalysis\bin\x64\Debug\DataScienceAnalysis.exe.config
