@@ -28,9 +28,9 @@ C:\Users\Oren E\Google Drive\teaching\mlMath\WF\wf\obj\x64\Debug\wf.csprojResolv
 E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\wf\bin\x64\Debug\wf.exe.config
 E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\wf\bin\x64\Debug\wf.exe
 E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\wf\bin\x64\Debug\wf.pdb
-E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\wf\obj\x64\Debug\wf.csprojAssemblyReference.cache
 E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\wf\obj\x64\Debug\wf.csproj.CoreCompileInputs.cache
 E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\wf\obj\x64\Debug\wf.exe
 E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\wf\obj\x64\Debug\wf.pdb
 E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\wf\bin\x64\Debug\alglibnet2.dll
 E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\wf\obj\x64\Debug\wf.csproj.CopyComplete
+E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\wf\bin\x64\Debug\LibOptimization.dll

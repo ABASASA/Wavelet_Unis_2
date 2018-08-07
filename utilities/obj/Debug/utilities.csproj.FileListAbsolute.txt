@@ -21,3 +21,10 @@ C:\Users\Oren E\Google Drive\teaching\mlMath\july2017\utilities\bin\Debug\utilit
 C:\Users\Oren E\Google Drive\teaching\mlMath\july2017\utilities\bin\Debug\utilities.pdb
 C:\Users\Oren E\Google Drive\teaching\mlMath\july2017\utilities\obj\Debug\utilities.exe
 C:\Users\Oren E\Google Drive\teaching\mlMath\july2017\utilities\obj\Debug\utilities.pdb
+E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\utilities\bin\Debug\utilities.exe.config
+E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\utilities\bin\Debug\utilities.exe
+E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\utilities\bin\Debug\utilities.pdb
+E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\utilities\obj\Debug\utilities.csprojAssemblyReference.cache
+E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\utilities\obj\Debug\utilities.csproj.CoreCompileInputs.cache
+E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\utilities\obj\Debug\utilities.exe
+E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\utilities\obj\Debug\utilities.pdb

@@ -56,6 +56,9 @@
     <Reference Include="alglibnet2">
       <HintPath>..\CONFIG\alglibnet2.dll</HintPath>
     </Reference>
+    <Reference Include="LibOptimization">
+      <HintPath>..\CONFIG\LibOptimization.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -82,6 +85,7 @@
       <Link>userConfig.cs</Link>
     </Compile>
     <Compile Include="KMeansDemo.cs" />
+    <Compile Include="OptimizationNaiveFunction.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using LibOptimization.Optimization;
+using LibOptimization.Util;
 
 namespace DataSetsSparsity
 {
@@ -148,7 +150,7 @@ namespace DataSetsSparsity
             if (child0.pointsIdArray.Count() == 0 || child1.pointsIdArray.Count() == 0){
                 double a = 0;
             }
-
+            Console.WriteLine("COunt1 : {0} Count2: {1}", child0.pointsIdArray.Count(), child1.pointsIdArray.Count());
             //RECURSION STEP !!!
             recursiveBSP_WaveletsByConsts(GeoWaveArr, GeoWaveArr[GeoWaveID].child0, seed);
             recursiveBSP_WaveletsByConsts(GeoWaveArr, GeoWaveArr[GeoWaveID].child1, seed);
@@ -728,7 +730,7 @@ namespace DataSetsSparsity
             double[] endState = new double[this.m_dimenstion + 1];
             strtingState[rnd.Next(0, m_dimenstion - 1)] = 1;
             //   strtingState = strtingState.Add(0.1);
-            strtingState[m_dimenstion] = 0;
+           // strtingState[m_dimenstion] = 0;
 
             // Optimizer 1
 
@@ -736,10 +738,24 @@ namespace DataSetsSparsity
             alglib.minlbfgsreport rep;
             alglib.minlbfgscreatef(1, strtingState, diffstep, out state);
             alglib.minlbfgssetcond(state, epsg, epsf, epsx, maxits);
-            alglib.minlbfgsoptimize(state, function1_funcOptimizer1, null, (object)dataForOptimizer);
-            alglib.minlbfgsresults(state, out endState, out rep);
+            //alglib.minlbfgsoptimize(state, function1_funcOptimizer1, null, (object)dataForOptimizer);
+            //alglib.minlbfgsresults(state, out endState, out rep);
 
+            //try 2
+            var func = new OptimizationNaiveFunction(dataForOptimizer);
+            var opt = new LibOptimization.Optimization.clsOptNelderMead(func);
 
+            opt.InitialPosition = strtingState;
+
+            //Init
+            opt.Init();
+            clsUtil.DebugValue(opt);
+            //do optimization!
+            opt.DoIteration(1000);
+
+            clsUtil.DebugValue(opt);
+            var eval1 = opt.Result.Eval;
+            endState = opt.Result.ToArray();
             hyperPlane = endState;
             return true;
 
