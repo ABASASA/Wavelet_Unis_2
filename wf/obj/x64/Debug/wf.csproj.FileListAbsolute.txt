@@ -34,3 +34,4 @@ E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_
 E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\wf\bin\x64\Debug\alglibnet2.dll
 E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\wf\obj\x64\Debug\wf.csproj.CopyComplete
 E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\wf\bin\x64\Debug\LibOptimization.dll
+E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\wf\obj\x64\Debug\wf.csprojAssemblyReference.cache

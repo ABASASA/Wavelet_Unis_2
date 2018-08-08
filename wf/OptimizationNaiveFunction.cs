@@ -86,13 +86,13 @@ namespace DataSetsSparsity
 
             int count0 = valuesChild0.Count();
             int count1 = valuesChild1.Count();
-            bool flagError =(double) Math.Max(count1, count0) /(double) Math.Min(count0, count1) > 50;
+            bool flagError =(double) Math.Max(count1, count0) /(double) Math.Min(count0, count1) > 20;
 
             if (count1 == 0 || count0 == 0 || flagError)
             {
                 Random rnd = new Random();
 
-                error1 += rnd.Next(100, 120);
+                error1 += rnd.Next(100, 320);
             }
 
 

@@ -37,5 +37,4 @@ E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_
 E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\CONFIG\obj\x64\Debug\CONFIG.csproj.CopyComplete
 E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\CONFIG\obj\x64\Debug\DataSetsSparsity.exe
 E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\CONFIG\obj\x64\Debug\DataSetsSparsity.pdb
-E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\CONFIG\bin\x64\Debug\alglibnet2.dll
 E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\CONFIG\bin\x64\Debug\LibOptimization.dll

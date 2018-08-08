@@ -13,8 +13,8 @@ boundLevelDepth,5000
 errTypeTest,2
 trainingPercentTB,
 nTrees,1
-nFeaturesStr,sqrt
-bagginPercent,0.8
+nFeaturesStr,5
+bagginPercent,0.6
 saveTrees,true
 runOneTreeCB,
 testRF,true
