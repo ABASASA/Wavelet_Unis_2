@@ -92,7 +92,7 @@ namespace DataSetsSparsity
             {
                 Random rnd = new Random();
 
-                error1 += rnd.Next(100, 320);
+                error1 += rnd.Next(100, 120);
             }
 
 

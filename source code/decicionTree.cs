@@ -619,44 +619,86 @@ namespace DataSetsSparsity
             return dataForOptimizer;
         }
         #region SVM
-        /*
+        
         public bool GetUnisotropicParitionUsingSVM(List<GeoWave> GeoWaveArr,
-            int GeoWaveID, double Error, out double[] hyperPlane)
+            int GeoWaveID, double Error, out double[] hyperPlane, bool[] Dim2TakeNode)
         {
 
-            double[][][] dataForOptimizer = OrganizeData(GeoWaveArr, GeoWaveID);
+            int dimNumber = 0;
+            for(int  i = 0; i < Dim2TakeNode.Count(); i ++)
+            {
+                dimNumber += Dim2TakeNode[i] ? 1 : 0;
+            }
+            double[][][] dataForOptimizer = OrganizeData(GeoWaveArr, GeoWaveID, Dim2TakeNode, dimNumber);
+
+            //2Means
             int[] clusters = UseKMeans2(dataForOptimizer[1]);
             for (int passingIndex = 0; passingIndex < dataForOptimizer[1].Count(); passingIndex++)
             {
                 double tmpValue = ((double)clusters[passingIndex] == 0) ? -1 : 1;
                 dataForOptimizer[1][passingIndex] = new double[1] { tmpValue };
             }
+
             Random rnd = new Random();
-            // ASAFAB - Initialize the optimizer
-            double epsg = 0.000010100000;
-            double epsf = 0.00010000000;
-            double epsx = 0.000100;
-            double diffstep = 0.5;
-            int maxits = 1000;
-            //int[]a  =  UseKMeans2(dataForOptimizer[0]);
-            double[] strtingState = new double[this.m_dimenstion + 1];
-            double[] endState = new double[this.m_dimenstion + 1];
-            strtingState[rnd.Next(0, m_dimenstion - 1)] = 1;
-            strtingState[m_dimenstion] = 0;
 
-            // Optimizer 1
+            double[] strtingState = new double[dimNumber + 1];
+            double[] endState = new double[dimNumber + 1];
+            strtingState[rnd.Next(0, dimNumber - 1)] = 1;
 
-            alglib.minlbfgsstate state;
-            alglib.minlbfgsreport rep;
-            alglib.minlbfgscreatef(1, strtingState, diffstep, out state);
-            alglib.minlbfgssetcond(state, epsg, epsf, epsx, maxits);
-            alglib.minlbfgsoptimize(state, SVMOptimizer, null, (object)dataForOptimizer);
-            alglib.minlbfgsresults(state, out endState, out rep);
 
-            hyperPlane = endState;
+            
+            //try 2
+            var func = new Optimization2MeansSVMFunctiton(dataForOptimizer);
+            var opt = new LibOptimization.Optimization.clsOptNelderMead(func);
+
+            opt.InitialPosition = strtingState;
+
+                //Init
+                opt.Init();
+               // clsUtil.DebugValue(opt);
+                //do optimization!
+                int size = 500;
+            bool flag = opt.DoIteration(size);
+
+            //clsUtil.DebugValue(opt);
+            double eval1 = opt.Result.Eval;
+            double tmp = 0;
+                while (false)
+                {
+                    size += 200;
+                    opt.InitialPosition = strtingState;
+
+                    //Init
+                    opt.Init();
+                    flag = opt.DoIteration(size);
+                    tmp = opt.Result.Eval;
+                    if (Math.Abs(tmp - eval1) < 0.4)
+                    {
+                        break;
+                    }
+                    eval1 = tmp;
+            }
+
+
+    endState = opt.Result.ToArray();
+            hyperPlane = new double[this.m_dimenstion + 1];
+            int counterDim = 0;
+            for(int i = 0; i<Dim2TakeNode.Count(); i++)
+            {
+                if (Dim2TakeNode[i])
+                {
+                    hyperPlane[i] = endState[counterDim];
+                    counterDim += 1;
+                }
+            }
+            hyperPlane[m_dimenstion] = endState[dimNumber];
+            //hyperPlane = endState;
             return true;
+
+
         }
-        */
+       
+        
         public static void SVMOptimizer(double[] x, ref double func, object obj)
         {
             // Cast bsck to tree
@@ -761,24 +803,24 @@ namespace DataSetsSparsity
 
             //Init
             opt.Init();
-            clsUtil.DebugValue(opt);
+           // clsUtil.DebugValue(opt);
             //do optimization!
             int size = 500;
             bool flag = opt.DoIteration(size);
 
-            clsUtil.DebugValue(opt);
+            //clsUtil.DebugValue(opt);
             double eval1 = opt.Result.Eval;
             double tmp = 0;
-            while(flag)
+            while (false)
             {
-                size *= 2;
+                size += 200;
                 opt.InitialPosition = strtingState;
 
                 //Init
                 opt.Init();
                 flag = opt.DoIteration(size);
                 tmp = opt.Result.Eval;
-                if (Math.Abs(tmp - eval1) < 0.5)
+                if (Math.Abs(tmp - eval1) < 0.4)
                 {
                     break;
                 }

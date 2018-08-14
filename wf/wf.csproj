@@ -85,6 +85,7 @@
       <Link>userConfig.cs</Link>
     </Compile>
     <Compile Include="KMeansDemo.cs" />
+    <Compile Include="Optimization2MeansSVMFunctiton.cs" />
     <Compile Include="OptimizationNaiveFunction.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
