@@ -84,7 +84,7 @@ namespace DataSetsSparsity
 
 
             // ASAFAB -old implemention : IsPartitionOK = getBestPartitionResult(ref dimIndex, ref Maingridindex, GeoWaveArr, GeoWaveID, Error, Dim2TakeNode);
-            IsPartitionOK = GetUnisotropicParition(GeoWaveArr, GeoWaveID, Error, out hyperPlane, Dim2TakeNode);
+            IsPartitionOK = GetUnisotropicParitionUsingSVM(GeoWaveArr, GeoWaveID, Error, out hyperPlane, Dim2TakeNode);
             dimIndex = 0;
             Maingridindex = 0;
 
@@ -657,13 +657,20 @@ namespace DataSetsSparsity
                 opt.Init();
                // clsUtil.DebugValue(opt);
                 //do optimization!
-                int size = 500;
+            int size = 500;
             bool flag = opt.DoIteration(size);
 
             //clsUtil.DebugValue(opt);
             double eval1 = opt.Result.Eval;
             double tmp = 0;
-                while (false)
+            size = 200;
+            opt.InitialPosition = strtingState;
+
+            //Init
+            opt.Init();
+            flag = opt.DoIteration(size);
+            tmp = opt.Result.Eval;
+            while (false)
                 {
                     size += 200;
                     opt.InitialPosition = strtingState;
