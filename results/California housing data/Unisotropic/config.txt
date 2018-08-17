@@ -1,0 +1,26 @@
+useCV,true
+useParallel,true
+nCv,1
+setInhyperCube,true
+nonLinearHopping,true
+dbPath,C:\Users\Administrator\Desktop\git\Wavelet_Unis_2\db\CaliforniaHousing
+resultsPath,C:\Users\Administrator\Desktop\git\Wavelet_Unis_2\results\California housing data\Unisotropic
+approxThresh,0
+minNodeSize,10
+partitionType,2
+useContNorms,false
+boundLevelDepth,5000
+errTypeTest,2
+trainingPercentTB,
+nTrees,71
+nFeaturesStr,5
+bagginPercent,0.8
+saveTrees,false
+runOneTreeCB,
+testRF,true
+evaluateSmoothness,true
+testWf,true
+fixThreshold,-1
+hopping,5
+m_terms,-1
+setClassification,false
