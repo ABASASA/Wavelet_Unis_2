@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 using System.IO;
 using LibOptimization.Optimization;
 using LibOptimization.Util;
-
+using Accord.MachineLearning.VectorMachines;
+using Accord.MachineLearning.VectorMachines.Learning;
+using Accord.Statistics.Kernels;
 namespace DataSetsSparsity
 {
     class decicionTree
@@ -700,6 +702,23 @@ namespace DataSetsSparsity
             }
             hyperPlane[m_dimenstion] = endState[dimNumber];
             //hyperPlane = endState;
+
+            // ASAFAB - Trying SVM
+            // Now, we can create the sequential minimal optimization teacher
+
+            var a = new SupportVectorMachine<Linear>();
+            var learn = new SequentialMinimalOptimization(a, dataForOptimizer[0], dataForOptimizer[1])
+            {
+                UseComplexityHeuristic = true,
+                UseKernelEstimation = false
+            };
+
+            // And then we can obtain a trained SVM by calling its Learn method
+            SupportVectorMachine svm = learn.Learn(inputs, xor);
+
+            // Finally, we can obtain the decisions predicted by the machine:
+            bool[] prediction = svm.Decide(inputs);
+
             return true;
 
 

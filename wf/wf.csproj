@@ -53,6 +53,12 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Accord.MachineLearning">
+      <HintPath>..\..\Wavelet_UNIS_1\runfile\Accord.MachineLearning.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.Statistics">
+      <HintPath>..\..\Wavelet_UNIS_1\runfile\Accord.Statistics.dll</HintPath>
+    </Reference>
     <Reference Include="alglibnet2">
       <HintPath>..\CONFIG\alglibnet2.dll</HintPath>
     </Reference>
