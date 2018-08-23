@@ -55,12 +55,12 @@ namespace DataSetsSparsity
                     valuesChild1.Add(dataForOptimizer[1][passingIndex]);
                 }
             }
-            double norm = 0;
+            /*double norm = 0;
             for (int positionIndex = 0; positionIndex < x.Count() - 1; positionIndex++)
             {
                 norm += x[positionIndex] * x[positionIndex];
             }
-            norm = Math.Sqrt(norm);
+            norm = Math.Sqrt(norm);*/
 
             error /= dataForOptimizer[0].Count(); // avrage the score
 
@@ -70,16 +70,16 @@ namespace DataSetsSparsity
             bool flagError = (double)Math.Max(count1, count0) / (double)Math.Min(count0, count1) > 20;
             
 
-            // adding extra loss
+            // adding extra loss if the 
             if (count1 == 0 || count0 == 0 || flagError)
             {
                 Random rnd = new Random();
-
                 error += rnd.Next(100, 120);
             }else
             {
-                double lambda = Math.Log(valuesChild0.Count() / valuesChild1.Count()) / Math.Log(2);
-                error += norm * lambda;
+                double lambda = 0.01 * Math.Log((double)dataForOptimizer[0].Count());
+                double proportion = Math.Log10((double)valuesChild0.Count() / (double)valuesChild1.Count()) / Math.Log10(-2);
+                error += proportion * lambda;
             }
 
             // List<int> originalIndexList = tree;

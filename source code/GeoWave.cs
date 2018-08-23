@@ -6,6 +6,7 @@ namespace DataSetsSparsity
 {
     public class GeoWave
     {
+
         public int parentID, child0, child1, level;
         public double proximity;
         public double volume;
@@ -21,6 +22,8 @@ namespace DataSetsSparsity
         public double splitValue;//of partition
         public double[] hyperPlane;
         public double[] PositionMean;
+        public double[] m_MaxLabel;
+        public double[] m_MinLabel;
 
         public GeoWave(int dataDim, int labelDim)
         {

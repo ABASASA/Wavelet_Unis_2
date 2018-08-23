@@ -19,6 +19,7 @@ namespace DataSetsSparsity
         private bool[] Dime2Take;
         private int m_dimenstion;
         private double[] m_MeanPositionForSplit_5;
+        private double[][] m_training_label_for_score;
 
         public decicionTree( DB db, bool[] Dime2Take)
         {
@@ -57,13 +58,55 @@ namespace DataSetsSparsity
 
         public void DecomposeWaveletsByConsts(List<GeoWave> GeoWaveArr, int seed = -1)//SHOULD GET LIST WITH ROOT GEOWAVE
         {
+            GeoWaveArr = NormLabels(GeoWaveArr);
+
             GeoWaveArr[0].MeanValue = GeoWaveArr[0].calc_MeanValue(training_label, GeoWaveArr[0].pointsIdArray);
             GeoWaveArr[0].computeNormOfConsts(Convert.ToDouble(userConfig.partitionType));
             GeoWaveArr[0].level = 0;
 
+
+
             if (seed == -1)
                 recursiveBSP_WaveletsByConsts(GeoWaveArr, 0);
             else recursiveBSP_WaveletsByConsts(GeoWaveArr, 0, seed);//0 is the root index
+        }
+
+        private List<GeoWave> NormLabels(List<GeoWave> GeoWaveArr)
+        {
+            GeoWaveArr[0].m_MaxLabel = new double[training_label[0].Count()];
+            GeoWaveArr[0].m_MinLabel = new double[training_label[0].Count()];
+
+            for (int index = 0; index < training_label[0].Count(); index++)
+            {
+                GeoWaveArr[0].m_MaxLabel[index] = double.MinValue;
+                GeoWaveArr[0].m_MinLabel[index] = double.MaxValue;
+            }
+
+            // find Maximal and minimal
+            for (int indexPosition = 0; indexPosition < training_label.Count(); indexPosition++)
+            {
+                for (int index = 0; index < training_label[0].Count(); index++)
+                {
+                    GeoWaveArr[0].m_MaxLabel[index] = Math.Max(GeoWaveArr[0].m_MaxLabel[index], training_label[indexPosition][index]);
+                    GeoWaveArr[0].m_MinLabel[index] = Math.Min(GeoWaveArr[0].m_MinLabel[index], training_label[indexPosition][index]);
+                }
+            }
+            m_training_label_for_score = new double[training_label.Count()][];
+            //organize data
+            for (int indexPosition = 0; indexPosition < training_label.Count(); indexPosition++)
+            {
+                m_training_label_for_score[indexPosition] = new double[training_label[0].Count()];
+                for (int index = 0; index < training_label[0].Count(); index++)
+                {
+                    m_training_label_for_score[indexPosition][index] = (training_label[indexPosition][index] - GeoWaveArr[0].m_MinLabel[index]) /
+                            (GeoWaveArr[0].m_MaxLabel[index] - GeoWaveArr[0].m_MinLabel[index]);
+                    if (m_training_label_for_score[indexPosition][index] < 0 || m_training_label_for_score[indexPosition][index] > 1)
+                    {
+                        double a = 0;
+                    }
+                }
+            }
+            return GeoWaveArr;
         }
 
         private void recursiveBSP_WaveletsByConsts(List<GeoWave> GeoWaveArr, int GeoWaveID, int seed=0)
@@ -608,10 +651,10 @@ namespace DataSetsSparsity
                 }
                 dataForOptimizer[0][indexTmp][dimNumber] = 1;
 
-                dataForOptimizer[1][indexTmp] = new double[training_label[0].Count()];
-                for (int indexLabelTmp = 0; indexLabelTmp < training_label[0].Count(); indexLabelTmp++)
+                dataForOptimizer[1][indexTmp] = new double[m_training_label_for_score[0].Count()];
+                for (int indexLabelTmp = 0; indexLabelTmp < m_training_label_for_score[0].Count(); indexLabelTmp++)
                 {
-                    dataForOptimizer[1][indexTmp][indexLabelTmp] = training_label[dataIDInGwW[indexTmp]][indexLabelTmp];
+                    dataForOptimizer[1][indexTmp][indexLabelTmp] = m_training_label_for_score[dataIDInGwW[indexTmp]][indexLabelTmp];
                 }
             }
 
@@ -664,32 +707,17 @@ namespace DataSetsSparsity
 
             //clsUtil.DebugValue(opt);
             double eval1 = opt.Result.Eval;
-            double tmp = 0;
+            /*double tmp = 0;
             size = 200;
             opt.InitialPosition = strtingState;
 
             //Init
             opt.Init();
             flag = opt.DoIteration(size);
-            tmp = opt.Result.Eval;
-            while (false)
-                {
-                    size += 200;
-                    opt.InitialPosition = strtingState;
-
-                    //Init
-                    opt.Init();
-                    flag = opt.DoIteration(size);
-                    tmp = opt.Result.Eval;
-                    if (Math.Abs(tmp - eval1) < 0.4)
-                    {
-                        break;
-                    }
-                    eval1 = tmp;
-            }
+            tmp = opt.Result.Eval;*/
 
 
-    endState = opt.Result.ToArray();
+            endState = opt.Result.ToArray();
             hyperPlane = new double[this.m_dimenstion + 1];
             int counterDim = 0;
             for(int i = 0; i<Dim2TakeNode.Count(); i++)
@@ -703,28 +731,12 @@ namespace DataSetsSparsity
             hyperPlane[m_dimenstion] = endState[dimNumber];
             //hyperPlane = endState;
 
-            // ASAFAB - Trying SVM
-            // Now, we can create the sequential minimal optimization teacher
-
-            var a = new SupportVectorMachine<Linear>();
-            var learn = new SequentialMinimalOptimization(a, dataForOptimizer[0], dataForOptimizer[1])
-            {
-                UseComplexityHeuristic = true,
-                UseKernelEstimation = false
-            };
-
-            // And then we can obtain a trained SVM by calling its Learn method
-            SupportVectorMachine svm = learn.Learn(inputs, xor);
-
-            // Finally, we can obtain the decisions predicted by the machine:
-            bool[] prediction = svm.Decide(inputs);
-
             return true;
 
 
         }
        
-        
+        /*
         public static void SVMOptimizer(double[] x, ref double func, object obj)
         {
             // Cast bsck to tree
@@ -775,7 +787,7 @@ namespace DataSetsSparsity
             //for (int tmpIndex = 0; t)
             func = error;
 
-        }
+        }*/
         #endregion
 
         //ASAFABAS - add functanlity of mulipication on double[]
