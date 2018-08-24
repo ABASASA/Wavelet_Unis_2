@@ -1,4 +1,4 @@
-useCV,false
+useCV,true
 useParallel,false
 nCv,5
 setInhyperCube,true
@@ -14,7 +14,7 @@ errTypeTest,2
 trainingPercentTB,
 nTrees,1
 nFeaturesStr,sqrt
-bagginPercent,0.6
+bagginPercent,0.8
 saveTrees,false
 runOneTreeCB,
 testRF,true

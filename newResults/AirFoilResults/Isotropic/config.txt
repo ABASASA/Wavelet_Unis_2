@@ -3,8 +3,8 @@ useParallel,true
 nCv,5
 setInhyperCube,true
 nonLinearHopping,true
-dbPath,C:\Users\Administrator\Desktop\git\Wavelet_Unis_2-master (2)\Wavelet_Unis_2-master\db\Airfoil
-resultsPath,C:\Users\Administrator\Desktop\git\Wavelet_Unis_2-master (2)\Wavelet_Unis_2-master\newResults\AirFoilResults\Isotropic
+dbPath,C:\Users\Administrator\Desktop\git\Wavelet_Unis_2\db\Airfoil
+resultsPath,C:\Users\Administrator\Desktop\git\Wavelet_Unis_2\newResults\AirFoilResults\Isotropic
 approxThresh,0
 minNodeSize,10
 partitionType,2
@@ -13,7 +13,7 @@ boundLevelDepth,5000
 errTypeTest,2
 trainingPercentTB,
 nTrees,72
-nFeaturesStr,3
+nFeaturesStr,sqrt
 bagginPercent,0.8
 saveTrees,false
 runOneTreeCB,
