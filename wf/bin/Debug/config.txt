@@ -3,8 +3,8 @@ useParallel,false
 nCv,5
 setInhyperCube,true
 nonLinearHopping,true
-dbPath,E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\db\1D_toy_dataset\18
-resultsPath,E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\resultsToyTmp
+dbPath,E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\db\Protein
+resultsPath,E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\newResults\Protein\Uniso
 approxThresh,0
 minNodeSize,10
 partitionType,2
@@ -14,7 +14,7 @@ errTypeTest,2
 trainingPercentTB,
 nTrees,1
 nFeaturesStr,sqrt
-bagginPercent,0.8
+bagginPercent,0.01
 saveTrees,false
 runOneTreeCB,
 testRF,true
