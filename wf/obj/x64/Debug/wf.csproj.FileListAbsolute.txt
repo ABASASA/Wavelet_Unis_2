@@ -38,3 +38,4 @@ E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_
 E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\wf\bin\x64\Debug\Accord.MachineLearning.dll
 E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\wf\bin\x64\Debug\Accord.Statistics.dll
 E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\wf\bin\x64\Debug\Accord.Math.dll
+E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\wf\bin\x64\Debug\Accord.dll

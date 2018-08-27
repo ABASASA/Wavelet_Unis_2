@@ -9,6 +9,9 @@ using LibOptimization.Util;
 using Accord.MachineLearning.VectorMachines;
 using Accord.MachineLearning.VectorMachines.Learning;
 using Accord.Statistics.Kernels;
+using Accord.Statistics.Analysis;
+using Accord.Math;
+using DataScienceAnalysis;
 namespace DataSetsSparsity
 {
     class decicionTree
@@ -98,12 +101,13 @@ namespace DataSetsSparsity
                 m_training_label_for_score[indexPosition] = new double[training_label[0].Count()];
                 for (int index = 0; index < training_label[0].Count(); index++)
                 {
-                    m_training_label_for_score[indexPosition][index] = (training_label[indexPosition][index] - GeoWaveArr[0].m_MinLabel[index]) /
+                    /*m_training_label_for_score[indexPosition][index] = (training_label[indexPosition][index] - GeoWaveArr[0].m_MinLabel[index]) /
                             (GeoWaveArr[0].m_MaxLabel[index] - GeoWaveArr[0].m_MinLabel[index]);
                     if (m_training_label_for_score[indexPosition][index] < 0 || m_training_label_for_score[indexPosition][index] > 1)
                     {
                         double a = 0;
-                    }
+                    }*/
+                    m_training_label_for_score[indexPosition][index] = training_label[indexPosition][index];
                 }
             }
             return GeoWaveArr;
@@ -129,7 +133,7 @@ namespace DataSetsSparsity
 
 
             // ASAFAB -old implemention : IsPartitionOK = getBestPartitionResult(ref dimIndex, ref Maingridindex, GeoWaveArr, GeoWaveID, Error, Dim2TakeNode);
-            IsPartitionOK = GetUnisotropicParitionUsingSVM(GeoWaveArr, GeoWaveID, Error, out hyperPlane, Dim2TakeNode);
+            IsPartitionOK = GetUnisotropicParitionUsingSVMWithPCA(GeoWaveArr, GeoWaveID, Error, out hyperPlane, Dim2TakeNode);
             dimIndex = 0;
             Maingridindex = 0;
 
@@ -567,8 +571,9 @@ namespace DataSetsSparsity
                 {
                     child0.pointsIdArray.Add(indexArr[i]);
                     for (int valueIndex = 0; valueIndex < training_label[0].Count(); valueIndex++)
-                    {
-                        mean0[valueIndex] += training_label[indexArr[i]][valueIndex];
+
+                    { //ASAFAB
+                        mean0[valueIndex] += this.m_training_label_for_score[indexArr[i]][valueIndex];
                     }
                 }
                 else
@@ -576,7 +581,7 @@ namespace DataSetsSparsity
                     child1.pointsIdArray.Add(indexArr[i]);
                     for (int valueIndex = 0; valueIndex < training_label[0].Count(); valueIndex++)
                     {
-                        mean1[valueIndex] += training_label[indexArr[i]][valueIndex];
+                        mean1[valueIndex] += m_training_label_for_score[indexArr[i]][valueIndex];
                     }
                 }
             }
@@ -674,6 +679,7 @@ namespace DataSetsSparsity
             {
                 dimNumber += Dim2TakeNode[i] ? 1 : 0;
             }
+
             double[][][] dataForOptimizer = OrganizeData(GeoWaveArr, GeoWaveID, Dim2TakeNode, dimNumber);
 
             //2Means
@@ -735,7 +741,106 @@ namespace DataSetsSparsity
 
 
         }
-       
+
+        public bool GetUnisotropicParitionUsingSVMWithPCA(List<GeoWave> GeoWaveArr,
+            int GeoWaveID, double Error, out double[] hyperPlane, bool[] Dim2TakeNode)
+        {
+
+            int dimNumber = 0;
+            for (int i = 0; i < Dim2TakeNode.Count(); i++)
+            {
+                dimNumber += Dim2TakeNode[i] ? 1 : 0;
+            }
+
+            //PCA
+            double[][][] dataForOptimizer = OrganizeData(GeoWaveArr, GeoWaveID, Dim2TakeNode, dimNumber);
+            ModifedPca pcaMethod = new ModifedPca(dataForOptimizer[0], AnalysisMethod.Center);
+            pcaMethod.Compute();
+
+            // Find Medians for each PC
+
+            double[,] results = pcaMethod.Result;
+           // double[] pcMedians = new double[results.GetLength(1)];
+            double[][] initialVectors = new double[results.GetLength(1)][];
+            double[,] componentMatrix = pcaMethod.ComponentMatrix;
+
+            for (int pcIndex = 0; pcIndex < results.GetLength(1); pcIndex++)
+            {
+                double[] array = new double[results.GetLength(0)];
+                for (int indexSample = 0; indexSample < results.GetLength(0); indexSample++)
+                {
+                    array[indexSample] = results[indexSample, pcIndex];
+                }
+                double median = FindMedian(array);
+                initialVectors[pcIndex] = new double[dimNumber + 1];
+                initialVectors[pcIndex][pcIndex] = median;
+                initialVectors[pcIndex] = initialVectors[pcIndex].Multiply(componentMatrix);
+            }
+            // Inv-Projection
+            // componentMatrix.MultiplyByTranspose(pcMedians);
+            //double[] invProjectionMedians = pcMedians.Multiply(componentMatrix);
+            double bestScore = double.MaxValue;
+            double[] bestEndState = new double[dimNumber + 1];
+
+
+            // NeadlerMead
+            var func = new Optimization2MeansSVMFunctiton(dataForOptimizer);
+            var opt = new LibOptimization.Optimization.clsOptNelderMead(func);
+
+            for (int indexInitalState = 0; indexInitalState < initialVectors.Count(); indexInitalState++)
+            {
+                double[] strtingState = initialVectors[indexInitalState];
+                double[] endState = new double[dimNumber + 1];
+                opt.InitialPosition = strtingState;
+
+                //Init
+                opt.Init();
+
+                //do optimization!
+                int size = 500;
+                bool flag = opt.DoIteration(size);
+
+                clsUtil.DebugValue(opt);
+                double eval1 = opt.Result.Eval;
+                endState = opt.Result.ToArray();
+
+                if (eval1 < bestScore)
+                {
+                    bestEndState = endState;
+                }
+            }
+
+            
+
+
+
+            //try 2
+            
+
+            
+            hyperPlane = new double[this.m_dimenstion + 1];
+            int counterDim = 0;
+            for (int i = 0; i < Dim2TakeNode.Count(); i++)
+            {
+                if (Dim2TakeNode[i])
+                {
+                    hyperPlane[i] = bestEndState[counterDim];
+                    counterDim += 1;
+                }
+            }
+            hyperPlane[m_dimenstion] = bestEndState[dimNumber];
+
+            return true;
+        }
+
+        private double FindMedian(double[] array)
+        {
+            Array.Sort(array);
+            double result = array[(int)array.Count() / 2];
+
+            return result;
+        }
+
         /*
         public static void SVMOptimizer(double[] x, ref double func, object obj)
         {

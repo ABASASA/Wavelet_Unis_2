@@ -27,6 +27,7 @@ namespace DataSetsSparsity
 
         public GeoWave(int dataDim, int labelDim)
         {
+            
             Init(dataDim, labelDim);
         }
 

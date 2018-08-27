@@ -1,10 +1,10 @@
 useCV,false
-useParallel,true
+useParallel,false
 nCv,5
 setInhyperCube,true
 nonLinearHopping,true
 dbPath,E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\db\1D_toy_dataset\18
-resultsPath,E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\resultsToy
+resultsPath,E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\resultsToy1
 approxThresh,0
 minNodeSize,10
 partitionType,2
@@ -12,8 +12,8 @@ useContNorms,false
 boundLevelDepth,5000
 errTypeTest,2
 trainingPercentTB,
-nTrees,4
-nFeaturesStr,5
+nTrees,1
+nFeaturesStr,sqrt
 bagginPercent,0.8
 saveTrees,false
 runOneTreeCB,

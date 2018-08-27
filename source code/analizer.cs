@@ -1021,7 +1021,12 @@ namespace DataSetsSparsity
                 else
                     endOfLoop = true;
             }
+            /*for(int indexLabel = 0; indexLabel < MeanValue.Count();indexLabel ++)
+            {
+                MeanValue[indexLabel] *= Tree_orderedById[0].m_MaxLabel[indexLabel] - Tree_orderedById[0].m_MinLabel[indexLabel];
+                MeanValue[indexLabel] += Tree_orderedById[0].m_MinLabel[indexLabel];
 
+            }*/
             return MeanValue;
         }
 

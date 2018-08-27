@@ -65,20 +65,18 @@ namespace DataSetsSparsity
             error /= dataForOptimizer[0].Count(); // avrage the score
 
             int count0 = valuesChild0.Count();
-            int count1 = valuesChild1.Count();
-
-            bool flagError = (double)Math.Max(count1, count0) / (double)Math.Min(count0, count1) > 20;
-            
+            int count1 = valuesChild1.Count();            
 
             // adding extra loss if the 
-            if (count1 == 0 || count0 == 0 || flagError)
+            if (count1 == 0 || count0 == 0)
             {
                 Random rnd = new Random();
                 error += rnd.Next(100, 120);
+
             }else
             {
-                double lambda = 0.01 * Math.Log((double)dataForOptimizer[0].Count());
-                double proportion = Math.Log10((double)valuesChild0.Count() / (double)valuesChild1.Count()) / Math.Log10(-2);
+                double lambda = Math.Abs( 0.001 * Math.Log((double)dataForOptimizer[0].Count()) );
+                double proportion = Math.Abs(Math.Log10((double)valuesChild0.Count() / (double)valuesChild1.Count()) / Math.Log10(2));
                 error += proportion * lambda;
             }
 
