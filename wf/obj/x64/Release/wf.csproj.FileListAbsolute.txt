@@ -1,0 +1,13 @@
+E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\wf\bin\x64\Release\wf.exe.config
+E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\wf\bin\x64\Release\wf.exe
+E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\wf\bin\x64\Release\wf.pdb
+E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\wf\bin\x64\Release\Accord.dll
+E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\wf\bin\x64\Release\Accord.MachineLearning.dll
+E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\wf\bin\x64\Release\Accord.Math.dll
+E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\wf\bin\x64\Release\Accord.Statistics.dll
+E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\wf\bin\x64\Release\alglibnet2.dll
+E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\wf\bin\x64\Release\LibOptimization.dll
+E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\wf\obj\x64\Release\wf.csproj.CoreCompileInputs.cache
+E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\wf\obj\x64\Release\wf.csproj.CopyComplete
+E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\wf\obj\x64\Release\wf.exe
+E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\wf\obj\x64\Release\wf.pdb

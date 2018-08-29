@@ -997,18 +997,18 @@ namespace DataSetsSparsity
                 }
                 bool tmpBool = DB.CheckOfEachChild(Tree_orderedById[parent_index].hyperPlane,
                         point, Tree_orderedById[parent_index].PositionMean); // tmpBool = true (child0)
-                if (Tree_orderedById[parent_index].child0 != -1 && tmpBool )
+                if (Tree_orderedById[parent_index].child0 != -1 && tmpBool)
                 {
                     if (!Tree_orderedById[Tree_orderedById[parent_index].child0].MeanValue.SequenceEqual(zeroMean) &&
                         NormThreshold <= Tree_orderedById[Tree_orderedById[parent_index].child0].norm) //take the mean value if its not 0 and the wavelete should be taken ( norm size) - or if its the root wavelete
                     {
-                        for(int t=0;t< MeanValue.Count(); t++)
+                        for (int t = 0; t < MeanValue.Count(); t++)
                             MeanValue[t] += (Tree_orderedById[Tree_orderedById[parent_index].child0].MeanValue[t] - Tree_orderedById[parent_index].MeanValue[t]);
                     }
 
                     parent_index = Tree_orderedById[parent_index].child0;
                 }
-                else if (Tree_orderedById[parent_index].child1 != -1 && !tmpBool )
+                else if (Tree_orderedById[parent_index].child1 != -1 && !tmpBool)
                 {
                     if (NormThreshold <= Tree_orderedById[Tree_orderedById[parent_index].child1].norm) //take the mean value if its above threshold
                     {
@@ -1021,6 +1021,12 @@ namespace DataSetsSparsity
                 else
                     endOfLoop = true;
             }
+            /*for(int indexLabel = 0; indexLabel < MeanValue.Count();indexLabel ++)
+            {
+                MeanValue[indexLabel] *= Tree_orderedById[0].m_MaxLabel[indexLabel] - Tree_orderedById[0].m_MinLabel[indexLabel];
+                MeanValue[indexLabel] += Tree_orderedById[0].m_MinLabel[indexLabel];
+
+            }*/
             return MeanValue;
         }
 

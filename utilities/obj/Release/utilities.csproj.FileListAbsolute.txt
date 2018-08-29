@@ -1,0 +1,7 @@
+E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\utilities\bin\Release\utilities.exe.config
+E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\utilities\bin\Release\utilities.exe
+E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\utilities\bin\Release\utilities.pdb
+E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\utilities\obj\Release\utilities.csprojAssemblyReference.cache
+E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\utilities\obj\Release\utilities.csproj.CoreCompileInputs.cache
+E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\utilities\obj\Release\utilities.exe
+E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\utilities\obj\Release\utilities.pdb
