@@ -133,7 +133,7 @@ namespace DataSetsSparsity
 
 
             // ASAFAB -old implemention : IsPartitionOK = getBestPartitionResult(ref dimIndex, ref Maingridindex, GeoWaveArr, GeoWaveID, Error, Dim2TakeNode);
-            IsPartitionOK = GetUnisotropicParitionUsingSVMWithPCA(GeoWaveArr, GeoWaveID, Error, out hyperPlane, Dim2TakeNode);
+            IsPartitionOK = GetUnisotropicParitionUsingPartialLeastSquares(GeoWaveArr, GeoWaveID, Error, out hyperPlane, Dim2TakeNode);
             dimIndex = 0;
             Maingridindex = 0;
 
@@ -807,6 +807,7 @@ namespace DataSetsSparsity
                 if (eval1 < bestScore)
                 {
                     bestEndState = endState;
+                    bestScore = eval1;
                 }
             }
 
@@ -841,6 +842,73 @@ namespace DataSetsSparsity
             return result;
         }
 
+        public bool GetUnisotropicParitionUsingPartialLeastSquares(List<GeoWave> GeoWaveArr,
+            int GeoWaveID, double Error, out double[] hyperPlane, bool[] Dim2TakeNode)
+        {
+
+            int dimNumber = 0;
+            for (int i = 0; i < Dim2TakeNode.Count(); i++)
+            {
+                dimNumber += Dim2TakeNode[i] ? 1 : 0;
+            }
+
+            //PCA
+
+            //uria: experiment with PLS
+            //Mean
+            double[][][] dataForOptimizerMean = OrganizeData(GeoWaveArr, GeoWaveID, Dim2TakeNode, dimNumber);
+            double[,] pls_vec = getPLSLatents(dataForOptimizerMean[0], dataForOptimizerMean[1]);
+            double[] meanHyperPlane = pls_vec.GetColumn(0);
+            double resultsMean = CalculateCostTmp(meanHyperPlane, dataForOptimizerMean);
+
+            //Midian
+            double[][][] dataForOptimizerMidian = OrganizeDataByMidian(GeoWaveArr, GeoWaveID, Dim2TakeNode, dimNumber);
+            pls_vec = getPLSLatents(dataForOptimizerMidian[0], dataForOptimizerMidian[1]);
+            double[] midianHyperPlane = pls_vec.GetColumn(0);
+            double resultsMidian = CalculateCostTmp(midianHyperPlane, dataForOptimizerMidian);
+
+            double[] bestvec = new double[midianHyperPlane.Count()];
+
+            if (resultsMean > resultsMidian)
+            {
+                OrganizeDataByMidian(GeoWaveArr, GeoWaveID, Dim2TakeNode, dimNumber);
+                bestvec = midianHyperPlane;
+            } else
+            {
+                OrganizeData(GeoWaveArr, GeoWaveID, Dim2TakeNode, dimNumber);
+                bestvec = meanHyperPlane;
+            }
+
+            hyperPlane = new double[this.m_dimenstion + 1];
+            int counterDim = 0;
+            for (int i = 0; i < Dim2TakeNode.Count(); i++)
+            {
+                if (Dim2TakeNode[i])
+                {
+                    hyperPlane[i] = bestvec[counterDim];
+                    counterDim += 1;
+                }
+            }
+            hyperPlane[m_dimenstion] = bestvec[dimNumber];
+            
+
+            //hyperPlane[hyperPlane.GetLength(0) - 1] = FindMedian(prods);
+            return true;
+
+        }
+
+
+        // uria: get pls most prominant direction
+        private double[,] getPLSLatents(double[][] X, double[][] Y)
+        {
+
+            var pls = new PartialLeastSquaresAnalysis(X.ToMatrix(), Y.ToMatrix(), AnalysisMethod.Center, PartialLeastSquaresAlgorithm.SIMPLS);
+            pls.Compute();
+
+            Double[,] preds = pls.Predictors.FactorMatrix;
+            return preds;
+        }
+        //uria
         /*
         public static void SVMOptimizer(double[] x, ref double func, object obj)
         {
@@ -987,6 +1055,134 @@ namespace DataSetsSparsity
             return true;
 
 
+        }
+
+        private double CalculateCostTmp(double[] tmpHyperplane, double[][][] dataForOptimizer)
+        {
+            double func = 0;
+            // Cast bsck to tree
+            int m_dim = tmpHyperplane.Count();
+            if (tmpHyperplane.Count() != m_dim)
+            {
+                throw new Exception("Somthing wrong with the state vector dimnsions");
+            }
+            double[] x = new double[m_dim];
+            for (int i = 0; i < m_dim; i++)
+            {
+                x[i] = tmpHyperplane[i];
+            }
+            double error = 0;
+
+            List<double[]> valuesChild0 = new List<double[]>();
+            List<double[]> valuesChild1 = new List<double[]>();
+
+            for (int passingIndex = 0; passingIndex < dataForOptimizer[0].Count(); passingIndex++)
+            {
+                double score = 0;
+                // compute score (up or down the hyperplane)
+                for (int positionIndex = 0; positionIndex < dataForOptimizer[0][0].Count() - 1; positionIndex++)
+                {
+                    score += x[positionIndex] * dataForOptimizer[0][passingIndex][positionIndex];
+                }
+                score += x[dataForOptimizer[0][0].Count() - 1];
+                error += Math.Max(0, dataForOptimizer[1][passingIndex][0] * score);
+
+                if (score > 0) // go to child 0 
+                {
+                    valuesChild0.Add(dataForOptimizer[1][passingIndex]);
+                }
+                else // go to child1
+                {
+                    valuesChild1.Add(dataForOptimizer[1][passingIndex]);
+                }
+            }
+            /*double norm = 0;
+            for (int positionIndex = 0; positionIndex < x.Count() - 1; positionIndex++)
+            {
+                norm += x[positionIndex] * x[positionIndex];
+            }
+            norm = Math.Sqrt(norm);*/
+
+            error /= dataForOptimizer[0].Count(); // avrage the score
+
+            int count0 = valuesChild0.Count();
+            int count1 = valuesChild1.Count();
+
+            // adding extra loss if the 
+            if (count1 == 0 || count0 == 0)
+            {
+                Random rnd = new Random();
+                error += rnd.Next(100, 120);
+
+            }
+            else
+            {
+                double lambda = Math.Abs(0.001 * Math.Log((double)dataForOptimizer[0].Count()));
+                double proportion = Math.Abs(Math.Log10((double)valuesChild0.Count() / (double)valuesChild1.Count()) / Math.Log10(2));
+                error += proportion * lambda;
+            }
+
+            // List<int> originalIndexList = tree;
+            //for (int tmpIndex = 0; t)
+            func = error;
+            return func;
+        }
+
+        public double[][][] OrganizeDataByMidian(List<GeoWave> GeoWaveArr, int GeoWaveID, bool[] Dim2TakeNode, int dimNumber)
+        {
+            List<int> dataIDInGwW = new List<int>(GeoWaveArr[GeoWaveID].pointsIdArray); // The index of the relevent data
+            double[] midPosition = new double[this.m_dimenstion];
+            double[][] centeredTrainingData = new double[dataIDInGwW.Count()][];
+
+
+            // Calculate mmean position of the relevant data (node data).
+            for (int j = 0; j < this.m_dimenstion; j++)
+            {
+                List<double> tmpList = new List<double>();
+                for (int indexTmp = 0; indexTmp < dataIDInGwW.Count(); indexTmp++)
+                {
+                    tmpList.Add(training_dt[dataIDInGwW[indexTmp]][j]);
+                }
+                tmpList.Sort();
+                midPosition[j] = tmpList[(int)Math.Round((double)(tmpList.Count() / 2))];
+            }
+
+            //meanPosition = meanPosition.Divide((double)dataIDInGwW.Count());
+            //MultipleDoubleArray(ref midPosition, 1 / (double)dataIDInGwW.Count());
+
+            // combine positions and labels
+            double[][][] dataForOptimizer = new double[2][][];
+            dataForOptimizer[0] = new double[dataIDInGwW.Count()][];
+            dataForOptimizer[1] = new double[dataIDInGwW.Count()][];
+            // move the fetuare of the data to mean 
+            for (int indexTmp = 0; indexTmp < dataIDInGwW.Count(); indexTmp++)
+            {
+                dataForOptimizer[0][indexTmp] = new double[dimNumber + 1];
+                centeredTrainingData[indexTmp] = new double[dimNumber + 1];
+                centeredTrainingData[indexTmp][dimNumber] = 1; // Placing 1 in the last index  -> transfet the point to higher dimnsion
+                int dimCounter = 0;
+                for (int j = 0; j < training_dt[0].Count(); j++)
+                {
+                    if (Dim2TakeNode[j])
+                    {
+                        centeredTrainingData[indexTmp][dimCounter] = training_dt[dataIDInGwW[indexTmp]][j] - midPosition[j];
+                        dataForOptimizer[0][indexTmp][dimCounter] = centeredTrainingData[indexTmp][dimCounter];
+                        dimCounter += 1;
+                    }
+                }
+                dataForOptimizer[0][indexTmp][dimNumber] = 1;
+
+                dataForOptimizer[1][indexTmp] = new double[m_training_label_for_score[0].Count()];
+                for (int indexLabelTmp = 0; indexLabelTmp < m_training_label_for_score[0].Count(); indexLabelTmp++)
+                {
+                    dataForOptimizer[1][indexTmp][indexLabelTmp] = m_training_label_for_score[dataIDInGwW[indexTmp]][indexLabelTmp];
+                }
+            }
+
+            this.m_MeanPositionForSplit_5 = midPosition;
+
+
+            return dataForOptimizer;
         }
 
         //ASAFAB - this is the function we want to minimize
