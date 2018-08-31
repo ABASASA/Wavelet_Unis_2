@@ -1,0 +1,26 @@
+useCV,true
+useParallel,true
+nCv,5
+setInhyperCube,true
+nonLinearHopping,true
+dbPath,E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\db\ConcreteData
+resultsPath,E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\results\Iso\Concrete
+approxThresh,0
+minNodeSize,1
+partitionType,2
+useContNorms,false
+boundLevelDepth,5000
+errTypeTest,2
+trainingPercentTB,
+nTrees,35
+nFeaturesStr,sqrt
+bagginPercent,0.8
+saveTrees,true
+runOneTreeCB,
+testRF,true
+evaluateSmoothness,true
+testWf,true
+fixThreshold,-1
+hopping,5
+m_terms,-1
+setClassification,false
