@@ -74,6 +74,7 @@ namespace DataSetsSparsity
             else recursiveBSP_WaveletsByConsts(GeoWaveArr, 0, seed);//0 is the root index
         }
 
+        //doesnt do anything 
         private List<GeoWave> NormLabels(List<GeoWave> GeoWaveArr)
         {
             GeoWaveArr[0].m_MaxLabel = new double[training_label[0].Count()];
@@ -861,14 +862,14 @@ namespace DataSetsSparsity
             double[] meanHyperPlane = pls_vec.GetColumn(0);
             double resultsMean = CalculateCostTmp(meanHyperPlane, dataForOptimizerMean);
 
-            //Midian
+            /*//Midian
             double[][][] dataForOptimizerMidian = OrganizeDataByMidian(GeoWaveArr, GeoWaveID, Dim2TakeNode, dimNumber);
             pls_vec = getPLSLatents(dataForOptimizerMidian[0], dataForOptimizerMidian[1]);
             double[] midianHyperPlane = pls_vec.GetColumn(0);
             double resultsMidian = CalculateCostTmp(midianHyperPlane, dataForOptimizerMidian);
-
-            double[] bestvec = new double[midianHyperPlane.Count()];
-
+            */
+            double[] bestvec = meanHyperPlane;
+            /*
             if (resultsMean > resultsMidian)
             {
                 OrganizeDataByMidian(GeoWaveArr, GeoWaveID, Dim2TakeNode, dimNumber);
@@ -877,7 +878,7 @@ namespace DataSetsSparsity
             {
                 OrganizeData(GeoWaveArr, GeoWaveID, Dim2TakeNode, dimNumber);
                 bestvec = meanHyperPlane;
-            }
+            }*/
 
             hyperPlane = new double[this.m_dimenstion + 1];
             int counterDim = 0;
@@ -906,6 +907,12 @@ namespace DataSetsSparsity
             pls.Compute();
 
             Double[,] preds = pls.Predictors.FactorMatrix;
+            double[,] fp = pls.Predictors.FactorProportions.ToMatrix().Transpose();
+            double[,] weights = fp.Transpose().Multiply(pls.Weights);
+
+            double[,] fp1 = preds.Transpose();
+            double[,] weights1 = fp1.Transpose().Multiply(pls.Weights);
+
             return preds;
         }
         //uria
