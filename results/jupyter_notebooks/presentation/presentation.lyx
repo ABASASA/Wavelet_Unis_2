@@ -1,0 +1,1452 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass beamer
+\begin_preamble
+
+\useoutertheme{wuerzburg}
+\useinnertheme[outline]{chamfered}
+\usecolortheme{shark}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+The effect of anisotropic node splits on Wavelet decomposition of RF
+\end_layout
+
+\begin_layout Author
+Asaf Abas 
+\begin_inset Formula $\qquad$
+\end_inset
+
+ Uria Mor
+\end_layout
+
+\begin_layout Date
+02/09/2018
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Single Decision Tree
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Settings:
+\end_layout
+
+\begin_layout Standard
+Given a sample set of a real (or vector) valued function 
+\begin_inset Formula $f$
+\end_inset
+
+ on some convex domain 
+\begin_inset Formula $\Omega_{0}\in\mathbb{R}^{n}$
+\end_inset
+
+: 
+\begin_inset Formula $\left\{ x_{i}\in\Omega_{0},f\left(x_{i}\right)\right\} _{i\in I}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Our goal is to find efficient representation of the underlying function
+ 
+\begin_inset Formula $f$
+\end_inset
+
+, overcoming the complexity, geometry and (usually) non-smoothness nature
+ of the function in the sampled points.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Single Decision Tree
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+We divide 
+\begin_inset Formula $\Omega_{0}$
+\end_inset
+
+ into two subdomains, by intersecting it with a hyperplane.
+ The subdivision is performed to minimize a given cost function.
+ We recursively repeat the subdivision process on each of the subdomains
+ until some stopping criteria is met and which defines the leafs of the
+ tree.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename division.png
+	width 5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Subdivision illustration
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Cost function
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+One possible choice of cost function is one such minimizes the variance
+ in each subdomain.
+\end_layout
+
+\begin_layout Standard
+Given a convex domain 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ (associated with a node in the tree) find:
+\end_layout
+
+\begin_layout Description
+\begin_inset Formula $\left(i\right)$
+\end_inset
+
+ A partition by a hyper-plane into two convex subdomains 
+\begin_inset Formula $\Omega',\Omega''$
+\end_inset
+
+, so 
+\begin_inset Formula $\Omega=\Omega'+\Omega''$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+\begin_inset Formula $\left(ii\right)$
+\end_inset
+
+ Two multivariate polynomials 
+\begin_inset Formula $Q_{\Omega'},Q_{\Omega''}$
+\end_inset
+
+ of fixed total degree 
+\begin_inset Formula $r-1$
+\end_inset
+
+ (typically low, usually 
+\begin_inset Formula $r=1$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+The subdomains 
+\begin_inset Formula $\Omega',\Omega''$
+\end_inset
+
+ and the polynomials 
+\begin_inset Formula $Q_{\Omega'},Q_{\Omega''}$
+\end_inset
+
+ are chosen to minimize 
+\begin_inset Formula 
+\[
+\sum_{x_{i}\in\Omega'}\left|f\left(x_{i}\right)-Q_{\Omega'}\left(x_{i}\right)\right|^{p}+\sum_{x_{i}\in\Omega''}\left|f\left(x_{i}\right)-Q_{\Omega''}\left(x_{i}\right)\right|^{p}
+\]
+
+\end_inset
+
+ Where 
+\begin_inset Formula $1<p\leq\infty$
+\end_inset
+
+ (usually 
+\begin_inset Formula $p=2$
+\end_inset
+
+) also, in our case, 
+\begin_inset Formula $Q_{\Omega}$
+\end_inset
+
+ will denote the mean value of 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ points.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Minimizing the cost function
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+The problem can be formulated as an optimization problem:
+\end_layout
+
+\begin_layout Standard
+find 
+\begin_inset Formula $\theta_{0},...,\theta_{d}$
+\end_inset
+
+ which minimize
+\begin_inset Formula 
+\[
+\sum_{x_{i}\in\Omega'}\left|f\left(x_{i}\right)-\overline{f\left(\Omega'\right)}\right|^{2}+\sum_{x_{i}\in\Omega''}\left|f\left(x_{i}\right)-\overline{f\left(\Omega''\right)}\right|^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $\Omega'=\left\{ x=\left(x_{1},...,x_{d}\right)\in\Omega;\sum_{i=1}^{d}\theta_{i}x_{i}<\theta_{0}\right\} $
+\end_inset
+
+ and 
+\begin_inset Formula $\Omega''=\Omega\smallsetminus\Omega'$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Note that the search space of this problem is far from ideal - slightly
+ changing one of the 
+\begin_inset Formula $\theta$
+\end_inset
+
+s can (and will) result a massive jump in the cost function values.
+ Moreover, since the cost function is not continuous, we can't use standard
+ optimization algorithms (CG, Newton, GD etc...)
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The division challenge
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+The number of possible hyperplanes which will divide a region containing
+ 
+\begin_inset Formula $n$
+\end_inset
+
+ data samples over 
+\begin_inset Formula $d$
+\end_inset
+
+ features is 
+\begin_inset Formula $\binom{n}{d}$
+\end_inset
+
+ at worst.
+ Furthermore, we can't simply 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\size small
+In many applications of decision trees, searching through all possible subdivisi
+ons is impractical.
+ Thus, in practice - most prominent implementations of DT (scikit-learn&R
+ included) restrict the search to subdivisions by an isotropic hyperplane,
+ that is, splits parallel to one of the features.
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "30col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status collapsed
+
+\begin_layout Plain Layout
+\align left
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename iso_split2.png
+	width 4cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align left
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Isotropic split
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Our work here aims to find a near optimal anisotropic split yielding better
+ progress (and thus better approximates the data) compared to isotropic
+ splits
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Our approach
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Since it is not feasible to go through all possible subdivisions, we turn
+ to heuristics that will (hopefully) find a near optimal hyper-plane which
+ (fingers crossed) outperforms the isotropic split.
+ We propose three approaches built one on top of the other:
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Capture the geometry
+\series default
+ as if there is 
+\series bold
+no problem
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Run KMeans 
+\begin_inset Formula $(k=2)$
+\end_inset
+
+ on the outcomes - 
+\begin_inset Formula $Y$
+\end_inset
+
+ and label each sample with the predicted label 
+\begin_inset Argument item:2
+status open
+
+\begin_layout Plain Layout
+
+2-
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Use SVM to best separate the labeled data in the features space 
+\begin_inset Argument item:2
+status open
+
+\begin_layout Plain Layout
+
+2-
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\series bold
+Solve the problem
+\series default
+ as if there is 
+\series bold
+no geometry
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Reduce the dimensionality of 
+\begin_inset Formula $X$
+\end_inset
+
+ space (PCA) 
+\begin_inset Argument item:2
+status open
+
+\begin_layout Plain Layout
+
+3-
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Use first two PCs as starting points for standard gradient-free optimization
+ (Nedler-Mead solver) 
+\begin_inset Argument item:2
+status open
+
+\begin_layout Plain Layout
+
+3-
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\series bold
+Capture the geometry of the problem
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Try to find 
+\begin_inset Formula $p$
+\end_inset
+
+ - the multidimensional direction in the 
+\begin_inset Formula $X$
+\end_inset
+
+ space that explains the maximum multidimensional variance direction in
+ the 
+\begin_inset Formula $Y$
+\end_inset
+
+ space (PLS)
+\begin_inset Argument item:2
+status open
+
+\begin_layout Plain Layout
+
+4-
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Find 
+\begin_inset Formula $H$
+\end_inset
+
+ - the hyperplane which 
+\begin_inset Formula $p$
+\end_inset
+
+ is it's normal 
+\begin_inset Argument item:2
+status open
+
+\begin_layout Plain Layout
+
+4-
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Find best offset of 
+\begin_inset Formula $H$
+\end_inset
+
+ 
+\begin_inset Argument item:2
+status open
+
+\begin_layout Plain Layout
+
+4-
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Toy demo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{onlyenv}<1-1>  
+\backslash
+begin{center} 	 
+\backslash
+begin{figure}  	 
+\backslash
+begin{centering}  		 
+\backslash
+includegraphics[width=11cm]{images/0} 
+\backslash
+par   	 
+\backslash
+end{centering}  
+\backslash
+centering{}
+\backslash
+caption{Iso splits}   	 
+\backslash
+end{figure} 
+\backslash
+par   	 
+\backslash
+end{center}  
+\backslash
+end{onlyenv} 
+\backslash
+begin{onlyenv}<2-2>  
+\backslash
+begin{center} 	 
+\backslash
+begin{figure}  	 
+\backslash
+begin{centering}  		 
+\backslash
+includegraphics[width=11cm]{images/iso/1} 
+\backslash
+par   	 
+\backslash
+end{centering}  
+\backslash
+centering{}
+\backslash
+caption{Iso splits}   	 
+\backslash
+end{figure} 
+\backslash
+par   	 
+\backslash
+end{center}  
+\backslash
+end{onlyenv} 
+\backslash
+begin{onlyenv}<3-3>  
+\backslash
+begin{center} 	 
+\backslash
+begin{figure}  	 
+\backslash
+begin{centering}  		 
+\backslash
+includegraphics[width=11cm]{images/iso/2} 
+\backslash
+par   	 
+\backslash
+end{centering}  
+\backslash
+centering{}
+\backslash
+caption{Iso splits}   	 
+\backslash
+end{figure} 
+\backslash
+par   	 
+\backslash
+end{center}  
+\backslash
+end{onlyenv} 
+\backslash
+begin{onlyenv}<4-4>  
+\backslash
+begin{center} 	 
+\backslash
+begin{figure}  	 
+\backslash
+begin{centering}  		 
+\backslash
+includegraphics[width=11cm]{images/iso/3} 
+\backslash
+par   	 
+\backslash
+end{centering}  
+\backslash
+centering{}
+\backslash
+caption{Iso splits}   	 
+\backslash
+end{figure} 
+\backslash
+par   	 
+\backslash
+end{center}  
+\backslash
+end{onlyenv} 
+\backslash
+begin{onlyenv}<5-5>  
+\backslash
+begin{center} 	 
+\backslash
+begin{figure}  	 
+\backslash
+begin{centering}  		 
+\backslash
+includegraphics[width=11cm]{images/iso/4} 
+\backslash
+par   	 
+\backslash
+end{centering}  
+\backslash
+centering{}
+\backslash
+caption{Iso splits}   	 
+\backslash
+end{figure} 
+\backslash
+par   	 
+\backslash
+end{center}  
+\backslash
+end{onlyenv} 
+\backslash
+begin{onlyenv}<6-6>  
+\backslash
+begin{center} 	 
+\backslash
+begin{figure}  	 
+\backslash
+begin{centering}  		 
+\backslash
+includegraphics[width=11cm]{images/iso/5} 
+\backslash
+par   	 
+\backslash
+end{centering}  
+\backslash
+centering{}
+\backslash
+caption{Iso splits}   	 
+\backslash
+end{figure} 
+\backslash
+par   	 
+\backslash
+end{center}  
+\backslash
+end{onlyenv} 
+\backslash
+begin{onlyenv}<7-7>  
+\backslash
+begin{center} 	 
+\backslash
+begin{figure}  	 
+\backslash
+begin{centering}  		 
+\backslash
+includegraphics[width=11cm]{images/iso/6} 
+\backslash
+par   	 
+\backslash
+end{centering}  
+\backslash
+centering{}
+\backslash
+caption{Iso splits}   	 
+\backslash
+end{figure} 
+\backslash
+par   	 
+\backslash
+end{center}  
+\backslash
+end{onlyenv}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{onlyenv}<8-8>  
+\backslash
+begin{center} 	 
+\backslash
+begin{figure}  	 
+\backslash
+begin{centering}  		 
+\backslash
+includegraphics[width=11cm]{images/0} 
+\backslash
+par   	 
+\backslash
+end{centering}  
+\backslash
+centering{}
+\backslash
+caption{2Means}   	 
+\backslash
+end{figure} 
+\backslash
+par   	 
+\backslash
+end{center}  
+\backslash
+end{onlyenv} 
+\backslash
+begin{onlyenv}<9-9>  
+\backslash
+begin{center} 	 
+\backslash
+begin{figure}  	 
+\backslash
+begin{centering}  		 
+\backslash
+includegraphics[width=11cm]{images/2means/1} 
+\backslash
+par   	 
+\backslash
+end{centering}  
+\backslash
+centering{}
+\backslash
+caption{2Means split}   	 
+\backslash
+end{figure} 
+\backslash
+par   	 
+\backslash
+end{center}  
+\backslash
+end{onlyenv} 
+\backslash
+begin{onlyenv}<10-10>  
+\backslash
+begin{center} 	 
+\backslash
+begin{figure}  	 
+\backslash
+begin{centering}  		 
+\backslash
+includegraphics[width=11cm]{images/2means/2} 
+\backslash
+par   	 
+\backslash
+end{centering}  
+\backslash
+centering{}
+\backslash
+caption{2Means split}   	 
+\backslash
+end{figure} 
+\backslash
+par   	 
+\backslash
+end{center}  
+\backslash
+end{onlyenv} 
+\backslash
+begin{onlyenv}<11-11>  
+\backslash
+begin{center} 	 
+\backslash
+begin{figure}  	 
+\backslash
+begin{centering}  		 
+\backslash
+includegraphics[width=11cm]{images/2means/3} 
+\backslash
+par   	 
+\backslash
+end{centering}  
+\backslash
+centering{}
+\backslash
+caption{2Means split}   	 
+\backslash
+end{figure} 
+\backslash
+par   	 
+\backslash
+end{center}  
+\backslash
+end{onlyenv}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{onlyenv}<12-12>  
+\backslash
+begin{center} 	 
+\backslash
+begin{figure}  	 
+\backslash
+begin{centering}  		 
+\backslash
+includegraphics[width=11cm]{images/0} 
+\backslash
+par   	 
+\backslash
+end{centering}  
+\backslash
+centering{}
+\backslash
+caption{PCA}   	 
+\backslash
+end{figure} 
+\backslash
+par   	 
+\backslash
+end{center}  
+\backslash
+end{onlyenv} 
+\backslash
+begin{onlyenv}<13-13>  
+\backslash
+begin{center} 	 
+\backslash
+begin{figure}  	 
+\backslash
+begin{centering}  		 
+\backslash
+includegraphics[width=11cm]{images/pca/1} 
+\backslash
+par   	 
+\backslash
+end{centering}  
+\backslash
+centering{}
+\backslash
+caption{PCA}   	 
+\backslash
+end{figure} 
+\backslash
+par   	 
+\backslash
+end{center}  
+\backslash
+end{onlyenv} 
+\backslash
+begin{onlyenv}<14-14>  
+\backslash
+begin{center} 	 
+\backslash
+begin{figure}  	 
+\backslash
+begin{centering}  		 
+\backslash
+includegraphics[width=11cm]{images/pca/2} 
+\backslash
+par   	 
+\backslash
+end{centering}  
+\backslash
+centering{}
+\backslash
+caption{PCA}   	 
+\backslash
+end{figure} 
+\backslash
+par   	 
+\backslash
+end{center}  
+\backslash
+end{onlyenv} 
+\backslash
+begin{onlyenv}<15-15>  
+\backslash
+begin{center} 	 
+\backslash
+begin{figure}  	 
+\backslash
+begin{centering}  		 
+\backslash
+includegraphics[width=11cm]{images/pca/3} 
+\backslash
+par   	 
+\backslash
+end{centering}  
+\backslash
+centering{}
+\backslash
+caption{PCA}   	 
+\backslash
+end{figure} 
+\backslash
+par   	 
+\backslash
+end{center}  
+\backslash
+end{onlyenv} 
+\backslash
+begin{onlyenv}<16-16>  
+\backslash
+begin{center} 	 
+\backslash
+begin{figure}  	 
+\backslash
+begin{centering}  		 
+\backslash
+includegraphics[width=11cm]{images/pca/4} 
+\backslash
+par   	 
+\backslash
+end{centering}  
+\backslash
+centering{}
+\backslash
+caption{PCA}   	 
+\backslash
+end{figure} 
+\backslash
+par   	 
+\backslash
+end{center}  
+\backslash
+end{onlyenv} 
+\backslash
+begin{onlyenv}<17-17>  
+\backslash
+begin{center} 	 
+\backslash
+begin{figure}  	 
+\backslash
+begin{centering}  		 
+\backslash
+includegraphics[width=11cm]{images/pca/5} 
+\backslash
+par   	 
+\backslash
+end{centering}  
+\backslash
+centering{}
+\backslash
+caption{PCA}   	 
+\backslash
+end{figure} 
+\backslash
+par   	 
+\backslash
+end{center}  
+\backslash
+end{onlyenv} 
+\backslash
+begin{onlyenv}<18-18>  
+\backslash
+begin{center} 	 
+\backslash
+begin{figure}  	 
+\backslash
+begin{centering}  		 
+\backslash
+includegraphics[width=11cm]{images/pca/6} 
+\backslash
+par   	 
+\backslash
+end{centering}  
+\backslash
+centering{}
+\backslash
+caption{PCA}   	 
+\backslash
+end{figure} 
+\backslash
+par   	 
+\backslash
+end{center}  
+\backslash
+end{onlyenv}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{onlyenv}<19-19>  
+\backslash
+begin{center} 	 
+\backslash
+begin{figure}  	 
+\backslash
+begin{centering}  		 
+\backslash
+includegraphics[width=11cm]{images/0} 
+\backslash
+par   	 
+\backslash
+end{centering}  
+\backslash
+centering{}
+\backslash
+caption{pls 
+\backslash
+textbf{NotImplementedError}}   	 
+\backslash
+end{figure} 
+\backslash
+par   	 
+\backslash
+end{center}  
+\backslash
+end{onlyenv} 
+\backslash
+begin{onlyenv}<20-20>  
+\backslash
+begin{center} 	 
+\backslash
+begin{figure}  	 
+\backslash
+begin{centering}  		 
+\backslash
+includegraphics[width=11cm]{images/pca/1} 
+\backslash
+par   	 
+\backslash
+end{centering}  
+\backslash
+centering{}
+\backslash
+caption{pls 
+\backslash
+textbf{NotImplementedError}}   	 
+\backslash
+end{figure} 
+\backslash
+par   	 
+\backslash
+end{center}  
+\backslash
+end{onlyenv} 
+\backslash
+begin{onlyenv}<21-21>  
+\backslash
+begin{center} 	 
+\backslash
+begin{figure}  	 
+\backslash
+begin{centering}  		 
+\backslash
+includegraphics[width=11cm]{images/pca/2} 
+\backslash
+par   	 
+\backslash
+end{centering}  
+\backslash
+centering{}
+\backslash
+caption{pls 
+\backslash
+textbf{NotImplementedError}}   	 
+\backslash
+end{figure} 
+\backslash
+par   	 
+\backslash
+end{center}  
+\backslash
+end{onlyenv} 
+\backslash
+begin{onlyenv}<22-22>  
+\backslash
+begin{center} 	 
+\backslash
+begin{figure}  	 
+\backslash
+begin{centering}  		 
+\backslash
+includegraphics[width=11cm]{images/pca/3} 
+\backslash
+par   	 
+\backslash
+end{centering}  
+\backslash
+centering{}
+\backslash
+caption{pls 
+\backslash
+textbf{NotImplementedError}}   	 
+\backslash
+end{figure} 
+\backslash
+par   	 
+\backslash
+end{center}  
+\backslash
+end{onlyenv} 
+\backslash
+begin{onlyenv}<23-23>  
+\backslash
+begin{center} 	 
+\backslash
+begin{figure}  	 
+\backslash
+begin{centering}  		 
+\backslash
+includegraphics[width=11cm]{images/pca/4} 
+\backslash
+par   	 
+\backslash
+end{centering}  
+\backslash
+centering{}
+\backslash
+caption{pls 
+\backslash
+textbf{NotImplementedError}}   	 
+\backslash
+end{figure} 
+\backslash
+par   	 
+\backslash
+end{center}  
+\backslash
+end{onlyenv}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_body
+\end_document
