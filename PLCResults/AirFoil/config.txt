@@ -1,0 +1,26 @@
+useCV,true
+useParallel,true
+nCv,5
+setInhyperCube,true
+nonLinearHopping,true
+dbPath,E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\db\Airfoil
+resultsPath,E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\PLCResults\AirFoil
+approxThresh,0
+minNodeSize,10
+partitionType,2
+useContNorms,false
+boundLevelDepth,5000
+errTypeTest,2
+trainingPercentTB,
+nTrees,36
+nFeaturesStr,all
+bagginPercent,0.8
+saveTrees,false
+runOneTreeCB,
+testRF,true
+evaluateSmoothness,true
+testWf,true
+fixThreshold,-1
+hopping,5
+m_terms,-1
+setClassification,false

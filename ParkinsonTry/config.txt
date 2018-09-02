@@ -1,6 +1,6 @@
 useCV,false
-useParallel,true
-nCv,5
+useParallel,false
+nCv,2
 setInhyperCube,true
 nonLinearHopping,true
 dbPath,E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\db\parkinson
@@ -12,9 +12,9 @@ useContNorms,false
 boundLevelDepth,5000
 errTypeTest,2
 trainingPercentTB,
-nTrees,2
-nFeaturesStr,sqrt
-bagginPercent,0.8
+nTrees,1
+nFeaturesStr,all
+bagginPercent,1
 saveTrees,false
 runOneTreeCB,
 testRF,true
