@@ -1,0 +1,176 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $X\in\mathbb{R}^{n\times d}$
+\end_inset
+
+ be our data and let 
+\begin_inset Formula $\tilde{X}$
+\end_inset
+
+ be the data representation in the rotated Principal component space.
+ That is, if 
+\begin_inset Formula $X=U\Sigma V^{T}$
+\end_inset
+
+ and svd decomposition of 
+\begin_inset Formula $X$
+\end_inset
+
+, we get 
+\begin_inset Formula $\tilde{X}=XV=U\Sigma$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $p_{i}$
+\end_inset
+
+ denote the 
+\begin_inset Formula $i$
+\end_inset
+
+'th element of the standard basis in the PC space.
+ And let 
+\begin_inset Formula $A,B\subset\tilde{X}$
+\end_inset
+
+ such that 
+\begin_inset Formula $A=\left\{ \tilde{x}=\left(\tilde{x}_{1},...,\tilde{x}_{d}\right)|\tilde{x}_{i}<m\right\} $
+\end_inset
+
+ and 
+\begin_inset Formula $B=\tilde{X}\smallsetminus A$
+\end_inset
+
+.
+ This division is defined by a hyperplane perpendicular to 
+\begin_inset Formula $p_{i}$
+\end_inset
+
+, and can be mathematically formulated by the equation 
+\begin_inset Formula $\chi_{p_{i},A}\left(\tilde{x}\right)=\begin{cases}
+1 & \left\langle p_{i},\tilde{x}\right\rangle <m\\
+0 & \text{otherwise}
+\end{cases}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Since 
+\begin_inset Formula $V$
+\end_inset
+
+ is orthogonal, we have 
+\begin_inset Formula $\left\langle p_{i},\tilde{x}\right\rangle <m\iff\left\langle Vp_{i},V\tilde{x}\right\rangle <m$
+\end_inset
+
+, thus 
+\begin_inset Formula $\chi_{Vp_{i},A}\left(V\tilde{x}\right)=\chi_{p_{i},A}\left(\tilde{x}\right)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+So the hyper-plane in the original plane is actually 
+\begin_inset Formula $\left\langle Vp_{i},x\right\rangle <m$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+What we previously did was 
+\begin_inset Formula $\left\langle V\left(m\cdot p_{i}\right),x\right\rangle <0$
+\end_inset
+
+ 
+\end_layout
+
+\end_body
+\end_document
