@@ -6,10 +6,10 @@
 \origin unavailable
 \textclass beamer
 \begin_preamble
-
+\usecolortheme{shark}
 \useoutertheme{wuerzburg}
 \useinnertheme[outline]{chamfered}
-\usecolortheme{shark}
+\usepackage{booktabs}
 \end_preamble
 \use_default_options true
 \maintain_unincluded_children false
@@ -171,33 +171,85 @@ Single Decision Tree
 
 \begin_deeper
 \begin_layout Standard
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "45col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\size scriptsize
 We divide 
 \begin_inset Formula $\Omega_{0}$
 \end_inset
 
  into two subdomains, by intersecting it with a hyperplane.
  The subdivision is performed to minimize a given cost function.
- We recursively repeat the subdivision process on each of the subdomains
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+\size scriptsize
+We recursively repeat the subdivision process on each of the subdomains
  until some stopping criteria is met and which defines the leafs of the
  tree.
 \end_layout
 
-\begin_layout Standard
-\align center
+\end_inset
+
+ 
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "50col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename division.png
-	width 5cm
+	height 2cm
+	BoundingBox -20bp 0bp 470bp 204bp
 
 \end_inset
 
@@ -206,9 +258,13 @@ status open
 
 \begin_layout Plain Layout
 \align center
+
+\size scriptsize
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+
+\size scriptsize
 Subdivision illustration
 \end_layout
 
@@ -217,7 +273,8 @@ Subdivision illustration
 
 \end_layout
 
-\begin_layout Plain Layout
+\end_inset
+
 
 \end_layout
 
@@ -226,117 +283,46 @@ Subdivision illustration
 
 \end_layout
 
-\end_deeper
 \begin_layout Standard
-\begin_inset Separator plain
+
+\size scriptsize
+\begin_inset VSpace smallskip
 \end_inset
 
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Cost function
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
 One possible choice of cost function is one such minimizes the variance
- in each subdomain.
-\end_layout
-
-\begin_layout Standard
-Given a convex domain 
+ in both subdomains, i.e, a partition of 
 \begin_inset Formula $\Omega$
 \end_inset
 
- (associated with a node in the tree) find:
-\end_layout
-
-\begin_layout Description
-\begin_inset Formula $\left(i\right)$
-\end_inset
-
- A partition by a hyper-plane into two convex subdomains 
+ by a hyper-plane into two convex subdomains 
 \begin_inset Formula $\Omega',\Omega''$
 \end_inset
 
-, so 
-\begin_inset Formula $\Omega=\Omega'+\Omega''$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Description
-\begin_inset Formula $\left(ii\right)$
-\end_inset
-
- Two multivariate polynomials 
-\begin_inset Formula $Q_{\Omega'},Q_{\Omega''}$
-\end_inset
-
- of fixed total degree 
-\begin_inset Formula $r-1$
-\end_inset
-
- (typically low, usually 
-\begin_inset Formula $r=1$
-\end_inset
-
-)
+, minimizing the cost function
 \end_layout
 
 \begin_layout Standard
-The subdomains 
-\begin_inset Formula $\Omega',\Omega''$
-\end_inset
 
- and the polynomials 
-\begin_inset Formula $Q_{\Omega'},Q_{\Omega''}$
-\end_inset
-
- are chosen to minimize 
+\size scriptsize
 \begin_inset Formula 
 \[
-\sum_{x_{i}\in\Omega'}\left|f\left(x_{i}\right)-Q_{\Omega'}\left(x_{i}\right)\right|^{p}+\sum_{x_{i}\in\Omega''}\left|f\left(x_{i}\right)-Q_{\Omega''}\left(x_{i}\right)\right|^{p}
+\sum_{x_{i}\in\Omega'}\left|f\left(x_{i}\right)-\overline{f\left(\Omega'\right)}\right|^{2}+\sum_{x_{i}\in\Omega''}\left|f\left(x_{i}\right)-\overline{f\left(\Omega''\right)}\right|^{2}
 \]
 
 \end_inset
 
- Where 
-\begin_inset Formula $1<p\leq\infty$
+ where 
+\begin_inset Formula $\overline{f\left(\Omega\right)}$
 \end_inset
 
- (usually 
-\begin_inset Formula $p=2$
-\end_inset
-
-) also, in our case, 
-\begin_inset Formula $Q_{\Omega}$
-\end_inset
-
- will denote the mean value of 
+ denotes the mean outcome of samples in 
 \begin_inset Formula $\Omega$
 \end_inset
 
- points.
- 
+.
 \end_layout
 
 \end_deeper
-\begin_layout Frame
-
-\end_layout
-
 \begin_layout Standard
 \begin_inset Separator plain
 \end_inset
@@ -438,11 +424,13 @@ The number of possible hyperplanes which will divide a region containing
 \end_inset
 
  features is 
-\begin_inset Formula $\binom{n}{d}$
+\begin_inset Formula $\left(\begin{matrix}n\\
+d
+\end{matrix}\right)\geq\frac{n^{d}}{d^{d}}$
 \end_inset
 
- at worst.
- Furthermore, we can't simply 
+ at worst (for 100 samples over 6 features this is 21433470...).
+ 
 \end_layout
 
 \begin_layout Standard
@@ -623,7 +611,7 @@ status open
 
 \begin_layout Plain Layout
 
-2-
+2-2
 \end_layout
 
 \end_inset
@@ -638,7 +626,7 @@ status open
 
 \begin_layout Plain Layout
 
-2-
+2-2
 \end_layout
 
 \end_inset
@@ -669,7 +657,7 @@ status open
 
 \begin_layout Plain Layout
 
-3-
+3-3
 \end_layout
 
 \end_inset
@@ -685,7 +673,7 @@ status open
 
 \begin_layout Plain Layout
 
-3-
+3-3
 \end_layout
 
 \end_inset
@@ -721,7 +709,7 @@ status open
 
 \begin_layout Plain Layout
 
-4-
+4-4
 \end_layout
 
 \end_inset
@@ -744,7 +732,7 @@ status open
 
 \begin_layout Plain Layout
 
-4-
+4-4
 \end_layout
 
 \end_inset
@@ -763,7 +751,7 @@ status open
 
 \begin_layout Plain Layout
 
-4-
+4-4
 \end_layout
 
 \end_inset
@@ -818,7 +806,7 @@ begin{figure}
 \backslash
 begin{centering}  		 
 \backslash
-includegraphics[width=10cm]{images/0} 
+includegraphics[width=11cm]{images/0} 
 \backslash
 par   	 
 \backslash
@@ -844,7 +832,7 @@ begin{figure}
 \backslash
 begin{centering}  		 
 \backslash
-includegraphics[width=10cm]{images/iso/1} 
+includegraphics[width=11cm]{images/iso/1} 
 \backslash
 par   	 
 \backslash
@@ -870,7 +858,7 @@ begin{figure}
 \backslash
 begin{centering}  		 
 \backslash
-includegraphics[width=10cm]{images/iso/2} 
+includegraphics[width=11cm]{images/iso/2} 
 \backslash
 par   	 
 \backslash
@@ -896,7 +884,7 @@ begin{figure}
 \backslash
 begin{centering}  		 
 \backslash
-includegraphics[width=10cm]{images/iso/3} 
+includegraphics[width=11cm]{images/iso/3} 
 \backslash
 par   	 
 \backslash
@@ -922,7 +910,7 @@ begin{figure}
 \backslash
 begin{centering}  		 
 \backslash
-includegraphics[width=10cm]{images/iso/4} 
+includegraphics[width=11cm]{images/iso/4} 
 \backslash
 par   	 
 \backslash
@@ -948,7 +936,7 @@ begin{figure}
 \backslash
 begin{centering}  		 
 \backslash
-includegraphics[width=10cm]{images/iso/5} 
+includegraphics[width=11cm]{images/iso/5} 
 \backslash
 par   	 
 \backslash
@@ -974,7 +962,7 @@ begin{figure}
 \backslash
 begin{centering}  		 
 \backslash
-includegraphics[width=10cm]{images/iso/6} 
+includegraphics[width=11cm]{images/iso/6} 
 \backslash
 par   	 
 \backslash
@@ -995,14 +983,6 @@ end{onlyenv}
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
 
 \backslash
 begin{onlyenv}<8-8>  
@@ -1013,7 +993,7 @@ begin{figure}
 \backslash
 begin{centering}  		 
 \backslash
-includegraphics[width=10cm]{images/0} 
+includegraphics[width=11cm]{images/0} 
 \backslash
 par   	 
 \backslash
@@ -1039,7 +1019,7 @@ begin{figure}
 \backslash
 begin{centering}  		 
 \backslash
-includegraphics[width=10cm]{images/2means/1} 
+includegraphics[width=11cm]{images/2means/1} 
 \backslash
 par   	 
 \backslash
@@ -1065,7 +1045,7 @@ begin{figure}
 \backslash
 begin{centering}  		 
 \backslash
-includegraphics[width=10cm]{images/2means/2} 
+includegraphics[width=11cm]{images/2means/2} 
 \backslash
 par   	 
 \backslash
@@ -1091,7 +1071,7 @@ begin{figure}
 \backslash
 begin{centering}  		 
 \backslash
-includegraphics[width=10cm]{images/2means/3} 
+includegraphics[width=11cm]{images/2means/3} 
 \backslash
 par   	 
 \backslash
@@ -1107,15 +1087,7 @@ par
 \backslash
 end{center}  
 \backslash
-end{onlyenv} 
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
+end{onlyenv}
 \end_layout
 
 \begin_layout Plain Layout
@@ -1130,7 +1102,7 @@ begin{figure}
 \backslash
 begin{centering}  		 
 \backslash
-includegraphics[width=10cm]{images/0} 
+includegraphics[width=11cm]{images/0} 
 \backslash
 par   	 
 \backslash
@@ -1156,7 +1128,7 @@ begin{figure}
 \backslash
 begin{centering}  		 
 \backslash
-includegraphics[width=10cm]{images/pca/1} 
+includegraphics[width=11cm]{images/pca/1} 
 \backslash
 par   	 
 \backslash
@@ -1182,7 +1154,7 @@ begin{figure}
 \backslash
 begin{centering}  		 
 \backslash
-includegraphics[width=10cm]{images/pca/2} 
+includegraphics[width=11cm]{images/pca/2} 
 \backslash
 par   	 
 \backslash
@@ -1208,7 +1180,7 @@ begin{figure}
 \backslash
 begin{centering}  		 
 \backslash
-includegraphics[width=10cm]{images/pca/3} 
+includegraphics[width=11cm]{images/pca/3} 
 \backslash
 par   	 
 \backslash
@@ -1234,7 +1206,7 @@ begin{figure}
 \backslash
 begin{centering}  		 
 \backslash
-includegraphics[width=10cm]{images/pca/4} 
+includegraphics[width=11cm]{images/pca/4} 
 \backslash
 par   	 
 \backslash
@@ -1260,7 +1232,7 @@ begin{figure}
 \backslash
 begin{centering}  		 
 \backslash
-includegraphics[width=10cm]{images/pca/5} 
+includegraphics[width=11cm]{images/pca/5} 
 \backslash
 par   	 
 \backslash
@@ -1286,7 +1258,7 @@ begin{figure}
 \backslash
 begin{centering}  		 
 \backslash
-includegraphics[width=10cm]{images/pca/6} 
+includegraphics[width=11cm]{images/pca/6} 
 \backslash
 par   	 
 \backslash
@@ -1295,6 +1267,151 @@ end{centering}
 centering{}
 \backslash
 caption{PCA}   	 
+\backslash
+end{figure} 
+\backslash
+par   	 
+\backslash
+end{center}  
+\backslash
+end{onlyenv}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{onlyenv}<19-19>  
+\backslash
+begin{center} 	 
+\backslash
+begin{figure}  	 
+\backslash
+begin{centering}  		 
+\backslash
+includegraphics[width=11cm]{images/0} 
+\backslash
+par   	 
+\backslash
+end{centering}  
+\backslash
+centering{}
+\backslash
+caption{pls 
+\backslash
+textbf{NotImplementedError}}   	 
+\backslash
+end{figure} 
+\backslash
+par   	 
+\backslash
+end{center}  
+\backslash
+end{onlyenv} 
+\backslash
+begin{onlyenv}<20-20>  
+\backslash
+begin{center} 	 
+\backslash
+begin{figure}  	 
+\backslash
+begin{centering}  		 
+\backslash
+includegraphics[width=11cm]{images/pca/1} 
+\backslash
+par   	 
+\backslash
+end{centering}  
+\backslash
+centering{}
+\backslash
+caption{pls 
+\backslash
+textbf{NotImplementedError}}   	 
+\backslash
+end{figure} 
+\backslash
+par   	 
+\backslash
+end{center}  
+\backslash
+end{onlyenv} 
+\backslash
+begin{onlyenv}<21-21>  
+\backslash
+begin{center} 	 
+\backslash
+begin{figure}  	 
+\backslash
+begin{centering}  		 
+\backslash
+includegraphics[width=11cm]{images/pca/2} 
+\backslash
+par   	 
+\backslash
+end{centering}  
+\backslash
+centering{}
+\backslash
+caption{pls 
+\backslash
+textbf{NotImplementedError}}   	 
+\backslash
+end{figure} 
+\backslash
+par   	 
+\backslash
+end{center}  
+\backslash
+end{onlyenv} 
+\backslash
+begin{onlyenv}<22-22>  
+\backslash
+begin{center} 	 
+\backslash
+begin{figure}  	 
+\backslash
+begin{centering}  		 
+\backslash
+includegraphics[width=11cm]{images/pca/3} 
+\backslash
+par   	 
+\backslash
+end{centering}  
+\backslash
+centering{}
+\backslash
+caption{pls 
+\backslash
+textbf{NotImplementedError}}   	 
+\backslash
+end{figure} 
+\backslash
+par   	 
+\backslash
+end{center}  
+\backslash
+end{onlyenv} 
+\backslash
+begin{onlyenv}<23-23>  
+\backslash
+begin{center} 	 
+\backslash
+begin{figure}  	 
+\backslash
+begin{centering}  		 
+\backslash
+includegraphics[width=11cm]{images/pca/4} 
+\backslash
+par   	 
+\backslash
+end{centering}  
+\backslash
+centering{}
+\backslash
+caption{pls 
+\backslash
+textbf{NotImplementedError}}   	 
 \backslash
 end{figure} 
 \backslash
@@ -1331,7 +1448,7 @@ end{onlyenv}
 status open
 
 \begin_layout Plain Layout
-Wavelet decomposition of RF 
+Real world experiments - error
 \end_layout
 
 \end_inset
@@ -1340,334 +1457,735 @@ Wavelet decomposition of RF
 \end_layout
 
 \begin_deeper
-\begin_layout Section*
-asdasd
-\end_layout
-
 \begin_layout Standard
-Let 
-\begin_inset Formula $\Omega'$
-\end_inset
+\begin_inset ERT
+status open
 
- a child node of 
-\begin_inset Formula $\Omega$
-\end_inset
+\begin_layout Plain Layout
 
- in tree 
-\begin_inset Formula $\mathcal{T}$
-\end_inset
 
-.
+\backslash
+begin{onlyenv}<1-1> 
+\backslash
+begin{table} 
+\backslash
+tiny 
+\backslash
+begin{tabular}{lrrl} 
+\backslash
+toprule {} &     mean &     std &    dataset 
+\backslash
+
+\backslash
  
 \end_layout
 
-\begin_layout Standard
-Let 
-\begin_inset Formula ${\bf 1}_{\Omega'}$
-\end_inset
-
- denote the indicator function over 
-\begin_inset Formula $\Omega'$
-\end_inset
-
-: 
-\begin_inset Formula ${\bf 1}_{\Omega'}\left(x\right)=\begin{cases}
-1 & x\in\Omega'\\
-0 & x\notin\Omega'
-\end{cases}$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Definition
-The 
-\series bold
-geometric wavelet
-\series default
- associated with the subdomain 
-\begin_inset Formula $\Omega'$
-\end_inset
-
- and the function 
-\begin_inset Formula $f$
-\end_inset
-
- is 
-\begin_inset Formula 
-\[
-\psi_{\Omega'}\coloneqq\psi_{\Omega'}\left(f\right)\coloneqq{\bf 1}_{\Omega'}\left(Q_{\Omega'}-Q_{\Omega}\right)
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Definition
-
-\size scriptsize
-Note that this is a function 
-\begin_inset Formula $\psi_{\Omega'}:\Omega_{0}\rightarrow\mathbb{R}$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-Each wavelet 
-\begin_inset Formula $\psi_{\Omega'}$
-\end_inset
-
- , is a ‘local difference’ component that belongs to the detail space between
- two levels in the tree, a ‘low resolution’ level associated with 
-\begin_inset Formula $\Omega$
-\end_inset
-
- and a ‘high resolution’ level associated with 
-\begin_inset Formula $\Omega'$
-\end_inset
-
-.
-\end_layout
-
-\end_deeper
-\begin_layout Frame
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
 \begin_layout Plain Layout
-Wavelet decomposition of RF 
-\end_layout
-
-\end_inset
 
 
-\end_layout
+\backslash
+textbf{method   } &          &         &            
+\backslash
 
-\begin_deeper
-\begin_layout Fact
-Under mild conditions on tree 
-\begin_inset Formula $\mathcal{T}$
-\end_inset
-
- and the function 
-\begin_inset Formula $f$
-\end_inset
-
-, it holds that 
-\begin_inset Formula 
-\[
-f=\lim_{\left|\Omega_{0}\right|\rightarrow\infty,\text{diam}\left(\Omega\right)\rightarrow0}\sum_{\Omega\in\mathcal{T}}\psi_{\Omega}
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-(let's not get into details)
-\end_layout
-
-\end_deeper
-\begin_layout Frame
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Wavelet decomposition of RF 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-Using given weights assigned to each tree in RF 
-\begin_inset Formula $\left\{ \mathcal{T}_{j}\right\} _{j=0}^{J}$
-\end_inset
-
- and the wavelet representation, we have 
-\begin_inset Formula 
-\[
-\tilde{f}\left(x\right)=\sum_{j=0}^{J}w_{j}\sum_{\Omega\in\mathcal{T}_{j}}\psi_{\Omega}\left(x\right)
-\]
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Wavelet decomposition of RF 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-In the setting of real valued function 
-\begin_inset Formula $f$
-\end_inset
-
- we can define a norm of a wavelet:
-\end_layout
-
-\begin_layout Definition
-A norm of a wavelet 
-\begin_inset Formula $\psi_{\Omega'}$
-\end_inset
-
- is calculated as 
-\begin_inset Formula 
-\[
-\left\Vert \psi_{\Omega'}\right\Vert _{2}^{2}=\sum_{x_{i}\in\Omega'}\psi_{\Omega'}\left(x_{i}\right)^{2}
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Note that once we computed wavelets and their norms for all nodes of all
- the trees in the RF, we can establish an ordering of the wavelet components
- (modes) based on their norm: 
-\begin_inset Formula 
-\[
-w_{j\left(\Omega_{k_{1}}\right)}\left\Vert \psi_{\Omega_{k_{1}}}\right\Vert _{2}\geq w_{j\left(\Omega_{k_{2}}\right)}\left\Vert \psi_{\Omega_{k_{2}}}\right\Vert _{2}\geq w_{j\left(\Omega_{k_{3}}\right)}\left\Vert \psi_{\Omega_{k_{3}}}\right\Vert _{2}...
-\]
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Frame
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Wavelet decomposition of RF - BEST 
-\begin_inset Formula $M$
-\end_inset
-
+\backslash
  
 \end_layout
 
-\end_inset
+\begin_layout Plain Layout
 
 
-\end_layout
+\backslash
+midrule 
+\backslash
+textbf{2MeansSVM} &    7.158 &   0.650 &   Concrete 
+\backslash
 
-\begin_deeper
-\begin_layout Standard
-
-\size scriptsize
-Having a norm-based ordering of the wavelets: 
-\begin_inset Formula $w_{j\left(\Omega_{k_{1}}\right)}\left\Vert \psi_{\Omega_{k_{1}}}\right\Vert _{2}\geq w_{j\left(\Omega_{k_{2}}\right)}\left\Vert \psi_{\Omega_{k_{2}}}\right\Vert _{2}\geq w_{j\left(\Omega_{k_{3}}\right)}\left\Vert \psi_{\Omega_{k_{3}}}\right\Vert _{2}...$
-\end_inset
-
- enables us to reconstruct a 
-\series bold
-sparse representation
-\series default
- of a RF using 
-\emph on
-best
-\emph default
+\backslash
  
-\begin_inset Formula $M$
-\end_inset
+\end_layout
+
+\begin_layout Plain Layout
 
 
-\emph on
--terms 
-\emph default
-(exactly like we with PCA)
-\size default
+\backslash
+textbf{Iso      } &    1.831 &   0.542 &   Concrete 
+\backslash
 
-\begin_inset Formula 
-\[
-f_{M}\left(x\right)=\sum_{m=1}^{M}w_{j\left(\Omega_{k_{m}}\right)}\psi_{\Omega_{k_{m}}}\left(x\right)
-\]
+\backslash
+ 
+\end_layout
 
-\end_inset
+\begin_layout Plain Layout
 
+
+\backslash
+textbf{PCA      } &    6.472 &   0.546 &   Concrete 
+\backslash
+
+\backslash
+ 
+\backslash
+
+\backslash
 
 \end_layout
 
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{2MeansSVM} &    2.611 &   0.281 &    AirFoil 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Iso      } &    0.564 &   0.215 &    AirFoil 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{PCA      } &    3.724 &   0.207 &    AirFoil 
+\backslash
+
+\backslash
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{2MeansSVM} &    3.747 &   0.139 &    Protein 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Iso      } &    1.049 &   0.317 &    Protein 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{PCA      } &    2.860 &   0.217 &    Protein 
+\backslash
+
+\backslash
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{2MeansSVM} &  118.624 &  10.641 &    ToyData 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Iso      } &   42.063 &  12.979 &    ToyData 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{PCA      } &   78.573 &  11.230 &    ToyData 
+\backslash
+
+\backslash
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{2MeansSVM} &    5.760 &   0.190 &  Parkinson 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Iso      } &    1.056 &   0.377 &  Parkinson 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{PCA      } &    4.213 &   0.343 &  Parkinson 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+bottomrule 
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+caption{Train error} 
+\backslash
+end{table} 
+\backslash
+end{onlyenv}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+  
+\end_layout
+
 \begin_layout Standard
-\align center
-\begin_inset Float figure
-wide false
-sideways false
+\begin_inset ERT
 status open
 
 \begin_layout Plain Layout
-\align center
-\begin_inset Caption Standard
+
+
+\backslash
+begin{onlyenv}<2-2> 
+\backslash
+begin{table} 
+\backslash
+tiny 
+\backslash
+begin{tabular}{lrrl} 
+\backslash
+toprule {} &     mean &     std &    dataset 
+\backslash
+
+\backslash
+ 
+\backslash
+textbf{method   } &          &         &            
+\backslash
+
+\backslash
+ 
+\end_layout
 
 \begin_layout Plain Layout
 
-\size scriptsize
-Selection of an M-term approximation from the entire forest.
+
+\backslash
+midrule 
+\backslash
+textbf{2MeansSVM} &    6.916 &   0.788 &   Concrete 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Iso      } &    1.587 &   0.559 &   Concrete 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{PCA      } &    6.295 &   0.528 &   Concrete 
+\backslash
+
+\backslash
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{2MeansSVM} &    2.600 &   0.345 &    AirFoil 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Iso      } &    0.564 &   0.252 &    AirFoil 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{PCA      } &    3.558 &   0.249 &    AirFoil 
+\backslash
+
+\backslash
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{2MeansSVM} &    3.718 &   0.138 &    Protein 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Iso      } &    1.073 &   0.302 &    Protein 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{PCA      } &    2.842 &   0.213 &    Protein 
+\backslash
+
+\backslash
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{2MeansSVM} &  116.359 &  10.804 &    ToyData 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Iso      } &   40.518 &  11.907 &    ToyData 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{PCA      } &   77.152 &  11.444 &    ToyData 
+\backslash
+
+\backslash
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{2MeansSVM} &    5.608 &   0.200 &  Parkinson 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Iso      } &    1.021 &   0.393 &  Parkinson 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{PCA      } &    4.153 &   0.355 &  Parkinson 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+bottomrule 
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+caption{Validation error} 
+\backslash
+end{table} 
+\backslash
+end{onlyenv}
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{onlyenv}<3-3> 
+\backslash
+begin{table} 
+\backslash
+tiny 
+\backslash
+begin{tabular}{lrrl} 
+\backslash
+toprule {} &     mean &     std &    dataset 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{method   } &          &         &            
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+midrule 
+\backslash
+textbf{2MeansSVM} &    8.461 &   0.985 &   Concrete 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Iso      } &    5.198 &   0.883 &   Concrete 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{PCA      } &    8.867 &   1.046 &   Concrete 
+\backslash
+
+\backslash
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{2MeansSVM} &    3.038 &   0.363 &    AirFoil 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Iso      } &    1.889 &   0.284 &    AirFoil 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{PCA      } &    4.559 &   0.336 &    AirFoil 
+\backslash
+
+\backslash
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{2MeansSVM} &    4.290 &   0.149 &    Protein 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Iso      } &    3.835 &   0.345 &    Protein 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{PCA      } &    4.203 &   0.224 &    Protein 
+\backslash
+
+\backslash
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{2MeansSVM} &  143.372 &  11.906 &    ToyData 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Iso      } &  122.088 &  16.475 &    ToyData 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{PCA      } &  125.165 &  13.071 &    ToyData 
+\backslash
+
+\backslash
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{2MeansSVM} &    6.641 &   0.210 &  Parkinson 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Iso      } &    3.631 &   0.493 &  Parkinson 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{PCA      } &    6.393 &   0.368 &  Parkinson 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+bottomrule 
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+caption{Test error} 
+\backslash
+end{table} 
+\backslash
+end{onlyenv}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
 
 \end_layout
 
@@ -1677,6 +2195,21 @@ Selection of an M-term approximation from the entire forest.
 \end_layout
 
 \end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 \begin_inset Separator plain
 \end_inset
@@ -1689,11 +2222,11 @@ Selection of an M-term approximation from the entire forest.
 status open
 
 \begin_layout Plain Layout
-Wavelet decomposition of RF - BEST 
-\begin_inset Formula $M$
+Real world experiments - 
+\begin_inset Formula $\alpha$
 \end_inset
 
- 
+
 \end_layout
 
 \end_inset
@@ -1703,33 +2236,253 @@ Wavelet decomposition of RF - BEST
 
 \begin_deeper
 \begin_layout Standard
-We can find an optimal 
-\begin_inset Formula $M$
-\end_inset
-
- using validation set for which we know the outcomes
-\end_layout
-
-\begin_layout Standard
-\align center
-\begin_inset Float figure
-wide false
-sideways false
+\begin_inset ERT
 status open
 
 \begin_layout Plain Layout
-\align center
-\begin_inset Caption Standard
+
+
+\backslash
+begin{table} 
+\end_layout
 
 \begin_layout Plain Layout
 
-\size scriptsize
-“RedWine Quality” dataset - Numeric computation of M for optimal regression.
+
+\backslash
+scriptsize 
 \end_layout
 
-\end_inset
+\begin_layout Plain Layout
 
 
+\backslash
+begin{tabular}{lrrl} 
+\backslash
+toprule {} &   mean &    std &    dataset 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{method   } &        &        &            
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+midrule 
+\backslash
+textbf{2MeansSVM} &  0.119 &  0.002 &   Concrete 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Iso      } &  0.255 &  0.009 &   Concrete 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{PCA      } &  0.116 &  0.003 &   Concrete 
+\backslash
+
+\backslash
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{2MeansSVM} &  0.133 &  0.003 &    AirFoil 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Iso      } &  0.246 &  0.001 &    AirFoil 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{PCA      } &  0.072 &  0.003 &    AirFoil 
+\backslash
+
+\backslash
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{2MeansSVM} &  0.046 &  0.000 &    Protein 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Iso      } &  0.139 &  0.000 &    Protein 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{PCA      } &  0.060 &  0.000 &    Protein 
+\backslash
+
+\backslash
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{2MeansSVM} &  0.070 &  0.001 &    ToyData 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Iso      } &  0.153 &  0.013 &    ToyData 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{PCA      } &  0.094 &  0.001 &    ToyData 
+\backslash
+
+\backslash
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{2MeansSVM} &  0.037 &  0.000 &  Parkinson 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Iso      } &  0.199 &  0.004 &  Parkinson 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{PCA      } &  0.057 &  0.002 &  Parkinson 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+bottomrule 
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+caption{ $
+\backslash
+alpha$ }
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{table}
 \end_layout
 
 \end_inset
@@ -1738,69 +2491,10 @@ status open
 \end_layout
 
 \end_deeper
-\begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
-
-\end_layout
-
 \begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Wavelet decomposition of RF - benefits 
-\end_layout
-
-\end_inset
-
 
 \end_layout
 
-\begin_deeper
-\begin_layout Itemize
-No need to fear for overfit due to tree depth
-\end_layout
-
-\begin_layout Itemize
-One hyper parameter to take care for (
-\begin_inset Formula $M$
-\end_inset
-
-) instead of taking into account max-depth, tree-num, num-features...
-\begin_inset Newline newline
-\end_inset
-
-Instead of tuning all usual parameters for RF, we only need to set the number
- of trees & maximum depth to be as high while computationally feasible,
- and any (reasonable) pruning quantities choice will be as good as the default
- (80% samples & sqrt #features) as long as we have enough trees.
-\end_layout
-
-\begin_layout Itemize
-Interpretable results: one can deduce importance of features (ask me)
-\end_layout
-
-\begin_layout Itemize
-Estimate 
-\begin_inset Quotes eld
-\end_inset
-
-weak-type smoothness
-\begin_inset Quotes erd
-\end_inset
-
- of the data (mathematically involved and computationally intensive, but
- made possible using the sparse representation)
-\end_layout
-
-\begin_layout Itemize
-Insensitive to pruning methods or splitting strategies.
- 
-\end_layout
-
-\end_deeper
 \begin_layout Frame
 
 \end_layout
