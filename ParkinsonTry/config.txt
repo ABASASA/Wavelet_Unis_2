@@ -1,9 +1,9 @@
-useCV,false
-useParallel,false
+useCV,true
+useParallel,true
 nCv,2
 setInhyperCube,true
 nonLinearHopping,true
-dbPath,E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\db\parkinson
+dbPath,E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\db\Protein
 resultsPath,E:\Workspace\לימודים\יסודות לימוד מכונה\git\Wavelet_Unis_2\ParkinsonTry
 approxThresh,0
 minNodeSize,10
@@ -12,9 +12,9 @@ useContNorms,false
 boundLevelDepth,5000
 errTypeTest,2
 trainingPercentTB,
-nTrees,1
-nFeaturesStr,all
-bagginPercent,1
+nTrees,36
+nFeaturesStr,sqrt
+bagginPercent,0.8
 saveTrees,false
 runOneTreeCB,
 testRF,true

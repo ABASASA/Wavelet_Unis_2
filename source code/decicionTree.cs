@@ -842,7 +842,7 @@ namespace DataSetsSparsity
 
             return result;
         }
-
+        //ASAFABPLS
         public bool GetUnisotropicParitionUsingPartialLeastSquares(List<GeoWave> GeoWaveArr,
             int GeoWaveID, double Error, out double[] hyperPlane, bool[] Dim2TakeNode)
         {
@@ -902,18 +902,54 @@ namespace DataSetsSparsity
         // uria: get pls most prominant direction
         private double[,] getPLSLatents(double[][] X, double[][] Y)
         {
+          
+            /*var means = new double[X[0].Count()];
+            for(int i = 0; i < X[0].Count() -1; i++)
+            {
+                means[i] = this.m_MeanPositionForSplit_5[i];
+            }
+            means[X[0].Count() - 1] = 0;
 
-            var pls = new PartialLeastSquaresAnalysis(X.ToMatrix(), Y.ToMatrix(), AnalysisMethod.Center, PartialLeastSquaresAlgorithm.SIMPLS);
+            //var Xmatrix = X.ToMatrix();
+            for(int i = 0; i <X.Count(); i++)
+            {
+                for(int j = 0; j<X[0].Count() - 1; j++)
+                {
+                    X[i][j] += means[j];
+                }
+            }*/
+            var pls = new PartialLeastSquaresAnalysis(X.ToMatrix(),
+                Y.ToMatrix(), AnalysisMethod.Center, PartialLeastSquaresAlgorithm.SIMPLS);
             pls.Compute();
 
-            Double[,] preds = pls.Predictors.FactorMatrix;
-            double[,] fp = pls.Predictors.FactorProportions.ToMatrix().Transpose();
-            double[,] weights = fp.Transpose().Multiply(pls.Weights);
+            //Double[,] preds = pls.Predictors.FactorMatrix;
+            double[,] fp = pls.Predictors.FactorProportions.ToMatrix();
+            double[,] fp1 = pls.Predictors.FactorMatrix.Transpose();
+            double[,] weights = pls.Weights;
+            var mult = fp1.Multiply(weights);
+            var inv = mult.PseudoInverse();
+            double[,] rotation = weights.Multiply(inv);
 
-            double[,] fp1 = preds.Transpose();
-            double[,] weights1 = fp1.Transpose().Multiply(pls.Weights);
+            /*
+                
+            var res = pls.Predictors.Result.GetRow(0);
+            var sample1 = pls.Predictors.Source.GetRow(0).ToMatrix();
+            //var sample1norm = sample1.Subtract(pls.Predictors.Means.ToMatrix());
+          //  var sample1Std = sample1norm.ElementwiseDivide(pls.Predictors.StandardDeviations.ToMatrix());
+            //sample1Std[0,20] = 0.000001;
 
-            return preds;
+            //var transformed = pls.Predictors.Transform(sample1norm.Transpose());
+
+            //     var atrans1 = sample1norm.Multiply(rotation);
+
+            //var atrans = rotation.Multiply(sample1norm.Transpose());
+
+           // var ii = pls.Predictors.Source;
+           // var db1 = ii.GetRow(0).ToMatrix();
+            var aaa = pls.Predictors.Transform(sample1);
+            var a = sample1.Multiply(fp1.Transpose());
+            var b = sample1.Multiply(rotation);*/
+            return rotation;
         }
         //uria
         /*
