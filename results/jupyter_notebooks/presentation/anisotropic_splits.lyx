@@ -1,0 +1,2150 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass amsart
+\begin_preamble
+\usepackage[ruled,vlined]{algorithm2e}
+\usepackage{booktabs}
+\usepackage{float}
+\end_preamble
+\use_default_options true
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 3cm
+\topmargin 2cm
+\rightmargin 3cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+The effect of anisotropic node splits on Wavelet decomposition of RF
+\end_layout
+
+\begin_layout Author
+Asaf Abas 
+\begin_inset Formula $\qquad$
+\end_inset
+
+ Uria Mor
+\end_layout
+
+\begin_layout Date
+02/09/2018
+\end_layout
+
+\begin_layout Standard
+
+\size small
+When building a decision trees (DT), at each node, the data is split by
+ a hyper-plane in a way that minimizes a cost function which represent the
+ learning process according to some criteria.
+ The search space of all possible splits of the data is huge: if our data
+ consists of 
+\begin_inset Formula $n$
+\end_inset
+
+ samples over 
+\begin_inset Formula $d$
+\end_inset
+
+ features, the number of all possible
+\noun on
+ 
+\begin_inset Formula $\mathbb{R}^{d-1}$
+\end_inset
+
+ 
+\noun default
+hyper planes spitting the data has an upper bound of 
+\begin_inset Formula $\binom{n}{d}$
+\end_inset
+
+ since 
+\begin_inset Formula $d$
+\end_inset
+
+ points define a 
+\begin_inset Formula $d-1$
+\end_inset
+
+ dimensional subspace .
+ Of course, this bound is super loose as the samples may be co-linear (and
+ thus many choices will coincide) we did not came up with a better analytic
+ bound, nor probabilistic one (on the expectation).
+ We assume that the size of the search space is what drives prominent implementa
+tions of DT to restrict the search to subdivisions by an isotropic split
+ (IS) , that is, splits parallel to one of the features.
+ In this work we describe our attempt to implement a random forest (RF)
+ regressor of decision trees (DT) using near optimal anisotropic split (AS)
+ in each decision node.
+\end_layout
+
+\begin_layout Standard
+The cost function we try to minimize in this work is the sum of variances:
+ suppose we have a split 
+\begin_inset Formula $s$
+\end_inset
+
+ of domain 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ into two disjoint subdomains 
+\begin_inset Formula $\Omega=\Omega'+\Omega''$
+\end_inset
+
+, we define the cost of split 
+\begin_inset Formula $s$
+\end_inset
+
+ as 
+\begin_inset Formula 
+\[
+C\left(s\right)\coloneqq\frac{1}{\left|\Omega'\right|}\sum_{x\in\Omega'}\left(x-\overline{\Omega'}\right)^{2}+\frac{1}{\left|\Omega''\right|}\sum_{x\in\Omega'}\left(x-\overline{\Omega''}\right)^{2}
+\]
+
+\end_inset
+
+ Where 
+\begin_inset Formula $\left|A\right|$
+\end_inset
+
+ is the number of elements in set 
+\begin_inset Formula $A$
+\end_inset
+
+, and 
+\begin_inset Formula $\overline{A}$
+\end_inset
+
+ is the mean estimation of outcomes for all data points in set 
+\begin_inset Formula $A$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Subsection*
+Space size challenge
+\end_layout
+
+\begin_layout Standard
+Examining all possible splits proved itself infeasible not only because
+ of the number of examples to process, but mostly because each such examination
+ requires to solve a linear equation which takes 
+\begin_inset Formula $d^{2}$
+\end_inset
+
+ operations at best.
+ So the natural approach we turn to is treating this search as a 'common'
+ optimization problem, but since our cost function is not continuous, of-the-she
+lf optimization algorithms such as gradient-descent which require a smooth
+ derivative are not relevant here.
+ A quick experiment with a gradient free optimization method (Nedler-Mead)
+ taught us the local minimas are abound and may be far worse than the best
+ IS cost.
+ Being unable to perform the only two things we actually know (iterating
+ through database and optimizing a smooth function)
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Joking, we also know all of saint David Bowie's masterpieces by heart
+\end_layout
+
+\end_inset
+
+ , we were forced to be creative and seek for some effective heuristics.
+\end_layout
+
+\begin_layout Subsubsection*
+First attempt: 
+\series bold
+Capture the geometry
+\series default
+ as if there is 
+\series bold
+no problem
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{algorithm}[H]
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+KwData{(Training) set $
+\backslash
+Omega$ consists of $n$ samples represented by feature matrix $X 
+\backslash
+in 
+\backslash
+mathbb{R}^{n 
+\backslash
+times d}$ and an outcome matrix $Y 
+\backslash
+in 
+\backslash
+mathbb{R}^{n 
+\backslash
+times m}$  }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+KwResult{A set of parameters $
+\backslash
+Theta 
+\backslash
+coloneqq 
+\backslash
+theta_{1} ,...,
+\backslash
+theta_{d} 
+\backslash
+in 
+\backslash
+mathbb{R}^{d} $ and an offset $
+\backslash
+theta_{0}$ such that the split $
+\backslash
+Omega ' = 
+\backslash
+{ x 
+\backslash
+in 
+\backslash
+Omega ; x 
+\backslash
+cdot 
+\backslash
+Theta 
+\backslash
+leq 
+\backslash
+theta_{0} 
+\backslash
+}$ and $
+\backslash
+Omega '' = 
+\backslash
+Omega 
+\backslash
+smallsetminus 
+\backslash
+Omega '$ defining the near optimal split of $
+\backslash
+Omega$}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+Begin{
+\end_layout
+
+\begin_layout Plain Layout
+
+  $X 
+\backslash
+longleftarrow 
+\backslash
+frac{X - 
+\backslash
+bar{X}}{
+\backslash
+max{X} - 
+\backslash
+min{X} } $
+\backslash
+;
+\end_layout
+
+\begin_layout Plain Layout
+
+  Compute 
+\backslash
+emph{KMeans} with $k=2$ on $Y$ and predict labeling of samples
+\backslash
+;
+\end_layout
+
+\begin_layout Plain Layout
+
+  Compute 
+\backslash
+emph{SVM} on $X$ using predicted labels to find best split
+\backslash
+;
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+KwRet{output of 
+\backslash
+emph{SVM}};
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ }
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+caption{2MeansSVM}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{algorithm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This approach relies on the (almost always wrong) assumption that relations
+ between features and outcomes are global w.r.t the dataset, that is, we assume
+ the underlying function 
+\begin_inset Formula $f:X\rightarrow Y$
+\end_inset
+
+ is 
+\emph on
+nice enough
+\emph default
+ in the sense that the direction of greatest variation in the outcome space
+ will correspond to some noticeable change in the feature space.
+ But since the 2Means predicted labels address the geometry of the outcomes
+ space alone, the split in the feature space may be nonsensical, and as
+ we observed - it mostly is.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Second attempt: 
+\series bold
+Solve the problem
+\series default
+ as if it had 
+\series bold
+no geometry
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{algorithm}[H]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+KwData{(Training) set $
+\backslash
+Omega$ consists of $n$ samples represented by feature matrix $X 
+\backslash
+in 
+\backslash
+mathbb{R}^{n 
+\backslash
+times d}$ and an outcome matrix $Y 
+\backslash
+in 
+\backslash
+mathbb{R}^{n 
+\backslash
+times m}$  } 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+KwResult{A set of parameters $
+\backslash
+Theta 
+\backslash
+coloneqq 
+\backslash
+theta_{1} ,...,
+\backslash
+theta_{d} 
+\backslash
+in 
+\backslash
+mathbb{R}^{d} $ and an offset $
+\backslash
+theta_{0}$ such that the split $
+\backslash
+Omega ' = 
+\backslash
+{ x 
+\backslash
+in 
+\backslash
+Omega ; x 
+\backslash
+cdot 
+\backslash
+Theta 
+\backslash
+leq 
+\backslash
+theta_{0} 
+\backslash
+}$ and $
+\backslash
+Omega '' = 
+\backslash
+Omega 
+\backslash
+smallsetminus 
+\backslash
+Omega '$ defining the near optimal split of $
+\backslash
+Omega$}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+Begin{
+\end_layout
+
+\begin_layout Plain Layout
+
+		$X 
+\backslash
+longleftarrow 
+\backslash
+frac{X - 
+\backslash
+bar{X}}{
+\backslash
+max{X} - 
+\backslash
+min{X} } $
+\backslash
+;
+\end_layout
+
+\begin_layout Plain Layout
+
+        Compute 
+\backslash
+emph{PCA} of matrix $X$ 
+\backslash
+;		
+\end_layout
+
+\begin_layout Plain Layout
+
+		best
+\backslash
+_var $ 
+\backslash
+longleftarrow  
+\backslash
+infty $ 
+\backslash
+;
+\end_layout
+
+\begin_layout Plain Layout
+
+		  
+\backslash
+For{$p 
+\backslash
+in $ first 2 principal components}{
+\end_layout
+
+\begin_layout Plain Layout
+
+			$
+\backslash
+bar{
+\backslash
+Theta} 
+\backslash
+longleftarrow 
+\backslash
+text{
+\backslash
+emph{InverseProjection}} 
+\backslash
+left( p 
+\backslash
+right) $ 
+\backslash
+;
+\end_layout
+
+\begin_layout Plain Layout
+
+			$
+\backslash
+bar{
+\backslash
+Theta} , 
+\backslash
+bar{
+\backslash
+theta_{0}} 
+\backslash
+longleftarrow  
+\backslash
+text{
+\backslash
+emph{CostMinimization}} 
+\backslash
+left( 
+\backslash
+bar{
+\backslash
+Theta}, 0
+\backslash
+right)  $ 
+\backslash
+;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+			$C 
+\backslash
+longleftarrow $ cost of split defined by $
+\backslash
+bar{
+\backslash
+theta_{0}},
+\backslash
+bar{
+\backslash
+Theta}$
+\backslash
+;
+\end_layout
+
+\begin_layout Plain Layout
+
+			
+\backslash
+If{$C 
+\backslash
+leq $ best
+\backslash
+_var }{
+\end_layout
+
+\begin_layout Plain Layout
+
+				best
+\backslash
+_var $
+\backslash
+longleftarrow C$
+\backslash
+;
+\end_layout
+
+\begin_layout Plain Layout
+
+				$
+\backslash
+theta_{0} 
+\backslash
+longleftarrow 
+\backslash
+bar{
+\backslash
+theta_{0}}$
+\backslash
+;
+\end_layout
+
+\begin_layout Plain Layout
+
+				$
+\backslash
+Theta 
+\backslash
+longleftarrow 
+\backslash
+bar{
+\backslash
+Theta}$ 
+\backslash
+;
+\end_layout
+
+\begin_layout Plain Layout
+
+			}
+\end_layout
+
+\begin_layout Plain Layout
+
+	      }
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+KwRet{$
+\backslash
+Theta, 
+\backslash
+theta_{0}$}
+\backslash
+;
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+caption{PCA} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{algorithm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This approach aims to find the most varying directions in the feature space
+ of the data, and use these as starting points for classical gradient free
+ optimization (we used the Nedler-Mead solver).
+ While having no guaranties for this split to yield a near optimal cost
+ value, a split that is on one of the first principal components of the
+ features space should provide the best progress in terms of variance reduction
+ in the features space and thus advance faster towards smaller regions in
+ which, we assumed, capturing the local geometry will be easier.
+\end_layout
+
+\begin_layout Subsubsection*
+Third attempt: 
+\series bold
+Capture the geometry of the problem
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{algorithm}[H]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+KwData{(Training) set $
+\backslash
+Omega$ consists of $n$ samples represented by feature matrix $X 
+\backslash
+in 
+\backslash
+mathbb{R}^{n 
+\backslash
+times d}$ and an outcome matrix $Y 
+\backslash
+in 
+\backslash
+mathbb{R}^{n 
+\backslash
+times m}$  } 
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+KwResult{A set of parameters $
+\backslash
+Theta 
+\backslash
+coloneqq 
+\backslash
+theta_{1} ,...,
+\backslash
+theta_{d} 
+\backslash
+in 
+\backslash
+mathbb{R}^{d} $ and an offset $
+\backslash
+theta_{0}$ such that the split $
+\backslash
+Omega ' = 
+\backslash
+{ x 
+\backslash
+in 
+\backslash
+Omega ; x 
+\backslash
+cdot 
+\backslash
+Theta 
+\backslash
+leq 
+\backslash
+theta_{0} 
+\backslash
+}$ and $
+\backslash
+Omega '' = 
+\backslash
+Omega 
+\backslash
+smallsetminus 
+\backslash
+Omega '$ defining the near optimal split of $
+\backslash
+Omega$}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+Begin{
+\end_layout
+
+\begin_layout Plain Layout
+
+		$X 
+\backslash
+longleftarrow 
+\backslash
+frac{X - 
+\backslash
+bar{X}}{
+\backslash
+max{X} - 
+\backslash
+min{X} } $
+\backslash
+;
+\end_layout
+
+\begin_layout Plain Layout
+
+		Compute 
+\backslash
+emph{PLS} of matrices $X,Y$ 
+\backslash
+;		
+\end_layout
+
+\begin_layout Plain Layout
+
+		best
+\backslash
+_var $ 
+\backslash
+longleftarrow  
+\backslash
+infty $ 
+\backslash
+;
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+For{$r 
+\backslash
+in $ first 2 columns of $X$'s rotation matrix}{
+\end_layout
+
+\begin_layout Plain Layout
+
+			$
+\backslash
+bar{
+\backslash
+Theta} 
+\backslash
+longleftarrow  r $  
+\backslash
+;
+\end_layout
+
+\begin_layout Plain Layout
+
+			$x' 
+\backslash
+longleftarrow 
+\backslash
+text{sort}
+\backslash
+left(X 
+\backslash
+bar{
+\backslash
+Theta}
+\backslash
+right)$  
+\backslash
+tcc*[R]{this array will contain the mid points between each two adjacent
+ points projections}
+\end_layout
+
+\begin_layout Plain Layout
+
+			$x' 
+\backslash
+longleftarrow 
+\backslash
+frac{x' 
+\backslash
+left[:-1
+\backslash
+right] + x' 
+\backslash
+left[1:
+\backslash
+right]}{2}$
+\backslash
+;
+\end_layout
+
+\begin_layout Plain Layout
+
+			
+\end_layout
+
+\begin_layout Plain Layout
+
+			
+\backslash
+For{$i 
+\backslash
+in 0,...,
+\backslash
+text{length of } x'$}{
+\end_layout
+
+\begin_layout Plain Layout
+
+				$
+\backslash
+bar{
+\backslash
+theta_{0}} 
+\backslash
+longleftarrow x'
+\backslash
+left[i
+\backslash
+right]$
+\end_layout
+
+\begin_layout Plain Layout
+
+				$C 
+\backslash
+longleftarrow $ cost of split defined by $
+\backslash
+bar{
+\backslash
+theta_{0}},
+\backslash
+bar{
+\backslash
+Theta}$
+\backslash
+;
+\end_layout
+
+\begin_layout Plain Layout
+
+				
+\backslash
+If{$C 
+\backslash
+leq $ best
+\backslash
+_var }{
+\end_layout
+
+\begin_layout Plain Layout
+
+					best
+\backslash
+_var $
+\backslash
+longleftarrow C$
+\backslash
+;
+\end_layout
+
+\begin_layout Plain Layout
+
+					$
+\backslash
+theta_{0} 
+\backslash
+longleftarrow 
+\backslash
+bar{
+\backslash
+theta_{0}}$
+\backslash
+;
+\end_layout
+
+\begin_layout Plain Layout
+
+					$
+\backslash
+Theta 
+\backslash
+longleftarrow 
+\backslash
+bar{
+\backslash
+Theta}$ 
+\backslash
+;
+\end_layout
+
+\begin_layout Plain Layout
+
+				}
+\end_layout
+
+\begin_layout Plain Layout
+
+			}
+\end_layout
+
+\begin_layout Plain Layout
+
+				
+\end_layout
+
+\begin_layout Plain Layout
+
+		}
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+KwRet{$
+\backslash
+Theta, 
+\backslash
+theta_{0}$}
+\backslash
+;
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+caption{PLS} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{algorithm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Here, we first use partial least squares regression (PLS) model that will
+ try to find the multidimensional direction in the features space that explains
+ the maximum multidimensional variance direction in the outcome space.
+ The model uses orthogonal matrices in order to project 
+\begin_inset Formula $X$
+\end_inset
+
+ and 
+\begin_inset Formula $Y$
+\end_inset
+
+ into a latent space in which their projections have maximal covariance.
+ We take the columns of the matrix used to rotate 
+\begin_inset Formula $X$
+\end_inset
+
+, and search for best split along these directions.
+ We didn't yet manage to make it work in the C# platform, but we have an
+ RF implementation in python which performs well for the Parkinson dataset
+ but as we didn't write the wavelet decomposition for this, it's hard to
+ compare using results performance over train/test/validation datasets alone.
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Subsection*
+Results 
+\end_layout
+
+\begin_layout Standard
+The following tables show errors (mean and std) of the inspected datasets
+ for the two methods we were able to implement, and the 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ coefficient.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{table}[H]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+small 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{lrrl} 
+\backslash
+toprule {} &     mean &     std &    dataset 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{method   } &          &         &            
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+midrule 
+\backslash
+textbf{2MeansSVM} &    7.158 &   0.650 &   Concrete 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Iso      } &    1.831 &   0.542 &   Concrete 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{PCA      } &    6.472 &   0.546 &   Concrete 
+\backslash
+
+\backslash
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{2MeansSVM} &    2.611 &   0.281 &    AirFoil 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Iso      } &    0.564 &   0.215 &    AirFoil 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{PCA      } &    3.724 &   0.207 &    AirFoil 
+\backslash
+
+\backslash
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{2MeansSVM} &    3.747 &   0.139 &    Protein 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Iso      } &    1.049 &   0.317 &    Protein 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{PCA      } &    2.860 &   0.217 &    Protein 
+\backslash
+
+\backslash
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{2MeansSVM} &  118.624 &  10.641 &    ToyData 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Iso      } &   42.063 &  12.979 &    ToyData 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{PCA      } &   78.573 &  11.230 &    ToyData 
+\backslash
+
+\backslash
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{2MeansSVM} &    5.760 &   0.190 &  Parkinson 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Iso      } &    1.056 &   0.377 &  Parkinson 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{PCA      } &    4.213 &   0.343 &  Parkinson 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+bottomrule 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+caption{Train error} 
+\backslash
+end{table}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{table}[H] 
+\backslash
+small 
+\backslash
+begin{tabular}{lrrl} 
+\backslash
+toprule {} &     mean &     std &    dataset 
+\backslash
+
+\backslash
+ 
+\backslash
+textbf{method   } &          &         &            
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+midrule 
+\backslash
+textbf{2MeansSVM} &    6.916 &   0.788 &   Concrete 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Iso      } &    1.587 &   0.559 &   Concrete 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{PCA      } &    6.295 &   0.528 &   Concrete 
+\backslash
+
+\backslash
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{2MeansSVM} &    2.600 &   0.345 &    AirFoil 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Iso      } &    0.564 &   0.252 &    AirFoil 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{PCA      } &    3.558 &   0.249 &    AirFoil 
+\backslash
+
+\backslash
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{2MeansSVM} &    3.718 &   0.138 &    Protein 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Iso      } &    1.073 &   0.302 &    Protein 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{PCA      } &    2.842 &   0.213 &    Protein 
+\backslash
+
+\backslash
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{2MeansSVM} &  116.359 &  10.804 &    ToyData 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Iso      } &   40.518 &  11.907 &    ToyData 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{PCA      } &   77.152 &  11.444 &    ToyData 
+\backslash
+
+\backslash
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{2MeansSVM} &    5.608 &   0.200 &  Parkinson 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Iso      } &    1.021 &   0.393 &  Parkinson 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{PCA      } &    4.153 &   0.355 &  Parkinson 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+bottomrule 
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+caption{Validation error} 
+\backslash
+end{table}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{table}[H] 
+\backslash
+small 
+\backslash
+begin{tabular}{lrrl} 
+\backslash
+toprule {} &     mean &     std &    dataset 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{method   } &          &         &            
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+midrule 
+\backslash
+textbf{2MeansSVM} &    8.461 &   0.985 &   Concrete 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Iso      } &    5.198 &   0.883 &   Concrete 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{PCA      } &    8.867 &   1.046 &   Concrete 
+\backslash
+
+\backslash
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{2MeansSVM} &    3.038 &   0.363 &    AirFoil 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Iso      } &    1.889 &   0.284 &    AirFoil 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{PCA      } &    4.559 &   0.336 &    AirFoil 
+\backslash
+
+\backslash
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{2MeansSVM} &    4.290 &   0.149 &    Protein 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Iso      } &    3.835 &   0.345 &    Protein 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{PCA      } &    4.203 &   0.224 &    Protein 
+\backslash
+
+\backslash
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{2MeansSVM} &  143.372 &  11.906 &    ToyData 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Iso      } &  122.088 &  16.475 &    ToyData 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{PCA      } &  125.165 &  13.071 &    ToyData 
+\backslash
+
+\backslash
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{2MeansSVM} &    6.641 &   0.210 &  Parkinson 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Iso      } &    3.631 &   0.493 &  Parkinson 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{PCA      } &    6.393 &   0.368 &  Parkinson 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+bottomrule 
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+caption{Test error} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{table}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{table}[H]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+small 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{lrrl} 
+\backslash
+toprule {} &   mean &    std &    dataset 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{method   } &        &        &            
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+midrule 
+\backslash
+textbf{2MeansSVM} &  0.119 &  0.002 &   Concrete 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Iso      } &  0.255 &  0.009 &   Concrete 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{PCA      } &  0.116 &  0.003 &   Concrete 
+\backslash
+
+\backslash
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{2MeansSVM} &  0.133 &  0.003 &    AirFoil 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Iso      } &  0.246 &  0.001 &    AirFoil 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{PCA      } &  0.072 &  0.003 &    AirFoil 
+\backslash
+
+\backslash
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{2MeansSVM} &  0.046 &  0.000 &    Protein 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Iso      } &  0.139 &  0.000 &    Protein 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{PCA      } &  0.060 &  0.000 &    Protein 
+\backslash
+
+\backslash
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{2MeansSVM} &  0.070 &  0.001 &    ToyData 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Iso      } &  0.153 &  0.013 &    ToyData 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{PCA      } &  0.094 &  0.001 &    ToyData 
+\backslash
+
+\backslash
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{2MeansSVM} &  0.037 &  0.000 &  Parkinson 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Iso      } &  0.199 &  0.004 &  Parkinson 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{PCA      } &  0.057 &  0.002 &  Parkinson 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+bottomrule 
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+caption{ $
+\backslash
+alpha$ }
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{table}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
